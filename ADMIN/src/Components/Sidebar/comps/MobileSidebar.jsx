@@ -5,6 +5,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import logo from "../../../Assets/icon.png";
@@ -42,8 +43,7 @@ import {
 import { Link, useLocation } from "react-router-dom";
 
 const MobileSidebar = () => {
-  const location = useLocation();
-  const currentPage = location.pathname;
+  const { pathname } = useLocation();
 
   return (
     <Sheet>
@@ -59,7 +59,7 @@ const MobileSidebar = () => {
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="bg-white text-left gap-10 flex flex-col"
+        className="bg-white text-left gap-10 flex flex-col w-[80%] max-w-sm"
       >
         <SheetHeader>
           <div className="h-16 bg-white">
@@ -73,16 +73,22 @@ const MobileSidebar = () => {
         <div className="w-full flex flex-col">
           {links.map((link, i) => {
             return (
-              <Link to={link.pageLink}>
-                <div className="flex gap-4 items-center py-3 active:bg-neutral-100 rounded-xl px-2 ">
-                  <div className="text-neutral-600">{link.icon}</div>
-                  <p className="text-lg ">{link.label}</p>
-                </div>
-              </Link>
+              <SheetClose asChild>
+                <Link to={link.pageLink}>
+                  <div
+                    className={`flex gap-4 items-center py-3 active:bg-neutral-100 rounded-xl px-2 ${
+                      pathname === link.pageLink
+                        ? "text-neutral-800"
+                        : "text-neutral-500"
+                    } `}
+                  >
+                    <div>{link.icon}</div>
+                    <p className="text-lg ">{link.label}</p>
+                  </div>
+                </Link>
+              </SheetClose>
             );
           })}
-
-          {pathname}
         </div>
       </SheetContent>
     </Sheet>

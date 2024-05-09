@@ -29,7 +29,7 @@ const ProfileMenu = () => {
         <Button
           variant="outline"
           size="icon"
-          className="rounded-full border-neutral-200 text-neutral-500"
+          className="rounded-full border-neutral-100 text-neutral-500"
         >
           <UserRound size={15} />
         </Button>{" "}
@@ -67,10 +67,9 @@ const Sidebar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="w-full h-14 border border-neutral-100 flex items-center justify-between p-2">
-        <div>
+      <nav className="w-full h-14 border border-neutral-100 flex items-center justify-between p-2 fixed top-0 left-0">
+        <div className="relative">
           <MobileSidebar />
-
         </div>
         <div></div>
         <div className="relative">

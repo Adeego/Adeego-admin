@@ -16,10 +16,9 @@ const Orders = () => {
   
 
   return (
-    <div className='bg-LightGrey items-center'>
-      <div className='h-12 justify-center mt-3'>
-      </div>
-      <div className=' bg-white rounded-xl  w-full shadow-lg'>
+    <div className='bg-LightGrey items-center w-screen bg-red-600 mt-20'>
+  
+      <div className=' bg-white rounded-xl  w-full shadow-lg overflow-scroll '>
         <OrdersTable/>
       </div>
     </div>
