@@ -1,0 +1,3515 @@
+[
+    {
+      "id": "06qnaPY9LVEunSZTJt1y",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FPersonal%20care%2Fgeishaaloevera.png?alt=media&token=a412eca6-9d48-41df-9d9d-5abc74c5b34d",
+      "UpdatedAt": {
+        "seconds": 1713779667,
+        "nanoseconds": 939000000
+      },
+      "CreatedAt": {
+        "seconds": 1713779667,
+        "nanoseconds": 939000000
+      },
+      "Keywords": [],
+      "Size": "200g",
+      "Price": 140,
+      "BuyPrice": 95,
+      "Name": "Geisha soothing aloe vera & honey soap",
+      "Category": "PersonalCare",
+      "Description": ""
+    },
+    {
+      "id": "0AhHLJ9sBgFPUnRRwyZS",
+      "Description": "",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fkanzbiryani.png?alt=media&token=74be7995-7060-4138-872c-c5d3697a0b27",
+      "UpdatedAt": {
+        "seconds": 1713420626,
+        "nanoseconds": 572000000
+      },
+      "Category": "DryFoods",
+      "Stock": "In stock",
+      "Price": 1250,
+      "CreatedAt": {
+        "seconds": 1713420626,
+        "nanoseconds": 572000000
+      },
+      "BuyPrice": 1000,
+      "Name": "Kanz brand parboiled biryani rice pakistani long grain",
+      "Keywords": [],
+      "Size": "5kg"
+    },
+    {
+      "id": "0XApxJaMBbbtXLo1YUVp",
+      "Keywords": [],
+      "BuyPrice": 315,
+      "Category": "OtherFoods",
+      "Price": 350,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fknorrbeefcubes.png?alt=media&token=d652e38c-8c93-412b-ab41-8f7b4792c11e",
+      "Description": "",
+      "Name": "Jumbo chicken stock",
+      "CreatedAt": {
+        "seconds": 1714739048,
+        "nanoseconds": 615000000
+      },
+      "Stock": "In stock",
+      "Size": "1pc ",
+      "UpdatedAt": {
+        "seconds": 1714739048,
+        "nanoseconds": 615000000
+      }
+    },
+    {
+      "id": "0dA7OUaP2A1R5v8jjkoa",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FPersonal%20care%2Fgeishacoconut.png?alt=media&token=0d8db028-8215-4692-9d00-b68f79eeb073",
+      "Price": 140,
+      "Keywords": [],
+      "Category": "PersonalCare",
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1713779781,
+        "nanoseconds": 804000000
+      },
+      "BuyPrice": 95,
+      "Description": "",
+      "Size": "200g",
+      "UpdatedAt": {
+        "seconds": 1713779781,
+        "nanoseconds": 804000000
+      },
+      "Name": "Geisha caring coconut & honey soap"
+    },
+    {
+      "id": "1cMMkaJGktMyxGycqOcO",
+      "Price": 260,
+      "CreatedAt": {
+        "seconds": 1714739567,
+        "nanoseconds": 914000000
+      },
+      "Name": "Closeup value pack",
+      "Stock": "In stock",
+      "Category": "PersonalCare",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FPersonal%20care%2FcloseupVP.png?alt=media&token=fcc416f1-1618-44ca-be60-1e3ceb14537a",
+      "BuyPrice": 241,
+      "Size": "2pc",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1714739567,
+        "nanoseconds": 914000000
+      }
+    },
+    {
+      "id": "2R57tSoJ46dUiE09kDTy",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fpembengano1kg.png?alt=media&token=7042e7e7-9a1b-4332-8990-47c80e0ff031",
+      "Size": "1kg x 24 Carton",
+      "Name": "Pembe unga safi wa ngano",
+      "BuyPrice": 2150,
+      "CreatedAt": {
+        "seconds": 1713418901,
+        "nanoseconds": 167000000
+      },
+      "UpdatedAt": {
+        "seconds": 1713418901,
+        "nanoseconds": 167000000
+      },
+      "Category": "DryFoods",
+      "Price": 2400,
+      "Stock": "In stock",
+      "Description": "",
+      "Keywords": []
+    },
+    {
+      "id": "3MwKWIXnhIL9cGn9mhdH",
+      "Size": "3kg",
+      "BuyPrice": 1270,
+      "Name": "Omo auto washing powder",
+      "UpdatedAt": {
+        "seconds": 1713592250,
+        "nanoseconds": 831000000
+      },
+      "Keywords": [],
+      "Stock": "In stock",
+      "Category": "Cleaning",
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1713592250,
+        "nanoseconds": 831000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fomoautowashingpowder.png?alt=media&token=404653cc-ce5c-41eb-9813-47e2dd649df0",
+      "Price": 1350
+    },
+    {
+      "id": "4Fl6p6IG9cDlf9XJE7MN",
+      "Stock": "Out of stock",
+      "Price": 10,
+      "Category": "Snacks",
+      "Name": "Kik boxxer lollipop",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FSnacks%2Flolipop1.png?alt=media&token=ac00dd9b-635a-411d-a7c5-6d9ad0e4af8b",
+      "CreatedAt": {
+        "seconds": 1712839455,
+        "nanoseconds": 154000000
+      },
+      "UpdatedAt": {
+        "seconds": 1712839455,
+        "nanoseconds": 154000000
+      },
+      "Keywords": [],
+      "Description": "",
+      "BuyPrice": 7,
+      "Size": "1pc"
+    },
+    {
+      "id": "4MbwCoM6woH8MzhyRDvu",
+      "CreatedAt": {
+        "seconds": 1714074180,
+        "nanoseconds": 882000000
+      },
+      "Stock": "In stock",
+      "Description": "",
+      "Size": "2.5kg",
+      "BuyPrice": 2400,
+      "Name": "Brookside full cream milk powder",
+      "Category": "Dairy",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fbrooksidepowder.png?alt=media&token=1d7100af-411a-450e-bf47-4e71a1be81ab",
+      "Price": 2900,
+      "UpdatedAt": {
+        "seconds": 1714074180,
+        "nanoseconds": 882000000
+      },
+      "Keywords": []
+    },
+    {
+      "id": "4mWyxAZn61Khp40YdUd6",
+      "CreatedAt": {
+        "seconds": 1710217565,
+        "nanoseconds": 645000000
+      },
+      "BuyPrice": 55,
+      "Type": "Offer",
+      "Name": "Minute Maid mango juice",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2FMinuteMaidMango400ml.png?alt=media&token=5425c769-4b8a-409d-aff6-6b442d862a90",
+      "Description": "",
+      "Keywords": [],
+      "Stock": "In stock",
+      "Category": "Drinks",
+      "UpdatedAt": {
+        "seconds": 1710217565,
+        "nanoseconds": 645000000
+      },
+      "Price": 70,
+      "Size": "400ml"
+    },
+    {
+      "id": "4u9eNFOOeg5TBOMOmerP",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fcrownbasmati.png?alt=media&token=296f3623-223e-4b5f-82a2-b21eca19af8e",
+      "UpdatedAt": {
+        "seconds": 1713420243,
+        "nanoseconds": 40000000
+      },
+      "Name": "Star Crown basmati parboiled rice",
+      "Description": "",
+      "Price": 300,
+      "Category": "DryFoods",
+      "Keywords": [],
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1713420243,
+        "nanoseconds": 40000000
+      },
+      "BuyPrice": 250,
+      "Size": "1kg"
+    },
+    {
+      "id": "52cBPZ1lLyB8BWz8bpBa",
+      "CreatedAt": {
+        "seconds": 1713783627,
+        "nanoseconds": 927000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOther%20E%2Fhananfoil.png?alt=media&token=b71991e9-e8df-4986-a345-90211d762a2d",
+      "Category": "OtherE",
+      "Name": "Hanan aluminium foil",
+      "Size": "30cmx5m",
+      "UpdatedAt": {
+        "seconds": 1713783627,
+        "nanoseconds": 927000000
+      },
+      "Description": "",
+      "Keywords": [],
+      "BuyPrice": 95,
+      "Price": 130,
+      "Stock": "In stock"
+    },
+    {
+      "id": "6XWMxt8bsQ8D8wEF8hx9",
+      "Keywords": [],
+      "Stock": "In stock",
+      "Name": "American Gourmet coconut milk",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Famericangourmetcoconutmilk.png?alt=media&token=3ce59288-1712-428b-bfb4-d12960b9026e",
+      "UpdatedAt": {
+        "seconds": 1714736330,
+        "nanoseconds": 137000000
+      },
+      "CreatedAt": {
+        "seconds": 1714736330,
+        "nanoseconds": 137000000
+      },
+      "Category": "Dairy",
+      "BuyPrice": 170,
+      "Description": "",
+      "Size": "400ml",
+      "Price": 250
+    },
+    {
+      "id": "6acnbv7oqv0h92hXTN3w",
+      "BuyPrice": 1640,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fsugar50kg.png?alt=media&token=0e6d0aef-aefa-4e9f-b652-1ad66a48b53f",
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1714746612,
+        "nanoseconds": 550000000
+      },
+      "Name": "Sugar",
+      "Category": "DryFoods",
+      "Stock": "In stock",
+      "Size": "12.5kg",
+      "UpdatedAt": {
+        "seconds": 1714746612,
+        "nanoseconds": 550000000
+      },
+      "Keywords": [],
+      "Price": 2000
+    },
+    {
+      "id": "6ri93iHBQ419UstEd5jQ",
+      "CreatedAt": {
+        "seconds": 1714734980,
+        "nanoseconds": 485000000
+      },
+      "Category": "DryFoods",
+      "BuyPrice": 140,
+      "Price": 200,
+      "Name": "Jogoo maize meal",
+      "Size": "2kg",
+      "Description": "",
+      "Keywords": [],
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fjogoomaizemeal2kg.png?alt=media&token=1f8a2d90-2691-4d07-b47a-882c08aba079",
+      "UpdatedAt": {
+        "seconds": 1714734980,
+        "nanoseconds": 485000000
+      }
+    },
+    {
+      "id": "7KkE1t1tzflGVG6GzI3a",
+      "Description": "",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fbrookside250ml.png?alt=media&token=f35267b1-5245-4b02-aca2-e0a6df5bff4d",
+      "BuyPrice": 960,
+      "Stock": "In stock",
+      "Size": "250ml x 24 Carton",
+      "CreatedAt": {
+        "seconds": 1714747212,
+        "nanoseconds": 8000000
+      },
+      "Category": "Dairy",
+      "Price": 1100,
+      "Name": "Brookside whole milk long life",
+      "UpdatedAt": {
+        "seconds": 1714747212,
+        "nanoseconds": 8000000
+      }
+    },
+    {
+      "id": "7Z4XMH2QElStudMoS8nz",
+      "BuyPrice": 490,
+      "Description": "",
+      "Price": 650,
+      "UpdatedAt": {
+        "seconds": 1713591261,
+        "nanoseconds": 992000000
+      },
+      "Keywords": [],
+      "Category": "Cleaning",
+      "CreatedAt": {
+        "seconds": 1713591261,
+        "nanoseconds": 992000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fharpictoiletsmall.png?alt=media&token=b21190d0-14b3-4cf6-8215-616ccb3e7cfe",
+      "Size": "500ml",
+      "Name": "Harpic power plus 10x disinfectant toilet cleaner",
+      "Stock": "In stock"
+    },
+    {
+      "id": "7w5JVNmz0nv1OmnVZMDm",
+      "Category": "Cleaning",
+      "Keywords": [],
+      "Price": 1350,
+      "BuyPrice": 1165,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlighthandwashpowder.png?alt=media&token=5f331deb-2418-4e2a-8b60-2ef10f98bc6d",
+      "Description": "",
+      "Stock": "In stock",
+      "Size": "3.5kg",
+      "Name": "Sunlight 2in1 hand wash powder tropical sensations",
+      "CreatedAt": {
+        "seconds": 1713592920,
+        "nanoseconds": 616000000
+      },
+      "UpdatedAt": {
+        "seconds": 1713592920,
+        "nanoseconds": 616000000
+      }
+    },
+    {
+      "id": "81hStRV2Cn0Xn9Nfcz1D",
+      "Size": "10ltr",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2Frinsun10ltr.png?alt=media&token=5dc5a4ac-150f-4790-a418-574bd11878b3",
+      "Category": "OilButter",
+      "Name": "Rinsun sunflower oil",
+      "Description": "",
+      "Price": 3450,
+      "Keywords": [],
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1713777633,
+        "nanoseconds": 135000000
+      },
+      "BuyPrice": 2975,
+      "CreatedAt": {
+        "seconds": 1713777633,
+        "nanoseconds": 135000000
+      }
+    },
+    {
+      "id": "89HhcT8q6xPPqNscj2My",
+      "Name": "Star Crown biryani long grain rice",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fcrownbiryani.png?alt=media&token=0be861df-e75a-4b8d-b5ad-2f2e14d351f3",
+      "Size": "2kg",
+      "Stock": "In stock",
+      "Category": "DryFoods",
+      "UpdatedAt": {
+        "seconds": 1713420381,
+        "nanoseconds": 165000000
+      },
+      "CreatedAt": {
+        "seconds": 1713420381,
+        "nanoseconds": 165000000
+      },
+      "BuyPrice": 350,
+      "Description": "",
+      "Keywords": [],
+      "Price": 380
+    },
+    {
+      "id": "8ENu0FCqsyz1IYju5cbH",
+      "Description": "",
+      "Size": "750ml",
+      "CreatedAt": {
+        "seconds": 1713591601,
+        "nanoseconds": 108000000
+      },
+      "UpdatedAt": {
+        "seconds": 1713591601,
+        "nanoseconds": 108000000
+      },
+      "BuyPrice": 690,
+      "Name": "Jik colours brightens coloured fabrics safely",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fjikcolours.png?alt=media&token=5a693baa-87db-47c4-a5fb-9c6454b123a9",
+      "Category": "Cleaning",
+      "Keywords": [],
+      "Price": 750
+    },
+    {
+      "id": "8HNmDyfvjZy0pgC5vlPl",
+      "Name": "American Gourmet Yellow Mustard",
+      "Description": "",
+      "BuyPrice": 240,
+      "Size": "227g",
+      "Price": 300,
+      "Category": "OtherFoods",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Famericangourmetyellowmastard.png?alt=media&token=ea334dac-61da-43c1-9e24-c228e05f30cc",
+      "UpdatedAt": {
+        "seconds": 1714740861,
+        "nanoseconds": 244000000
+      },
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1714740861,
+        "nanoseconds": 244000000
+      },
+      "Stock": "In stock"
+    },
+    {
+      "id": "8MVMkecJVHxrwVmY3Z1I",
+      "Keywords": [],
+      "Description": "",
+      "Price": 270,
+      "Size": "750ml",
+      "UpdatedAt": {
+        "seconds": 1713592729,
+        "nanoseconds": 847000000
+      },
+      "Category": "Cleaning",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlightdishwashingstrawberry.png?alt=media&token=d6c4d266-5bbc-47f8-bd6d-927fa30f6ab5",
+      "CreatedAt": {
+        "seconds": 1713592729,
+        "nanoseconds": 847000000
+      },
+      "Name": "Sunlight dishwashing liquid strawberry",
+      "BuyPrice": 240,
+      "Stock": "In stock"
+    },
+    {
+      "id": "9VNKKndnYluoHSeObwdr",
+      "Name": "Brookside whole milk Long Life ",
+      "Description": "",
+      "Keywords": [],
+      "Size": "250ml",
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1714732973,
+        "nanoseconds": 730000000
+      },
+      "Category": "Dairy",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fbrookside250ml.png?alt=media&token=f35267b1-5245-4b02-aca2-e0a6df5bff4d",
+      "Price": 60,
+      "UpdatedAt": {
+        "seconds": 1714732973,
+        "nanoseconds": 730000000
+      },
+      "BuyPrice": 40
+    },
+    {
+      "id": "9q3xJekeYLkgbj99yqge",
+      "Stock": "In stock",
+      "Size": "700ml",
+      "CreatedAt": {
+        "seconds": 1713591766,
+        "nanoseconds": 709000000
+      },
+      "Description": "",
+      "Price": 450,
+      "UpdatedAt": {
+        "seconds": 1713591766,
+        "nanoseconds": 709000000
+      },
+      "Keywords": [],
+      "BuyPrice": 385,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fjikregular.png?alt=media&token=3f9f5c2d-c753-4328-b718-22f012d1e515",
+      "Category": "Cleaning",
+      "Name": "Jik regular whitens & removes stains"
+    },
+    {
+      "id": "9zSmIR6CKj9erV44Zlmz",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2FVGGcoconutmilk.png?alt=media&token=cd516b7a-236e-4c98-9d44-ed77eced5d74",
+      "Price": 300,
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1714748514,
+        "nanoseconds": 367000000
+      },
+      "Name": "Virginia Green Garden coconut",
+      "Size": "400ml",
+      "BuyPrice": 250,
+      "CreatedAt": {
+        "seconds": 1714748514,
+        "nanoseconds": 367000000
+      },
+      "Category": "Dairy",
+      "Description": ""
+    },
+    {
+      "id": "A5aV67yxLOR3m2kl4Nd4",
+      "Keywords": [],
+      "Price": 65,
+      "BuyPrice": 60,
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fdaimamilk500ml.png?alt=media&token=f620fe0b-ee50-4e4b-87f1-f5753b8fcda7",
+      "Size": "500ml",
+      "Name": "Daima whole milk",
+      "CreatedAt": {
+        "seconds": 1714746168,
+        "nanoseconds": 951000000
+      },
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1714746168,
+        "nanoseconds": 951000000
+      },
+      "Category": "Dairy"
+    },
+    {
+      "id": "B6UiS5KM2RJn54UYUofh",
+      "CreatedAt": {
+        "seconds": 1713101956,
+        "nanoseconds": 93000000
+      },
+      "BuyPrice": 45,
+      "Category": "Drinks",
+      "Size": "300ml",
+      "Name": "Magic lemon flavoured drink",
+      "Description": "",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fmagiclemon.png?alt=media&token=cbca28d6-554d-4101-b255-fce5b48fa457",
+      "Price": 50,
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1713101956,
+        "nanoseconds": 93000000
+      }
+    },
+    {
+      "id": "BXLnPA91AXRmkqlFZZFe",
+      "Price": 0,
+      "Description": "",
+      "Size": "1 Carton",
+      "Category": "DryFoods",
+      "UpdatedAt": {
+        "seconds": 1714734523,
+        "nanoseconds": 481000000
+      },
+      "Name": "Ajab maiza flour 1kg carton",
+      "Stock": "Out of stock",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fajabmaizemeal1kg.png?alt=media&token=6686c2f7-a6f8-47e0-9a2b-897452d5e3c0",
+      "CreatedAt": {
+        "seconds": 1714734523,
+        "nanoseconds": 481000000
+      },
+      "BuyPrice": 0
+    },
+    {
+      "id": "Bad8J15gZlwR8uce28dq",
+      "CreatedAt": {
+        "seconds": 1713555387,
+        "nanoseconds": 499000000
+      },
+      "Category": "OtherFoods",
+      "UpdatedAt": {
+        "seconds": 1713555387,
+        "nanoseconds": 499000000
+      },
+      "Price": 180,
+      "Size": "200g",
+      "Stock": "In stock",
+      "Description": "",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Froycomchuzimix.png?alt=media&token=534392ff-9932-427b-8a6a-e21e0333fae7",
+      "Keywords": [],
+      "BuyPrice": 140,
+      "Name": "Royco mchuzi mix spicy beef flavour original"
+    },
+    {
+      "id": "Be7GIkHWCktorNKS66zV",
+      "Price": 1850,
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1713420806,
+        "nanoseconds": 222000000
+      },
+      "Name": "Pearl basmati rice super extra long grain",
+      "CreatedAt": {
+        "seconds": 1713420806,
+        "nanoseconds": 222000000
+      },
+      "Stock": "In stock",
+      "Description": "",
+      "BuyPrice": 1720,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fpearlbasmati5kg.png?alt=media&token=e5f4c769-555e-4514-b7c3-f4547242b8d4",
+      "Size": "5kg",
+      "Category": "DryFoods"
+    },
+    {
+      "id": "BrjDpuSWdN2rynHeQ6Ch",
+      "BuyPrice": 200,
+      "CreatedAt": {
+        "seconds": 1713593766,
+        "nanoseconds": 98000000
+      },
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Ftintexwindowcleaner.png?alt=media&token=148f204e-add7-47bf-a147-5270f6106c22",
+      "Category": "Cleaning",
+      "Name": "Tintex window cleaner",
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1713593766,
+        "nanoseconds": 98000000
+      },
+      "Price": 230,
+      "Description": "",
+      "Size": "400ml"
+    },
+    {
+      "id": "CCSuGoYLVx1ZSzJoKV1I",
+      "Price": 200,
+      "UpdatedAt": {
+        "seconds": 1713100095,
+        "nanoseconds": 495000000
+      },
+      "Description": "",
+      "Name": "Cocacola original taste",
+      "CreatedAt": {
+        "seconds": 1713100095,
+        "nanoseconds": 495000000
+      },
+      "Category": "Drinks",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fcocacola2ltr.png?alt=media&token=61b0f39f-4ca6-4df1-858a-6cab078b65cb",
+      "Size": "2ltr",
+      "BuyPrice": 180,
+      "Keywords": []
+    },
+    {
+      "id": "CGYQjaAmOfrhoovOs8AK",
+      "UpdatedAt": {
+        "seconds": 1712839845,
+        "nanoseconds": 720000000
+      },
+      "CreatedAt": {
+        "seconds": 1712839845,
+        "nanoseconds": 720000000
+      },
+      "BuyPrice": 1100,
+      "Category": "OilButter",
+      "Size": "1ltr",
+      "Price": 1400,
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2Fgardenolive2.png?alt=media&token=cd253a67-7910-4d1c-af10-3cd59b3ca364",
+      "Keywords": [],
+      "Name": "Virginia Green Garden Spanish olive oil",
+      "Description": ""
+    },
+    {
+      "id": "CTcHqb8L3OZdz9VIG5WV",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Ftropicalchiliflakes.png?alt=media&token=a0ecbd89-0eb2-4815-8a72-737682150bf5",
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1713553969,
+        "nanoseconds": 279000000
+      },
+      "BuyPrice": 105,
+      "Category": "OtherFoods",
+      "UpdatedAt": {
+        "seconds": 1713553969,
+        "nanoseconds": 279000000
+      },
+      "Description": "",
+      "Size": "75g",
+      "Price": 150,
+      "Name": "Tropical Heat chilli flakes spice",
+      "Keywords": []
+    },
+    {
+      "id": "CTcxQlvr0MfQ6fxPFDYc",
+      "CreatedAt": {
+        "seconds": 1713419453,
+        "nanoseconds": 11000000
+      },
+      "Description": "",
+      "Size": "500g Carton",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Ftarpasta.png?alt=media&token=c5b30db3-3131-47e9-87dd-f1a668ae16df",
+      "UpdatedAt": {
+        "seconds": 1713419453,
+        "nanoseconds": 11000000
+      },
+      "Name": "Tak makaron spaghetti ",
+      "Price": 2500,
+      "BuyPrice": 2230,
+      "Stock": "In stock",
+      "Category": "DryFoods"
+    },
+    {
+      "id": "Cq1S3dxYbwHlTe2P51On",
+      "Keywords": [],
+      "Category": "OtherFoods",
+      "Price": 7800,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fjumbochickenstock.png?alt=media&token=3eeb4141-827e-48f6-90d4-bde56e839a56",
+      "Size": "1 Carton",
+      "Name": "Jumbo chicken stock",
+      "CreatedAt": {
+        "seconds": 1714739102,
+        "nanoseconds": 352000000
+      },
+      "UpdatedAt": {
+        "seconds": 1714739102,
+        "nanoseconds": 352000000
+      },
+      "Description": "",
+      "BuyPrice": 7560,
+      "Stock": "In stock"
+    },
+    {
+      "id": "DHJvXrb9L7I9FWIMfTKb",
+      "CreatedAt": {
+        "seconds": 1714735140,
+        "nanoseconds": 911000000
+      },
+      "Keywords": [],
+      "Description": "",
+      "Size": "2kg x 12 Carton",
+      "Category": "DryFoods",
+      "BuyPrice": 2405,
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fhostessmaizemeal2kg.png?alt=media&token=20763ea0-7256-4ac2-a4e0-88144910c208",
+      "Price": 2900,
+      "UpdatedAt": {
+        "seconds": 1714735140,
+        "nanoseconds": 911000000
+      },
+      "Name": "Hostess maize meal"
+    },
+    {
+      "id": "DlQ7XnX4K8V1MUSytDXj",
+      "Category": "OtherFoods",
+      "Keywords": [],
+      "Price": 1600,
+      "CreatedAt": {
+        "seconds": 1714739392,
+        "nanoseconds": 183000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fnutella750g.png?alt=media&token=f0b6092e-403c-4217-a9e2-23bfae1a1e09",
+      "Size": "750g",
+      "Description": "",
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1714739392,
+        "nanoseconds": 183000000
+      },
+      "Name": "Nutella choco spread 750g",
+      "BuyPrice": 992
+    },
+    {
+      "id": "DnojY230iK8c4AFtmgNr",
+      "Keywords": [],
+      "BuyPrice": 660,
+      "Type": "Popular",
+      "Size": "2ltr",
+      "Price": 800,
+      "Category": "OilButter",
+      "Stock": "In stock",
+      "Name": "Rinsun sunflower oil",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2FRinsunoil2ltr.png?alt=media&token=4e02d29f-b100-4cbe-aa3c-e776fdd33d46",
+      "CreatedAt": {
+        "seconds": 1710244114,
+        "nanoseconds": 878000000
+      },
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1710244114,
+        "nanoseconds": 878000000
+      }
+    },
+    {
+      "id": "EhMPphyfHKVffkMUON6j",
+      "CreatedAt": {
+        "seconds": 1713556237,
+        "nanoseconds": 298000000
+      },
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1713556237,
+        "nanoseconds": 298000000
+      },
+      "Name": "Heinz tomato ketchup",
+      "BuyPrice": 540,
+      "Price": 1150,
+      "Category": "OtherFoods",
+      "Size": "570g",
+      "Keywords": [],
+      "Description": "",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fheinzketchap.png?alt=media&token=276525b5-9939-4619-9218-95b4aab67a50"
+    },
+    {
+      "id": "F4ukq9SoW7SaP5Kuvnoo",
+      "Description": "",
+      "Name": "Pearl kenyan pishori rice grade 1 long grain",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fpearlbishori5kg.png?alt=media&token=3d645390-46c7-47d5-bb83-bc1f30def797",
+      "Category": "DryFoods",
+      "BuyPrice": 1400,
+      "UpdatedAt": {
+        "seconds": 1713421010,
+        "nanoseconds": 780000000
+      },
+      "CreatedAt": {
+        "seconds": 1713421010,
+        "nanoseconds": 780000000
+      },
+      "Size": "5kg",
+      "Price": 1500,
+      "Stock": "In stock",
+      "Keywords": []
+    },
+    {
+      "id": "F6M4Qd4kh5mazBlzrO3g",
+      "Keywords": [],
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1714719340,
+        "nanoseconds": 194000000
+      },
+      "Price": 150,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FPersonal%20care%2Fcolgateherbal.png?alt=media&token=0bf55ebd-e499-40cf-8788-e8b49a56b2f6",
+      "Size": "70",
+      "Name": "Colgate herbal tooth paste",
+      "Category": "PersonalCare",
+      "CreatedAt": {
+        "seconds": 1714719340,
+        "nanoseconds": 194000000
+      },
+      "Description": "",
+      "BuyPrice": 100
+    },
+    {
+      "id": "FC2PVm5pkuzu5WHX6YNb",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2Fpostman10ltr.png?alt=media&token=9c82b625-4eac-4f85-8778-68ef879ded8d",
+      "Price": 2400,
+      "CreatedAt": {
+        "seconds": 1713776874,
+        "nanoseconds": 312000000
+      },
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713776874,
+        "nanoseconds": 312000000
+      },
+      "Name": "Postman vegetable cooking oil",
+      "Size": "10ltr",
+      "BuyPrice": 2060,
+      "Category": "OilButter",
+      "Stock": "In stock"
+    },
+    {
+      "id": "FHK1QkOMLLD6CfsuA4wX",
+      "CreatedAt": {
+        "seconds": 1713677132,
+        "nanoseconds": 775000000
+      },
+      "Name": "Jamaa cream washing bar",
+      "Stock": "In stock",
+      "BuyPrice": 1850,
+      "Size": "800g x12 Carton",
+      "Category": "Cleaning",
+      "UpdatedAt": {
+        "seconds": 1713677132,
+        "nanoseconds": 775000000
+      },
+      "Description": "",
+      "Price": 2300,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fjamaasoupbar.png?alt=media&token=e16d3d32-376c-4c3d-a10b-12fa7dd591bb",
+      "Keywords": []
+    },
+    {
+      "id": "Fa79SzBFJb9v5fXv197L",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Famericangourmetcookedbeans.png?alt=media&token=a8bee5f6-edb1-4128-8eed-a28c60fa8e83",
+      "Name": "American Gourmet Baked Beans",
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1714740516,
+        "nanoseconds": 899000000
+      },
+      "Size": "400g",
+      "Category": "OtherFoods",
+      "BuyPrice": 130,
+      "Price": 150,
+      "Stock": "In stock",
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1714740516,
+        "nanoseconds": 899000000
+      }
+    },
+    {
+      "id": "GCoMHXIN2ErapwjpsB0f",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713100527,
+        "nanoseconds": 950000000
+      },
+      "CreatedAt": {
+        "seconds": 1713100527,
+        "nanoseconds": 950000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Ffantaorange500ml.png?alt=media&token=83a36ddc-71b7-46db-8f88-45d4bba71d30",
+      "Stock": "In stock",
+      "Keywords": [],
+      "Category": "Drinks",
+      "Price": 80,
+      "Name": "Fanta orange flavoured",
+      "BuyPrice": 70,
+      "Size": "500ml"
+    },
+    {
+      "id": "HD9emLdbwpYJGvQNTGge",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fmmmango1ltr.png?alt=media&token=d1842376-7b5d-470d-981d-a2d4bc97c3a1",
+      "Stock": "In stock",
+      "BuyPrice": 135,
+      "Size": "1ltr",
+      "UpdatedAt": {
+        "seconds": 1713099789,
+        "nanoseconds": 836000000
+      },
+      "Name": "Minute Maid mango juice",
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1713099789,
+        "nanoseconds": 836000000
+      },
+      "Description": "",
+      "Category": "Drinks",
+      "Price": 150
+    },
+    {
+      "id": "I546ftut8b1n9pdAsKKM",
+      "Price": 350,
+      "Size": "400g",
+      "CreatedAt": {
+        "seconds": 1713553216,
+        "nanoseconds": 882000000
+      },
+      "Description": "",
+      "Keywords": [],
+      "BuyPrice": 235,
+      "Category": "OtherFoods",
+      "Name": "Nuteez spread smooth peanut butter",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fnuteezsmooth.png?alt=media&token=2116f571-75be-4e19-9844-b46cb9596277",
+      "UpdatedAt": {
+        "seconds": 1713553216,
+        "nanoseconds": 882000000
+      }
+    },
+    {
+      "id": "IDsN7Xief1Q1BKTYkkZn",
+      "Keywords": [],
+      "Price": 330,
+      "Size": "750ml",
+      "UpdatedAt": {
+        "seconds": 1713591890,
+        "nanoseconds": 243000000
+      },
+      "Stock": "In stock",
+      "Category": "Cleaning",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fmorningfeshdishwash.png?alt=media&token=b90828b1-6809-4fe0-9b88-48bb9bae3380",
+      "Description": "",
+      "Name": "Morning Fresh dishwashing liquid detergent original fresh",
+      "BuyPrice": 260,
+      "CreatedAt": {
+        "seconds": 1713591890,
+        "nanoseconds": 243000000
+      }
+    },
+    {
+      "id": "IXEM2tB5xhxfVat6sxGI",
+      "Keywords": [],
+      "Name": "Jogoo maize meal",
+      "Size": "2kg x 12 Carton",
+      "Price": 2400,
+      "BuyPrice": 1640,
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1714735011,
+        "nanoseconds": 695000000
+      },
+      "Description": "",
+      "Category": "DryFoods",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fjogoomaizemeal2kg.png?alt=media&token=1f8a2d90-2691-4d07-b47a-882c08aba079",
+      "CreatedAt": {
+        "seconds": 1714735011,
+        "nanoseconds": 695000000
+      }
+    },
+    {
+      "id": "JfJ5CpCA5qkrzMjee5Z5",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fdaimamilk500ml.png?alt=media&token=f620fe0b-ee50-4e4b-87f1-f5753b8fcda7",
+      "Size": "500ml x 12 Carton",
+      "BuyPrice": 700,
+      "CreatedAt": {
+        "seconds": 1714749929,
+        "nanoseconds": 425000000
+      },
+      "Stock": "In stock",
+      "Description": "",
+      "Price": 780,
+      "Name": "Daima whole milk",
+      "Category": "Dairy",
+      "UpdatedAt": {
+        "seconds": 1714749929,
+        "nanoseconds": 425000000
+      }
+    },
+    {
+      "id": "KPjlwBOMGkq4oirBqfLE",
+      "Category": "OilButter",
+      "CreatedAt": {
+        "seconds": 1713777094,
+        "nanoseconds": 55000000
+      },
+      "Price": 4700,
+      "Stock": "In stock",
+      "Keywords": [],
+      "Size": "20ltr",
+      "BuyPrice": 4100,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2Fpostman20ltr.png?alt=media&token=5495e28b-651b-4af2-8550-85ddad9b7545",
+      "Name": "Postman vegetable cooking oil",
+      "UpdatedAt": {
+        "seconds": 1713777094,
+        "nanoseconds": 55000000
+      },
+      "Description": ""
+    },
+    {
+      "id": "Kb97ye9lZK4L1VpLFVuB",
+      "Price": 3100,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlightsoupbar.png?alt=media&token=d9fa81fc-7c1d-48ca-8373-cde784628e36",
+      "Name": "Sunlight laundry bar soap",
+      "UpdatedAt": {
+        "seconds": 1713674255,
+        "nanoseconds": 402000000
+      },
+      "CreatedAt": {
+        "seconds": 1713674255,
+        "nanoseconds": 402000000
+      },
+      "Category": "Cleaning",
+      "Keywords": [],
+      "Description": "",
+      "Stock": "In stock",
+      "BuyPrice": 2950,
+      "Size": "700g x12 Carton"
+    },
+    {
+      "id": "KxtuPN4Jd7xGXyTOX9e5",
+      "CreatedAt": {
+        "seconds": 1713555229,
+        "nanoseconds": 452000000
+      },
+      "Keywords": [],
+      "BuyPrice": 230,
+      "Size": "500g",
+      "Category": "OtherFoods",
+      "Name": "Zesta red plum jam",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fzestajam.png?alt=media&token=1b5bf4d9-5acd-436b-91db-2f03183f97a4",
+      "Stock": "In stock",
+      "Price": 280,
+      "UpdatedAt": {
+        "seconds": 1713555229,
+        "nanoseconds": 452000000
+      },
+      "Description": ""
+    },
+    {
+      "id": "LAG249qAZWCUQ3aiAkhi",
+      "Keywords": [],
+      "Size": "400ml",
+      "Category": "PersonalCare",
+      "Price": 500,
+      "CreatedAt": {
+        "seconds": 1713782926,
+        "nanoseconds": 959000000
+      },
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713782926,
+        "nanoseconds": 959000000
+      },
+      "Stock": "In stock",
+      "Name": "Vatika coconut & castor volume & thickness shampoo",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FPersonal%20care%2Fvatikacoconutshampoo.png?alt=media&token=4dbdb53d-1e00-4b25-9998-58cc5a4d32e6",
+      "BuyPrice": 410
+    },
+    {
+      "id": "LIIGFLOLx5ptDk3SaVtT",
+      "Category": "BabyCare",
+      "Price": 3400,
+      "UpdatedAt": {
+        "seconds": 1710243503,
+        "nanoseconds": 225000000
+      },
+      "CreatedAt": {
+        "seconds": 1710243503,
+        "nanoseconds": 225000000
+      },
+      "BuyPrice": 3000,
+      "Type": "Offer",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2FAptamilmilk800g.png?alt=media&token=d4826e28-be83-44cc-9535-92d255b5e617",
+      "Stock": "In stock",
+      "Description": "",
+      "Keywords": [],
+      "Size": "800g",
+      "Name": "Aptamil milk Infant formula 0-6 months"
+    },
+    {
+      "id": "LjFKkbDbZNud4qhU589K",
+      "BuyPrice": 1030,
+      "Category": "Cleaning",
+      "Stock": "In stock",
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1713594081,
+        "nanoseconds": 88000000
+      },
+      "Price": 1100,
+      "Name": "Toss white gentle detergent",
+      "Description": "",
+      "Size": "3.5kg",
+      "UpdatedAt": {
+        "seconds": 1713594081,
+        "nanoseconds": 88000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Ftossndoo.png?alt=media&token=19997da9-227c-4715-90b9-aa61afb00c96"
+    },
+    {
+      "id": "M3JyTK4w9LZjKRW0LJHu",
+      "Size": "6pc",
+      "Price": 90,
+      "UpdatedAt": {
+        "seconds": 1714738886,
+        "nanoseconds": 192000000
+      },
+      "BuyPrice": 68,
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fknorrbeefcubes.png?alt=media&token=d652e38c-8c93-412b-ab41-8f7b4792c11e",
+      "Stock": "In stock",
+      "Name": "Knorr Chilli Beef cubes",
+      "CreatedAt": {
+        "seconds": 1714738886,
+        "nanoseconds": 192000000
+      },
+      "Description": "",
+      "Category": "OtherFoods"
+    },
+    {
+      "id": "MB0YnL4Bc8qtR94IEOfw",
+      "Stock": "In stock",
+      "Size": "42pcs",
+      "Price": 700,
+      "UpdatedAt": {
+        "seconds": 1713595372,
+        "nanoseconds": 140000000
+      },
+      "Keywords": [],
+      "Category": "BabyCare",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FBaby%20care%2FsoftcaredaiperM.png?alt=media&token=72478538-7caa-491c-af6c-741c4472dcf3",
+      "Name": "Softcare baby diaper M",
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1713595372,
+        "nanoseconds": 140000000
+      },
+      "BuyPrice": 600
+    },
+    {
+      "id": "NCeSaBdTPMOwGBwNNHHn",
+      "Price": 2450,
+      "Name": "Ajab fortified all purpose home baking flour",
+      "Keywords": [],
+      "Size": "1kg x 24",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fajabflour1kg.png?alt=media&token=4b40e0c7-8b1b-4acc-8ab8-201446b51db6",
+      "CreatedAt": {
+        "seconds": 1710242489,
+        "nanoseconds": 933000000
+      },
+      "Stock": "In stock",
+      "Description": "",
+      "Type": "Regular",
+      "BuyPrice": 2150,
+      "UpdatedAt": {
+        "seconds": 1710242489,
+        "nanoseconds": 933000000
+      },
+      "Category": "DryFoods"
+    },
+    {
+      "id": "NPofzDBJo3gs9MokO35P",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713594360,
+        "nanoseconds": 25000000
+      },
+      "Name": "White wash multi-purpose soap",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fwhitewashsoup.png?alt=media&token=7ec84f75-6761-414f-a5f0-2c72aef4a4ba",
+      "Size": "175g",
+      "BuyPrice": 30,
+      "Price": 50,
+      "Keywords": [],
+      "Category": "Cleaning",
+      "CreatedAt": {
+        "seconds": 1713594360,
+        "nanoseconds": 25000000
+      },
+      "Stock": "In stock"
+    },
+    {
+      "id": "NSaIDymn2Jel4BzDEyA0",
+      "Price": 780,
+      "Name": "Brookside Whole milk  Long Life\t",
+      "BuyPrice": 660,
+      "Size": "500ml x 12 Carton",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fbrookside500ml.png?alt=media&token=e10fab2b-1ba1-4668-bfc0-61b7508b4323",
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1714732466,
+        "nanoseconds": 950000000
+      },
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1714732466,
+        "nanoseconds": 950000000
+      },
+      "Category": "Dairy"
+    },
+    {
+      "id": "Nqc7WMkvRXadsWMhT6wa",
+      "Keywords": [],
+      "Price": 65,
+      "Stock": "In stock",
+      "Description": "",
+      "Name": "Lato Milk UHT",
+      "CreatedAt": {
+        "seconds": 1714073288,
+        "nanoseconds": 843000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2FLatoMilkuht.png?alt=media&token=6f03f168-889c-4185-bb6a-e72fda4c13d8",
+      "UpdatedAt": {
+        "seconds": 1714073288,
+        "nanoseconds": 843000000
+      },
+      "Category": "Dairy",
+      "BuyPrice": 50,
+      "Size": "500ml"
+    },
+    {
+      "id": "NxPR4UgVjN1c2EEQGg0I",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713419240,
+        "nanoseconds": 482000000
+      },
+      "Name": "Raha premium grade 1 sifted fortified maize meal",
+      "Price": 2600,
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1713419240,
+        "nanoseconds": 482000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Frahamaizemeal.png?alt=media&token=431809d5-3bbc-48e5-b12d-1dad7de26910",
+      "Keywords": [],
+      "Size": "2kg x 12",
+      "BuyPrice": 2340,
+      "Category": "DryFoods"
+    },
+    {
+      "id": "OHDjKYymJI2EI0yLWmGt",
+      "Description": "",
+      "Stock": "In stock",
+      "Keywords": [],
+      "BuyPrice": 40,
+      "CreatedAt": {
+        "seconds": 1713593336,
+        "nanoseconds": 101000000
+      },
+      "Price": 50,
+      "UpdatedAt": {
+        "seconds": 1713593336,
+        "nanoseconds": 101000000
+      },
+      "Size": "175g",
+      "Category": "Cleaning",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlightluandrysoup.png?alt=media&token=c617e93f-5638-4209-b49a-fd1b285dc6e9",
+      "Name": "Sunlight laundry soap"
+    },
+    {
+      "id": "OOP8hnywIqqtOYWhwHuA",
+      "BuyPrice": 55,
+      "UpdatedAt": {
+        "seconds": 1713594238,
+        "nanoseconds": 714000000
+      },
+      "Size": "175g",
+      "CreatedAt": {
+        "seconds": 1713594238,
+        "nanoseconds": 714000000
+      },
+      "Price": 70,
+      "Keywords": [],
+      "Description": "",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fushindisoup.png?alt=media&token=5e864c83-137a-42ad-9c3a-aa480fb32559",
+      "Category": "Cleaning",
+      "Stock": "In stock",
+      "Name": "Ushindi gentle multi-purpose soap"
+    },
+    {
+      "id": "OScfkWTgAoDIfQCdIYav",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fpuretotomatopaste.png?alt=media&token=09b4d545-28d2-4bcb-afb6-9509d3ec06f2",
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1713555504,
+        "nanoseconds": 352000000
+      },
+      "Name": "Pureto tomato paste",
+      "CreatedAt": {
+        "seconds": 1713555504,
+        "nanoseconds": 352000000
+      },
+      "Description": "",
+      "BuyPrice": 135,
+      "Category": "OtherFoods",
+      "Stock": "In stock",
+      "Size": "400g",
+      "Price": 150
+    },
+    {
+      "id": "QCsg9L2YMuR2JMp5oUvX",
+      "Price": 700,
+      "BuyPrice": 630,
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1714732907,
+        "nanoseconds": 811000000
+      },
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fbrookside200ml.png?alt=media&token=ded7cf97-98f9-4220-a4e3-bc12ceecc0a3",
+      "Description": "",
+      "Size": " 200ml x 21 Carton",
+      "Name": "Brookside whole milk Long Life\t",
+      "Category": "Dairy",
+      "UpdatedAt": {
+        "seconds": 1714732907,
+        "nanoseconds": 811000000
+      }
+    },
+    {
+      "id": "QLeJFaAHJYL6TSXc4X25",
+      "Stock": "In stock",
+      "Size": "300g",
+      "BuyPrice": 170,
+      "UpdatedAt": {
+        "seconds": 1714073885,
+        "nanoseconds": 507000000
+      },
+      "CreatedAt": {
+        "seconds": 1714073885,
+        "nanoseconds": 507000000
+      },
+      "Price": 200,
+      "Name": "Virginia Green Garden evaporated milk",
+      "Description": "",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2FVGGevaporatedmilk.png?alt=media&token=946f2b91-9fb6-4807-b81d-bc966d21fe48",
+      "Category": "Dairy"
+    },
+    {
+      "id": "QoD8a9pZFhT3sh9v92aQ",
+      "Stock": "In stock",
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1713554126,
+        "nanoseconds": 163000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Ftropicalheatcumin.png?alt=media&token=2eaa2744-7a8c-4a58-8592-90baf14fb72f",
+      "Keywords": [],
+      "BuyPrice": 140,
+      "Name": "Tropical Heat pure ground cumin spice",
+      "Category": "OtherFoods",
+      "Size": "100g",
+      "UpdatedAt": {
+        "seconds": 1713554126,
+        "nanoseconds": 163000000
+      },
+      "Price": 300
+    },
+    {
+      "id": "R8c6gKprJTOYC7rfXtwM",
+      "CreatedAt": {
+        "seconds": 1713593947,
+        "nanoseconds": 449000000
+      },
+      "Size": "1kg",
+      "Name": "Toss blue gentle detergent",
+      "Keywords": [],
+      "BuyPrice": 290,
+      "Category": "Cleaning",
+      "Stock": "In stock",
+      "Price": 330,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Ftossmkebe.png?alt=media&token=fd62a79e-69a6-4188-8bae-5bd1f0c8645d",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713593947,
+        "nanoseconds": 449000000
+      }
+    },
+    {
+      "id": "RE7nmOkFBtdCMzDFBnPf",
+      "Name": "Cocacola original taste",
+      "CreatedAt": {
+        "seconds": 1713100205,
+        "nanoseconds": 196000000
+      },
+      "UpdatedAt": {
+        "seconds": 1713100205,
+        "nanoseconds": 196000000
+      },
+      "BuyPrice": 70,
+      "Size": "500ml",
+      "Category": "Drinks",
+      "Keywords": [],
+      "Price": 80,
+      "Description": "",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fcocacola500ml.png?alt=media&token=0488f3db-5c38-4797-bb1e-1d513e71cd85"
+    },
+    {
+      "id": "S59O6cFITCE9tEf4jCAN",
+      "Size": "500g",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fnutgoldcrunchy.png?alt=media&token=c86ad600-31d7-495c-aa56-596223fedd06",
+      "Description": "",
+      "Price": 350,
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1713553584,
+        "nanoseconds": 774000000
+      },
+      "Stock": "In stock",
+      "Category": "OtherFoods",
+      "Name": "Nut Gold crunchy peanut butter",
+      "UpdatedAt": {
+        "seconds": 1713553584,
+        "nanoseconds": 774000000
+      },
+      "BuyPrice": 290
+    },
+    {
+      "id": "SBPPK8oRjmnMudJq5hFx",
+      "BuyPrice": 410,
+      "CreatedAt": {
+        "seconds": 1713782779,
+        "nanoseconds": 138000000
+      },
+      "Category": "PersonalCare",
+      "UpdatedAt": {
+        "seconds": 1713782779,
+        "nanoseconds": 138000000
+      },
+      "Size": "400ml",
+      "Name": "Vatika lemon & yoghurt dundruff guard shampoo",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FPersonal%20care%2Fvatikalemonshampoo.png?alt=media&token=67089282-6c90-4154-b1c8-5378f49036dd",
+      "Keywords": [],
+      "Stock": "In stock",
+      "Price": 500,
+      "Description": ""
+    },
+    {
+      "id": "SboQkXyHozAgRXAPN414",
+      "Size": "25kg",
+      "CreatedAt": {
+        "seconds": 1714746542,
+        "nanoseconds": 35000000
+      },
+      "Stock": "In stock",
+      "Price": 4000,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fsugar50kg.png?alt=media&token=0e6d0aef-aefa-4e9f-b652-1ad66a48b53f",
+      "Keywords": [],
+      "Description": "",
+      "Name": "Sugar",
+      "Category": "DryFoods",
+      "UpdatedAt": {
+        "seconds": 1714746542,
+        "nanoseconds": 35000000
+      },
+      "BuyPrice": 3275
+    },
+    {
+      "id": "T6NXQLF0pXhNynTajX6S",
+      "Stock": "In stock",
+      "Description": "",
+      "Size": "473ml",
+      "Price": 320,
+      "BuyPrice": 270,
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1714740730,
+        "nanoseconds": 104000000
+      },
+      "CreatedAt": {
+        "seconds": 1714740730,
+        "nanoseconds": 104000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Famericangourmetmayonneise.png?alt=media&token=00a77915-9db4-49a1-b977-3ff887524f1c",
+      "Name": "American Gourmet Mayonnaise ",
+      "Category": "OtherFoods"
+    },
+    {
+      "id": "TFuw4mW7A8CXo9P5QVyq",
+      "CreatedAt": {
+        "seconds": 1710244323,
+        "nanoseconds": 695000000
+      },
+      "UpdatedAt": {
+        "seconds": 1710244323,
+        "nanoseconds": 695000000
+      },
+      "Description": "",
+      "Keywords": [],
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2FVirginGardenolive500ml.png?alt=media&token=5e6beb3d-35b3-4165-bfca-f2345f457001",
+      "Name": "Virgin garden Extra virgin olive oil",
+      "Price": 850,
+      "Type": "Regular",
+      "Size": "500ml",
+      "Category": "OilButter",
+      "BuyPrice": 700
+    },
+    {
+      "id": "TNLkrGAwa3B6BjRTJ8pv",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fhilwatuna185g.png?alt=media&token=cfefa42f-d1c4-44b0-bea1-3839f9fe5fc2",
+      "Keywords": [],
+      "Name": "Hilwa Tuna",
+      "Price": 6100,
+      "BuyPrice": 6000,
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1714739999,
+        "nanoseconds": 252000000
+      },
+      "Size": "185g x 1 Carton",
+      "UpdatedAt": {
+        "seconds": 1714739999,
+        "nanoseconds": 252000000
+      },
+      "Description": "",
+      "Category": "OtherFoods"
+    },
+    {
+      "id": "TTH8nbyPjNth2g0WBJx9",
+      "Price": 2400,
+      "UpdatedAt": {
+        "seconds": 1712840865,
+        "nanoseconds": 12000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FGas%2F13kgcooking.png?alt=media&token=ef2b8d06-9e24-445c-96a3-193d50bf9bcf",
+      "BuyPrice": 2200,
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1712840865,
+        "nanoseconds": 12000000
+      },
+      "Keywords": [],
+      "Name": "Cooking gas refill",
+      "Size": "13kg",
+      "Description": "",
+      "Category": "Gas"
+    },
+    {
+      "id": "TtGKzCZSfMRTY7513t23",
+      "UpdatedAt": {
+        "seconds": 1713595144,
+        "nanoseconds": 216000000
+      },
+      "Size": "80pcs",
+      "BuyPrice": 125,
+      "Category": "BabyCare",
+      "Price": 200,
+      "Description": "",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FBaby%20care%2Fsoftcarebabywipes.png?alt=media&token=c76f13ce-2792-4067-943a-81f89009288f",
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1713595144,
+        "nanoseconds": 216000000
+      },
+      "Name": "Softcare baby wipes"
+    },
+    {
+      "id": "Ux02Nq4jb0sjLYZBfo9I",
+      "Description": "",
+      "Category": "DryFoods",
+      "Stock": "In stock",
+      "Keywords": [],
+      "Name": "Dawat traditional basmati rice",
+      "Price": 750,
+      "UpdatedAt": {
+        "seconds": 1713420475,
+        "nanoseconds": 95000000
+      },
+      "CreatedAt": {
+        "seconds": 1713420475,
+        "nanoseconds": 95000000
+      },
+      "BuyPrice": 700,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fdawatbasmati.png?alt=media&token=25779e8a-e460-4cd7-af63-36d3806945f0",
+      "Size": "2kg"
+    },
+    {
+      "id": "V6Ea4wblXeNgwrW71qP5",
+      "Keywords": [],
+      "Name": "Sprite lemon lime flavoured",
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1713101047,
+        "nanoseconds": 713000000
+      },
+      "UpdatedAt": {
+        "seconds": 1713101047,
+        "nanoseconds": 713000000
+      },
+      "Size": "500ml",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2FSprite500ml.png?alt=media&token=a6795fdf-dc81-429d-8606-1741a0a8bfa3",
+      "Description": "",
+      "BuyPrice": 70,
+      "Category": "Drinks",
+      "Price": 80
+    },
+    {
+      "id": "VHGtQ5ZbDUvB9BAUGZDb",
+      "Keywords": [],
+      "BuyPrice": 90,
+      "Stock": "In stock",
+      "Name": "Daima milk strawberry flavoured drink",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fdaimasb500ml.png?alt=media&token=e23e151e-5253-414b-84cc-3d872e82efbf",
+      "Size": "500ml",
+      "Price": 100,
+      "Category": "Drinks",
+      "CreatedAt": {
+        "seconds": 1713101335,
+        "nanoseconds": 507000000
+      },
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713101335,
+        "nanoseconds": 507000000
+      }
+    },
+    {
+      "id": "Vl09kht3ytYpHw32yEUu",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Flatomilkchoc.png?alt=media&token=4db9f373-d81f-4afb-ba1e-2b873e28b977",
+      "Description": "",
+      "BuyPrice": 30,
+      "Category": "Dairy",
+      "Price": 40,
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1712860730,
+        "nanoseconds": 143000000
+      },
+      "Keywords": [],
+      "Name": "Lato chocolate flavored uht milk",
+      "Size": "125ml",
+      "CreatedAt": {
+        "seconds": 1712860730,
+        "nanoseconds": 143000000
+      }
+    },
+    {
+      "id": "W5cPs6LGzQbZn28N8Lxr",
+      "UpdatedAt": {
+        "seconds": 1713779427,
+        "nanoseconds": 607000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FPersonal%20care%2Falwaysextra.png?alt=media&token=2c7dd3ca-3ebc-4183-9f9e-48280db3d1c3",
+      "CreatedAt": {
+        "seconds": 1713779427,
+        "nanoseconds": 607000000
+      },
+      "BuyPrice": 100,
+      "Description": "",
+      "Size": "7pcs",
+      "Price": 150,
+      "Category": "PersonalCare",
+      "Name": "Always 3in1",
+      "Keywords": [],
+      "Stock": "In stock"
+    },
+    {
+      "id": "WDSX2gntXm6pT2qowE24",
+      "Keywords": [],
+      "Name": "Royco cubes beef flavour 40 x 4g",
+      "Size": "4g X 40pc",
+      "Category": "OtherFoods",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Froycocube.png?alt=media&token=5ad543bc-81f5-4962-a884-81c9d852b4e3",
+      "Price": 140,
+      "UpdatedAt": {
+        "seconds": 1714738763,
+        "nanoseconds": 315000000
+      },
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1714738763,
+        "nanoseconds": 315000000
+      },
+      "BuyPrice": 113,
+      "Description": ""
+    },
+    {
+      "id": "WTiA0YpMf6BID8RcFWp4",
+      "Size": "700g",
+      "UpdatedAt": {
+        "seconds": 1713593638,
+        "nanoseconds": 96000000
+      },
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlightsoupbar.png?alt=media&token=d9fa81fc-7c1d-48ca-8373-cde784628e36",
+      "Price": 270,
+      "Keywords": [],
+      "BuyPrice": 250,
+      "CreatedAt": {
+        "seconds": 1713593638,
+        "nanoseconds": 96000000
+      },
+      "Name": "Sunlight laundry bar soap",
+      "Description": "",
+      "Category": "Cleaning"
+    },
+    {
+      "id": "WftGStFRGCRLQbZVfgPD",
+      "Category": "Drinks",
+      "Keywords": [],
+      "BuyPrice": 45,
+      "UpdatedAt": {
+        "seconds": 1713100610,
+        "nanoseconds": 815000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Ffantaorange350ml.png?alt=media&token=56dbfe34-469e-4330-a88e-bff4b63a2b91",
+      "Description": "",
+      "Size": "350ml",
+      "Stock": "In stock",
+      "Name": "Fanta orange flavoured",
+      "CreatedAt": {
+        "seconds": 1713100610,
+        "nanoseconds": 815000000
+      },
+      "Price": 50
+    },
+    {
+      "id": "WlVwqjSYPNc85EImAcES",
+      "BuyPrice": 60,
+      "Category": "DryFoods",
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1713419710,
+        "nanoseconds": 615000000
+      },
+      "CreatedAt": {
+        "seconds": 1713419710,
+        "nanoseconds": 615000000
+      },
+      "Name": "Hilwa spaghetti",
+      "Size": "500g",
+      "Stock": "In stock",
+      "Description": "",
+      "Price": 75,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2FHilwapasta.png?alt=media&token=ca792276-8c79-4259-87af-1ffcf20996e8"
+    },
+    {
+      "id": "X3hKHqBs1p1MiebQndDq",
+      "Price": 1400,
+      "BuyPrice": 1135,
+      "Name": "Postman vegetable cooking oil",
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1713777354,
+        "nanoseconds": 977000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2Fpostman5ltr.png?alt=media&token=1ae28ca6-62a6-4b3a-bc4a-fa8cbe408f84",
+      "CreatedAt": {
+        "seconds": 1713777354,
+        "nanoseconds": 977000000
+      },
+      "Stock": "In stock",
+      "Category": "OilButter",
+      "Size": "5ltr",
+      "Description": ""
+    },
+    {
+      "id": "XERwCf2cNrLAOQwjMPsl",
+      "Price": 0,
+      "Name": "Sunsalt edible salt",
+      "Category": "OtherFoods",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1714740424,
+        "nanoseconds": 579000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fsunsalt200g.png?alt=media&token=37b3652f-2bec-42c5-9f2b-832884615f57",
+      "Stock": "Out of stock",
+      "CreatedAt": {
+        "seconds": 1714740424,
+        "nanoseconds": 579000000
+      },
+      "Size": "200g",
+      "Keywords": [],
+      "BuyPrice": 0
+    },
+    {
+      "id": "XyLoQWsuKph6tjQUQiyh",
+      "UpdatedAt": {
+        "seconds": 1713100332,
+        "nanoseconds": 682000000
+      },
+      "Size": "350ml",
+      "Price": 50,
+      "Keywords": [],
+      "BuyPrice": 40,
+      "Category": "Drinks",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fcocacola350ml.png?alt=media&token=61fbc1c9-cd0a-4087-b831-d5ffb0e90293",
+      "CreatedAt": {
+        "seconds": 1713100332,
+        "nanoseconds": 682000000
+      },
+      "Name": "Cocacola original taste",
+      "Description": "",
+      "Stock": "In stock"
+    },
+    {
+      "id": "Y2WfFZSnn0keSn6bh20c",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlighthandwashpowder2.png?alt=media&token=2b2010de-07e7-413d-8489-4e029f6f5b95",
+      "Size": "3.5kg x4 Carton",
+      "Keywords": [],
+      "Price": 5400,
+      "CreatedAt": {
+        "seconds": 1713675145,
+        "nanoseconds": 32000000
+      },
+      "Name": "Sunlight 2in1 hand wash powder lavender sensations",
+      "UpdatedAt": {
+        "seconds": 1713675145,
+        "nanoseconds": 32000000
+      },
+      "BuyPrice": 4660,
+      "Stock": "In stock",
+      "Description": "",
+      "Category": "Cleaning"
+    },
+    {
+      "id": "YGO9ZnzcGogjvKFxg4V9",
+      "Name": "Sugar",
+      "Stock": "In stock",
+      "BuyPrice": 6500,
+      "UpdatedAt": {
+        "seconds": 1714746491,
+        "nanoseconds": 803000000
+      },
+      "Price": 8000,
+      "Description": "",
+      "Category": "DryFoods",
+      "Size": "50kg",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fsugar50kg.png?alt=media&token=0e6d0aef-aefa-4e9f-b652-1ad66a48b53f",
+      "CreatedAt": {
+        "seconds": 1714746491,
+        "nanoseconds": 803000000
+      }
+    },
+    {
+      "id": "YItoad0nXASGR3S1g387",
+      "Category": "Snacks",
+      "Size": "3pcs",
+      "CreatedAt": {
+        "seconds": 1710244581,
+        "nanoseconds": 711000000
+      },
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FSnacks%2FOreo3pcs.png?alt=media&token=cfa360dc-150a-4db6-b999-94d87ecffce6",
+      "UpdatedAt": {
+        "seconds": 1710244581,
+        "nanoseconds": 711000000
+      },
+      "Type": "Offer",
+      "BuyPrice": 45,
+      "Name": "Oreo cocoa biscuit with vanilla cream",
+      "Description": "",
+      "Price": 50,
+      "Keywords": []
+    },
+    {
+      "id": "YNsPioNoBg7OrqYfuHBq",
+      "Name": "Jamaa cream washing bar",
+      "Category": "Cleaning",
+      "CreatedAt": {
+        "seconds": 1713591392,
+        "nanoseconds": 364000000
+      },
+      "Stock": "In stock",
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1713591392,
+        "nanoseconds": 364000000
+      },
+      "Size": "800g",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fjamaasoupbar.png?alt=media&token=e16d3d32-376c-4c3d-a10b-12fa7dd591bb",
+      "BuyPrice": 155,
+      "Description": "",
+      "Price": 200
+    },
+    {
+      "id": "Z5F6bKqIIzGAGhQ1voAf",
+      "Category": "Drinks",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Ffantabc350ml.png?alt=media&token=9ace2560-a6da-44fe-a347-ba8fc98db782",
+      "Stock": "In stock",
+      "Size": "350ml",
+      "Keywords": [],
+      "Price": 50,
+      "CreatedAt": {
+        "seconds": 1713100881,
+        "nanoseconds": 115000000
+      },
+      "Name": "Fanta black current flavoured",
+      "BuyPrice": 45,
+      "UpdatedAt": {
+        "seconds": 1713100881,
+        "nanoseconds": 115000000
+      },
+      "Description": ""
+    },
+    {
+      "id": "ZfZuriawTS7vtNBHH31w",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fvggcoconutmilkpowder.png?alt=media&token=dcdb1c48-1899-473e-ae2f-919117ca5bd3",
+      "UpdatedAt": {
+        "seconds": 1714738273,
+        "nanoseconds": 592000000
+      },
+      "Price": 400,
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1714738273,
+        "nanoseconds": 592000000
+      },
+      "Category": "Dairy",
+      "Keywords": [],
+      "Name": "Virginia Green Garden Coconut Milk Powder",
+      "Size": "150g",
+      "BuyPrice": 350,
+      "Stock": "In stock"
+    },
+    {
+      "id": "Zm6nvr0yLEGQW0jDKSXb",
+      "Keywords": [],
+      "Size": "200ml",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fstasoftbabycloth.png?alt=media&token=bb516c5e-0c4f-459b-a583-b50a3da04ddb",
+      "Category": "Non",
+      "Name": "sta-soft fabric conditioner",
+      "Description": "",
+      "BuyPrice": 200,
+      "UpdatedAt": {
+        "seconds": 1713592354,
+        "nanoseconds": 424000000
+      },
+      "CreatedAt": {
+        "seconds": 1713592354,
+        "nanoseconds": 424000000
+      },
+      "Price": 250
+    },
+    {
+      "id": "aAc8JCvOhCSqQlNaPEYF",
+      "Name": "Softcare baby diaper S",
+      "Size": "48pcs",
+      "Price": 700,
+      "CreatedAt": {
+        "seconds": 1713595446,
+        "nanoseconds": 987000000
+      },
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1713595446,
+        "nanoseconds": 987000000
+      },
+      "Category": "BabyCare",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FBaby%20care%2FsoftcaredaiperS.png?alt=media&token=8bb6dfde-7aac-4dfb-9287-7fd70c38e7cd",
+      "BuyPrice": 600,
+      "Stock": "In stock",
+      "Description": ""
+    },
+    {
+      "id": "aNojHgqgRO9jYLB5WQhf",
+      "Description": "",
+      "Price": 270,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fhostessmaizemeal2kg.png?alt=media&token=20763ea0-7256-4ac2-a4e0-88144910c208",
+      "Category": "DryFoods",
+      "Keywords": [],
+      "Name": "Hostess maize meal",
+      "BuyPrice": 200,
+      "CreatedAt": {
+        "seconds": 1714735093,
+        "nanoseconds": 181000000
+      },
+      "UpdatedAt": {
+        "seconds": 1714735093,
+        "nanoseconds": 181000000
+      },
+      "Size": "2kg",
+      "Stock": "In stock"
+    },
+    {
+      "id": "asLTcWWj1SYHTZ28UNM2",
+      "Size": "500g",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713592626,
+        "nanoseconds": 8000000
+      },
+      "Category": "Cleaning",
+      "Price": 250,
+      "BuyPrice": 185,
+      "CreatedAt": {
+        "seconds": 1713592626,
+        "nanoseconds": 8000000
+      },
+      "Name": "Sunlight dishwashing paste with real lemon juice",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlightdishwashingpaste.png?alt=media&token=9d100361-be92-4507-8a8e-7e90173d62ff",
+      "Keywords": [],
+      "Stock": "In stock"
+    },
+    {
+      "id": "bTdGKLpGrbpRQdIt7gLC",
+      "Keywords": [],
+      "Stock": "In stock",
+      "Type": "Regular",
+      "Price": 80,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2FFantaPassion500ml.png?alt=media&token=d863adb7-8892-4030-9bb2-164840ddbd85",
+      "Category": "Drinks",
+      "Description": "",
+      "BuyPrice": 65,
+      "Size": "500ml",
+      "CreatedAt": {
+        "seconds": 1710218242,
+        "nanoseconds": 901000000
+      },
+      "Name": "Fanta passion flavoured drink",
+      "UpdatedAt": {
+        "seconds": 1710218242,
+        "nanoseconds": 901000000
+      }
+    },
+    {
+      "id": "c385nLb3eSsH0A78HGKt",
+      "CreatedAt": {
+        "seconds": 1713416745,
+        "nanoseconds": 486000000
+      },
+      "BuyPrice": 35,
+      "Price": 45,
+      "Name": "Ajab fortified all purpose home baking flour",
+      "Description": "",
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1713416745,
+        "nanoseconds": 486000000
+      },
+      "Size": "500g",
+      "Category": "DryFoods",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2FAjabflour500g.png?alt=media&token=14201df8-dfc5-4912-b396-355877410bfc"
+    },
+    {
+      "id": "cTa57pxyVZvW7mmnV1SH",
+      "Size": "200g",
+      "Category": "PersonalCare",
+      "UpdatedAt": {
+        "seconds": 1713779864,
+        "nanoseconds": 849000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FPersonal%20care%2Fgeishalemon.png?alt=media&token=7475322b-7a11-4719-a4f1-315bba2bec22",
+      "BuyPrice": 95,
+      "Description": "",
+      "Keywords": [],
+      "Name": "Geisha refreshing lemon & honey soap",
+      "CreatedAt": {
+        "seconds": 1713779864,
+        "nanoseconds": 849000000
+      },
+      "Price": 140,
+      "Stock": "In stock"
+    },
+    {
+      "id": "ce7WM5wKqpAWcY677N1C",
+      "Price": 150,
+      "CreatedAt": {
+        "seconds": 1713099634,
+        "nanoseconds": 71000000
+      },
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fmmapple1ltr.png?alt=media&token=edcbea3c-3100-45c3-8125-7eef5f46f028",
+      "Category": "Drinks",
+      "BuyPrice": 135,
+      "Name": "Minute Maid apple juice",
+      "Size": "1ltr",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713099634,
+        "nanoseconds": 71000000
+      },
+      "Keywords": []
+    },
+    {
+      "id": "ceN9EbIoEXv6XrihtmSm",
+      "Price": 800,
+      "Category": "OtherFoods",
+      "Size": "350g",
+      "Keywords": [],
+      "BuyPrice": 570,
+      "Stock": "In stock",
+      "Name": "Nutella choco spread",
+      "Description": "",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fnutella350g.png?alt=media&token=b63b4d18-fbcc-4edb-8b4a-107b473b2e2f",
+      "UpdatedAt": {
+        "seconds": 1714724069,
+        "nanoseconds": 393000000
+      },
+      "CreatedAt": {
+        "seconds": 1714724069,
+        "nanoseconds": 393000000
+      }
+    },
+    {
+      "id": "cxfj0u4dAX6npzvObB25",
+      "BuyPrice": 35,
+      "Stock": "Out of stock",
+      "UpdatedAt": {
+        "seconds": 1710217914,
+        "nanoseconds": 294000000
+      },
+      "Price": 50,
+      "CreatedAt": {
+        "seconds": 1710217914,
+        "nanoseconds": 294000000
+      },
+      "Description": "",
+      "Type": "Popular",
+      "Size": "350ml",
+      "Name": "Sprite lemon lime flavoured drink",
+      "Category": "Drinks",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2FSprite350ml.png?alt=media&token=0ed3b8d7-876b-4b97-9cdc-136f4078df71",
+      "Keywords": []
+    },
+    {
+      "id": "dpbtqIKjOlUlxZxswjoH",
+      "Price": 75,
+      "Keywords": [],
+      "Name": "Rose Linda spaghetti",
+      "Category": "DryFoods",
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1713420101,
+        "nanoseconds": 7000000
+      },
+      "UpdatedAt": {
+        "seconds": 1713420101,
+        "nanoseconds": 7000000
+      },
+      "Size": "25kg",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Frosalindapasta500g.png?alt=media&token=3e60dcd3-3cc2-45f5-adc7-d37c6bf42176",
+      "BuyPrice": 60,
+      "Description": ""
+    },
+    {
+      "id": "e9xxHjUD3W3ivSZWyfeJ",
+      "Price": 900,
+      "Category": "OtherFoods",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fcadburycocoapowder.png?alt=media&token=98e41a97-4148-4351-9f07-58a7f3254bcb",
+      "CreatedAt": {
+        "seconds": 1713556594,
+        "nanoseconds": 443000000
+      },
+      "UpdatedAt": {
+        "seconds": 1713556594,
+        "nanoseconds": 443000000
+      },
+      "Description": "",
+      "Name": "Cadbury cocoa powder",
+      "BuyPrice": 750,
+      "Size": "320g",
+      "Stock": "In stock",
+      "Keywords": []
+    },
+    {
+      "id": "eFphEEgxUiUrUkNV63wp",
+      "Category": "OtherFoods",
+      "Price": 180,
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1713556073,
+        "nanoseconds": 650000000
+      },
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1713556073,
+        "nanoseconds": 650000000
+      },
+      "BuyPrice": 135,
+      "Name": "Kenylon tomato paste",
+      "Size": "450g",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fkenylontomatopaste.png?alt=media&token=34b6d272-461f-4e02-b4a2-2e790175282e",
+      "Description": ""
+    },
+    {
+      "id": "eTPn05j0BTixLzkSibux",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Ffatmabasmati5kg.png?alt=media&token=dc84d73a-eb92-45c0-bff2-6b14c18059f0",
+      "CreatedAt": {
+        "seconds": 1712841314,
+        "nanoseconds": 863000000
+      },
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1712841314,
+        "nanoseconds": 863000000
+      },
+      "Price": 1550,
+      "Keywords": [],
+      "Size": "5kg",
+      "Description": "",
+      "Name": "Fatma Basmati",
+      "BuyPrice": 1380,
+      "Category": "DryFoods"
+    },
+    {
+      "id": "eVnTlOnyCIhkqZRcrTfT",
+      "Name": "Sprite lemon lime flavoured drink",
+      "Stock": "In stock",
+      "Category": "Drinks",
+      "Type": "Regular",
+      "Price": 200,
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1710217753,
+        "nanoseconds": 638000000
+      },
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2FSprite2ltr.png?alt=media&token=4a2716c7-21d2-4010-9179-7bd47269dc1d",
+      "BuyPrice": 185,
+      "CreatedAt": {
+        "seconds": 1710217753,
+        "nanoseconds": 638000000
+      },
+      "Size": "2ltr"
+    },
+    {
+      "id": "gDtRJSEAKDDMu5yUgMSu",
+      "CreatedAt": {
+        "seconds": 1713778147,
+        "nanoseconds": 986000000
+      },
+      "Name": "Rinsun sunflower oil",
+      "UpdatedAt": {
+        "seconds": 1713778147,
+        "nanoseconds": 986000000
+      },
+      "Stock": "In stock",
+      "Description": "",
+      "Price": 1900,
+      "Category": "OilButter",
+      "BuyPrice": 1485,
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2Frinsun5ltr.png?alt=media&token=103868ef-6bff-4f5b-ac07-728f99eb97fc",
+      "Size": "5ltr"
+    },
+    {
+      "id": "gKHBmWfXnIda2vImGJ1j",
+      "Name": "Fahari ya Kenya black tea",
+      "CreatedAt": {
+        "seconds": 1713552976,
+        "nanoseconds": 998000000
+      },
+      "UpdatedAt": {
+        "seconds": 1713552976,
+        "nanoseconds": 998000000
+      },
+      "Size": "100g",
+      "Description": "",
+      "Price": 50,
+      "BuyPrice": 40,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Ffaharimajani.png?alt=media&token=bc380f60-d72f-4731-9cf6-29a6adbe821d",
+      "Keywords": [],
+      "Category": "OtherFoods",
+      "Stock": "In stock"
+    },
+    {
+      "id": "gci52lXd8QWSRCYrHlSt",
+      "Size": "50 tea bags",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fkerichogoldtea.png?alt=media&token=f235d60a-06d8-40dd-a04f-d1bfd80ca6e8",
+      "CreatedAt": {
+        "seconds": 1713555946,
+        "nanoseconds": 617000000
+      },
+      "BuyPrice": 120,
+      "Keywords": [],
+      "Stock": "In stock",
+      "Price": 140,
+      "UpdatedAt": {
+        "seconds": 1713555946,
+        "nanoseconds": 617000000
+      },
+      "Category": "OtherFoods",
+      "Description": "",
+      "Name": "Kericho gold pure Kenya tea"
+    },
+    {
+      "id": "gsIomaMsQeHITsbujAjn",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlightmachinewash.png?alt=media&token=b3feccb4-48f7-4b0b-be93-adb9e51cc6f0",
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1713593518,
+        "nanoseconds": 256000000
+      },
+      "BuyPrice": 915,
+      "UpdatedAt": {
+        "seconds": 1713593518,
+        "nanoseconds": 256000000
+      },
+      "Keywords": [],
+      "Name": "Sunlight 2in1 auto machine washing powder lavender sensations",
+      "Price": 1200,
+      "Size": "3kg",
+      "Stock": "In stock",
+      "Category": "Cleaning"
+    },
+    {
+      "id": "hUVGBMbbWgY0Xu1L7rQe",
+      "Description": "",
+      "Stock": "In stock",
+      "Keywords": [],
+      "Price": 4800,
+      "Size": "3kg x4 Carton",
+      "Category": "Cleaning",
+      "CreatedAt": {
+        "seconds": 1713673856,
+        "nanoseconds": 826000000
+      },
+      "Name": "Sunlight 2in1 auto machine washing powder lavender sensations",
+      "UpdatedAt": {
+        "seconds": 1713673856,
+        "nanoseconds": 826000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlightmachinewash.png?alt=media&token=b3feccb4-48f7-4b0b-be93-adb9e51cc6f0",
+      "BuyPrice": 3660
+    },
+    {
+      "id": "hUXTfmJiile8ACGJokV2",
+      "Keywords": [],
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713099905,
+        "nanoseconds": 340000000
+      },
+      "BuyPrice": 135,
+      "Category": "Drinks",
+      "Price": 150,
+      "Size": "1ltr",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fmmtropical1ltr.png?alt=media&token=b2b1da4a-c0df-42d4-b1e9-37eb85d8878a",
+      "CreatedAt": {
+        "seconds": 1713099905,
+        "nanoseconds": 340000000
+      },
+      "Name": "Minute Maid tropical juice"
+    },
+    {
+      "id": "hxv2iNrVywUC86Q0cYAi",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2Fpostman1ltr.png?alt=media&token=17263d13-6039-43bd-a984-9705900a8506",
+      "UpdatedAt": {
+        "seconds": 1713777004,
+        "nanoseconds": 771000000
+      },
+      "Category": "OilButter",
+      "Stock": "In stock",
+      "BuyPrice": 300,
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1713777004,
+        "nanoseconds": 771000000
+      },
+      "Name": "Postman vegetable cooking oil",
+      "Price": 350,
+      "Size": "1ltr",
+      "Description": ""
+    },
+    {
+      "id": "i8AQID1lI36CimJqqRgv",
+      "CreatedAt": {
+        "seconds": 1713101647,
+        "nanoseconds": 580000000
+      },
+      "Keywords": [],
+      "Description": "",
+      "Category": "Drinks",
+      "Name": "Magic cola flavoured drink",
+      "BuyPrice": 45,
+      "Price": 50,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fmagiccola.png?alt=media&token=280bf324-cd2c-40bc-9943-4b21c7db5192",
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1713101647,
+        "nanoseconds": 580000000
+      },
+      "Size": "300ml"
+    },
+    {
+      "id": "iPfwh0OtsLX7iT2GhV80",
+      "Price": 2400,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FGas%2Fsafegas13kg.png?alt=media&token=598dc39a-cc7a-4fb5-959c-ecee08a55ee5",
+      "BuyPrice": 2200,
+      "Size": "13kg",
+      "Name": "Safe gas refill",
+      "CreatedAt": {
+        "seconds": 1712840945,
+        "nanoseconds": 471000000
+      },
+      "Description": "",
+      "Category": "Gas",
+      "Stock": "In stock",
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1712840945,
+        "nanoseconds": 471000000
+      }
+    },
+    {
+      "id": "ileOyiQ22LHk7IQ58uWW",
+      "BuyPrice": 170,
+      "Name": "Virginia green garden sweetened condensed milk",
+      "Size": "390g",
+      "CreatedAt": {
+        "seconds": 1714737898,
+        "nanoseconds": 329000000
+      },
+      "Category": "Dairy",
+      "Price": 250,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fvggcondensedmilk.png?alt=media&token=f00c8d82-6230-4ca7-9205-a38ec3a0f891",
+      "Stock": "In stock",
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1714737898,
+        "nanoseconds": 329000000
+      },
+      "Description": ""
+    },
+    {
+      "id": "jqkpTwgYGPIyokIZETvL",
+      "Name": "First Cup coffee medium grind",
+      "Size": "250g",
+      "BuyPrice": 80,
+      "Category": "OtherFoods",
+      "Description": "",
+      "Price": 150,
+      "Keywords": [],
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Ffirstcupmediumgrind.png?alt=media&token=967e3a31-2454-4d19-80a3-04fca4ff8f4b",
+      "CreatedAt": {
+        "seconds": 1713556445,
+        "nanoseconds": 269000000
+      },
+      "UpdatedAt": {
+        "seconds": 1713556445,
+        "nanoseconds": 269000000
+      }
+    },
+    {
+      "id": "k8Yqw4ywWBlR8N74hDY5",
+      "Name": "Pampers pants size 3",
+      "Size": "58 pcs",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FBaby%20care%2Fpampers3.png?alt=media&token=bfb31b00-a15a-4aea-9316-0ea9b4b0900f",
+      "Stock": "In stock",
+      "BuyPrice": 1677,
+      "Description": "",
+      "Price": 2100,
+      "CreatedAt": {
+        "seconds": 1713595826,
+        "nanoseconds": 928000000
+      },
+      "Keywords": [],
+      "Category": "BabyCare",
+      "UpdatedAt": {
+        "seconds": 1713595826,
+        "nanoseconds": 928000000
+      }
+    },
+    {
+      "id": "kmhxN9D3TW4QzBO5M98M",
+      "Price": 1750,
+      "UpdatedAt": {
+        "seconds": 1713678386,
+        "nanoseconds": 637000000
+      },
+      "Stock": "In stock",
+      "Description": "",
+      "Category": "BabyCare",
+      "Keywords": [],
+      "Size": "80pcs x12 Carton",
+      "BuyPrice": 1470,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FBaby%20care%2Fsoftcarebabywipes.png?alt=media&token=c76f13ce-2792-4067-943a-81f89009288f",
+      "Name": "Softcare baby wipes",
+      "CreatedAt": {
+        "seconds": 1713678386,
+        "nanoseconds": 637000000
+      }
+    },
+    {
+      "id": "l6ZXuBMdLEZJ11uavtHv",
+      "Size": "500g x18 Carton",
+      "UpdatedAt": {
+        "seconds": 1713673563,
+        "nanoseconds": 556000000
+      },
+      "CreatedAt": {
+        "seconds": 1713673563,
+        "nanoseconds": 556000000
+      },
+      "BuyPrice": 4400,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlightdishwashingpaste.png?alt=media&token=9d100361-be92-4507-8a8e-7e90173d62ff",
+      "Category": "Cleaning",
+      "Name": "Sunlight dishwashing paste with real lemon juice",
+      "Description": "",
+      "Keywords": [],
+      "Stock": "In stock",
+      "Price": 4500
+    },
+    {
+      "id": "m1IlJvpGs7PIjrTkvEg7",
+      "BuyPrice": 190,
+      "Category": "DryFoods",
+      "Price": 250,
+      "CreatedAt": {
+        "seconds": 1713418530,
+        "nanoseconds": 340000000
+      },
+      "UpdatedAt": {
+        "seconds": 1713418530,
+        "nanoseconds": 340000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fpembeattamark1kg.png?alt=media&token=61d232a2-8ef2-439d-97c1-18c65ca8fd73",
+      "Description": "",
+      "Size": "2kg",
+      "Keywords": [],
+      "Stock": "In stock",
+      "Name": "Pembe fortified atta mark 1"
+    },
+    {
+      "id": "m6NbFAUjVPPehF7VWL8y",
+      "Name": "Hilwa sweetened condensed milk",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fcondensedmilk.png?alt=media&token=477ea800-8a24-417e-ab06-ec02664de085",
+      "BuyPrice": 220,
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1712841638,
+        "nanoseconds": 469000000
+      },
+      "Description": "",
+      "Category": "Dairy",
+      "Size": "390g",
+      "Stock": "Out of stock",
+      "Price": 250,
+      "UpdatedAt": {
+        "seconds": 1712841638,
+        "nanoseconds": 469000000
+      }
+    },
+    {
+      "id": "mGIDlbT4338PwnLPYkLr",
+      "Keywords": [],
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713592014,
+        "nanoseconds": 485000000
+      },
+      "CreatedAt": {
+        "seconds": 1713592014,
+        "nanoseconds": 485000000
+      },
+      "Category": "Cleaning",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fmorningfreshdishwashing.png?alt=media&token=77d5f125-cc9e-48d9-a6b9-5f6b4e029790",
+      "Stock": "In stock",
+      "Size": "750ml",
+      "Name": "Morning Fresh dishwashing liquid detergent zesty lemon",
+      "Price": 330,
+      "BuyPrice": 260
+    },
+    {
+      "id": "nDMR7YM1yfephwln9JyS",
+      "CreatedAt": {
+        "seconds": 1714740291,
+        "nanoseconds": 285000000
+      },
+      "UpdatedAt": {
+        "seconds": 1714740291,
+        "nanoseconds": 285000000
+      },
+      "Price": 8600,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fomaarfishtuna.png?alt=media&token=79a969e3-a892-4478-a572-801a9e3b557e",
+      "Name": "Omaar Tuna",
+      "BuyPrice": 8400,
+      "Stock": "In stock",
+      "Size": "185g x 1 Carton",
+      "Category": "OtherFoods",
+      "Description": "",
+      "Keywords": []
+    },
+    {
+      "id": "nasJMVCqZJr7qQdQLQ0S",
+      "UpdatedAt": {
+        "seconds": 1712840749,
+        "nanoseconds": 708000000
+      },
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1712840749,
+        "nanoseconds": 708000000
+      },
+      "Category": "Gas",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FGas%2F6kgcookinggas.png?alt=media&token=5a7b3d8a-411b-4cf0-a61c-93c3a95f01ba",
+      "Name": "Cooking gas refill",
+      "Price": 1200,
+      "Size": "6kg",
+      "BuyPrice": 1100,
+      "Description": "",
+      "Stock": "In stock"
+    },
+    {
+      "id": "npf9TAN1QACKxQoQKTHL",
+      "CreatedAt": {
+        "seconds": 1713418720,
+        "nanoseconds": 420000000
+      },
+      "BuyPrice": 80,
+      "Description": "",
+      "Name": "Pembe grade 1 sifted fortified maize meal",
+      "UpdatedAt": {
+        "seconds": 1713418720,
+        "nanoseconds": 420000000
+      },
+      "Category": "DryFoods",
+      "Stock": "In stock",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fpembemaizmeal1kg.png?alt=media&token=17f2e553-f23d-46ee-831b-043ea4982b64",
+      "Size": "1kg",
+      "Price": 110
+    },
+    {
+      "id": "oDit1ITrQxKAPUa5yZ8K",
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1713676016,
+        "nanoseconds": 248000000
+      },
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1713676016,
+        "nanoseconds": 248000000
+      },
+      "Name": "Omo auto washing powder",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fomoautowashingpowder.png?alt=media&token=404653cc-ce5c-41eb-9813-47e2dd649df0",
+      "Size": "3kg x4 Carton",
+      "Price": 5400,
+      "Category": "Cleaning",
+      "BuyPrice": 5080,
+      "Description": ""
+    },
+    {
+      "id": "ooitKJMJvUYBO2x6pAnJ",
+      "CreatedAt": {
+        "seconds": 1714738441,
+        "nanoseconds": 863000000
+      },
+      "UpdatedAt": {
+        "seconds": 1714738441,
+        "nanoseconds": 863000000
+      },
+      "Stock": "In stock",
+      "Keywords": [],
+      "Name": "Primo Peanut Butter 340g",
+      "BuyPrice": 250,
+      "Description": "",
+      "Size": "340g",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fprimopeanutbutter.png?alt=media&token=fb890f17-12d2-4b4d-b02f-bc2e238237a9",
+      "Price": 300,
+      "Category": "OtherFoods"
+    },
+    {
+      "id": "paVkHLJBx2hYXEa1OXUo",
+      "Category": "DryFoods",
+      "Size": "1kg",
+      "Stock": "Out of stock",
+      "CreatedAt": {
+        "seconds": 1714734474,
+        "nanoseconds": 597000000
+      },
+      "Keywords": [],
+      "BuyPrice": 0,
+      "Price": 0,
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1714734474,
+        "nanoseconds": 597000000
+      },
+      "Name": "Ajab Maize Flour 1kg",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fajabmaizemeal1kg.png?alt=media&token=6686c2f7-a6f8-47e0-9a2b-897452d5e3c0"
+    },
+    {
+      "id": "qgUgJW3YPGi2vEoUn7Ca",
+      "Keywords": [],
+      "Name": "Sunlight 2in1 hand wash powder lavender sensations",
+      "UpdatedAt": {
+        "seconds": 1713593118,
+        "nanoseconds": 868000000
+      },
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1713593118,
+        "nanoseconds": 868000000
+      },
+      "Category": "Cleaning",
+      "BuyPrice": 1165,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlighthandwashpowder2.png?alt=media&token=2b2010de-07e7-413d-8489-4e029f6f5b95",
+      "Size": "3.5kg",
+      "Price": 1350,
+      "Description": ""
+    },
+    {
+      "id": "qpvaHbcFY8rOgRejQ8nc",
+      "Stock": "In stock",
+      "Category": "OtherFoods",
+      "Name": "Omaar Tuna",
+      "UpdatedAt": {
+        "seconds": 1714740160,
+        "nanoseconds": 655000000
+      },
+      "CreatedAt": {
+        "seconds": 1714740160,
+        "nanoseconds": 655000000
+      },
+      "Keywords": [],
+      "Description": "",
+      "BuyPrice": 175,
+      "Size": "185g",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fomaarfishtuna.png?alt=media&token=79a969e3-a892-4478-a572-801a9e3b557e",
+      "Price": 181
+    },
+    {
+      "id": "qtdh6TgPPA046jB8yDcH",
+      "Keywords": [],
+      "Price": 65,
+      "UpdatedAt": {
+        "seconds": 1714732466,
+        "nanoseconds": 760000000
+      },
+      "Category": "Dairy",
+      "Size": "500ml",
+      "BuyPrice": 55,
+      "CreatedAt": {
+        "seconds": 1714732466,
+        "nanoseconds": 760000000
+      },
+      "Name": "Brookside Dairy Best 500ml Long Life\t",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fbrookside500ml.png?alt=media&token=e10fab2b-1ba1-4668-bfc0-61b7508b4323",
+      "Description": ""
+    },
+    {
+      "id": "qz3bQDW289QiUj9bwpAv",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fmweapurepishori25kg.png?alt=media&token=d4de69d3-496d-4b46-ac15-0b6579884724",
+      "Stock": "In stock",
+      "Keywords": [],
+      "BuyPrice": 4000,
+      "Description": "",
+      "Size": "25kg",
+      "Price": 4800,
+      "CreatedAt": {
+        "seconds": 1713419983,
+        "nanoseconds": 245000000
+      },
+      "Category": "DryFoods",
+      "UpdatedAt": {
+        "seconds": 1713419983,
+        "nanoseconds": 245000000
+      },
+      "Name": "Mwea pure pishori rice"
+    },
+    {
+      "id": "r0SiuMPWqV2lY8WztFXa",
+      "Description": "",
+      "BuyPrice": 1200,
+      "Stock": "In stock",
+      "Price": 1300,
+      "Name": "Master Chef vegetable cooking oil",
+      "Type": "Offer",
+      "Size": "3ltr",
+      "CreatedAt": {
+        "seconds": 1710243855,
+        "nanoseconds": 685000000
+      },
+      "Keywords": [],
+      "UpdatedAt": {
+        "seconds": 1710243855,
+        "nanoseconds": 685000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2FMasterChefoil3ltr.png?alt=media&token=7b3f5433-72db-4794-982a-fcbcd56be8ae",
+      "Category": "OilButter"
+    },
+    {
+      "id": "raHLJrbCvKmFvnlIoud9",
+      "CreatedAt": {
+        "seconds": 1714738132,
+        "nanoseconds": 345000000
+      },
+      "BuyPrice": 170,
+      "Description": "",
+      "Stock": "In stock",
+      "Name": "Virginia Coconut Milk",
+      "Price": 230,
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2FVGGcoconutmilk.png?alt=media&token=cd516b7a-236e-4c98-9d44-ed77eced5d74",
+      "Category": "Dairy",
+      "Size": "400ml",
+      "UpdatedAt": {
+        "seconds": 1714738132,
+        "nanoseconds": 345000000
+      }
+    },
+    {
+      "id": "rnTo5ZUAx1TKR4lraYVF",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fnuteezcrunchy.png?alt=media&token=cf3a96f6-9bc0-49ad-9199-50640390a3ca",
+      "UpdatedAt": {
+        "seconds": 1713553351,
+        "nanoseconds": 783000000
+      },
+      "Description": "",
+      "Category": "OtherFoods",
+      "BuyPrice": 235,
+      "Price": 350,
+      "Name": "Nuteez spread crunchy peanut butter",
+      "CreatedAt": {
+        "seconds": 1713553351,
+        "nanoseconds": 783000000
+      },
+      "Size": "400g",
+      "Stock": "In stock",
+      "Keywords": []
+    },
+    {
+      "id": "rodC4j84KWQWlTObfr2Q",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713100781,
+        "nanoseconds": 738000000
+      },
+      "CreatedAt": {
+        "seconds": 1713100781,
+        "nanoseconds": 738000000
+      },
+      "Name": "Fanta black current flavoured",
+      "Category": "Drinks",
+      "Size": "500ml",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Ffantabc500ml.png?alt=media&token=4861bf6f-e4fd-4513-99f5-66a14abce574",
+      "Keywords": [],
+      "BuyPrice": 70,
+      "Stock": "In stock",
+      "Price": 80
+    },
+    {
+      "id": "rxXIaE3TJcTcboILOimu",
+      "Category": "Drinks",
+      "Size": "500ml",
+      "UpdatedAt": {
+        "seconds": 1713101478,
+        "nanoseconds": 71000000
+      },
+      "Name": "Daima milk vanilla flavoured drink",
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1713101478,
+        "nanoseconds": 71000000
+      },
+      "Stock": "In stock",
+      "BuyPrice": 90,
+      "Price": 100,
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fdaimavanilla500ml.png?alt=media&token=f136b419-340e-4ce5-9165-0687a9ca86bf"
+    },
+    {
+      "id": "s3BuVjLbvncE5i6pszOE",
+      "Category": "DryFoods",
+      "Stock": "In stock",
+      "BuyPrice": 70,
+      "Name": "Soko maize meal grade 1 sifted",
+      "UpdatedAt": {
+        "seconds": 1712860966,
+        "nanoseconds": 680000000
+      },
+      "Keywords": [],
+      "Size": "1kg",
+      "Price": 80,
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1712860966,
+        "nanoseconds": 680000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fsokomaize1kg.png?alt=media&token=d707f367-6a1a-4eac-9141-308cb97053df"
+    },
+    {
+      "id": "sP4naLnw21iC6C8vvgUu",
+      "Category": "PersonalCare",
+      "CreatedAt": {
+        "seconds": 1713780010,
+        "nanoseconds": 170000000
+      },
+      "Keywords": [],
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713780010,
+        "nanoseconds": 170000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FPersonal%20care%2Flifebuoysoap.png?alt=media&token=4c60e99c-44d8-4a99-8a29-20a65e94ad06",
+      "Size": "175g",
+      "Stock": "In stock",
+      "BuyPrice": 155,
+      "Price": 200,
+      "Name": "Lifebuoy germ protection soap"
+    },
+    {
+      "id": "tLUkKPe9XwHwqEj0fDvw",
+      "Category": "HomeM",
+      "Keywords": [],
+      "Size": "300ml",
+      "BuyPrice": 490,
+      "Description": "",
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1714721321,
+        "nanoseconds": 386000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FHome%20M%2Fsakinaairfreshener.png?alt=media&token=4e466fc8-bc3e-4a32-835a-bf1a152ccd1f",
+      "UpdatedAt": {
+        "seconds": 1714721321,
+        "nanoseconds": 386000000
+      },
+      "Price": 550,
+      "Name": "Sakina air freshener"
+    },
+    {
+      "id": "trf3GjyZa85RU2RqAPzx",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713555676,
+        "nanoseconds": 480000000
+      },
+      "CreatedAt": {
+        "seconds": 1713555676,
+        "nanoseconds": 480000000
+      },
+      "Stock": "In stock",
+      "Category": "OtherFoods",
+      "Price": 700,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fnescafeclassic.png?alt=media&token=07363b73-f594-4e03-938b-b14697de6ad7",
+      "BuyPrice": 430,
+      "Keywords": [],
+      "Name": "Nescafe classic",
+      "Size": "95g"
+    },
+    {
+      "id": "ug5ZkSz5Y0U0iwvartbT",
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1713591134,
+        "nanoseconds": 968000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fharpictoilet.png?alt=media&token=151c0e3a-a3f5-4e6c-a4cc-2bf1453a8fe2",
+      "Size": "1ltr",
+      "Category": "Cleaning",
+      "CreatedAt": {
+        "seconds": 1713591134,
+        "nanoseconds": 968000000
+      },
+      "Price": 1150,
+      "Name": "Harpic power plus 10x disinfectant toilet cleaner",
+      "Keywords": [],
+      "BuyPrice": 1030,
+      "Description": ""
+    },
+    {
+      "id": "v33tDPKinOfq2hixwpK8",
+      "Price": 550,
+      "Size": "2ltr",
+      "UpdatedAt": {
+        "seconds": 1713777258,
+        "nanoseconds": 771000000
+      },
+      "BuyPrice": 480,
+      "Keywords": [],
+      "Name": "Postman vegetable cooking oil",
+      "Stock": "In stock",
+      "Description": "",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2Fpostman2ltr.png?alt=media&token=ce5a585c-2980-4f99-99cb-9074533424a6",
+      "CreatedAt": {
+        "seconds": 1713777258,
+        "nanoseconds": 771000000
+      },
+      "Category": "OilButter"
+    },
+    {
+      "id": "v5VjwU6spbJd77tRjqUk",
+      "Size": "20ltr",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713777830,
+        "nanoseconds": 238000000
+      },
+      "BuyPrice": 5850,
+      "Category": "OilButter",
+      "Stock": "In stock",
+      "Price": 6200,
+      "CreatedAt": {
+        "seconds": 1713777830,
+        "nanoseconds": 238000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2Frinsun20ltr.png?alt=media&token=c48eeb3d-4373-4a7c-83e5-246f16e5dd36",
+      "Name": "Rinsun sunflower oil",
+      "Keywords": []
+    },
+    {
+      "id": "vBCdfjqmKLdw85pbxXja",
+      "UpdatedAt": {
+        "seconds": 1714746692,
+        "nanoseconds": 729000000
+      },
+      "Price": 170,
+      "Category": "DryFoods",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fsugar50kg.png?alt=media&token=0e6d0aef-aefa-4e9f-b652-1ad66a48b53f",
+      "Name": "Sugar Measured",
+      "Keywords": [],
+      "Stock": "In stock",
+      "CreatedAt": {
+        "seconds": 1714746692,
+        "nanoseconds": 729000000
+      },
+      "Size": "1kg",
+      "BuyPrice": 130,
+      "Description": ""
+    },
+    {
+      "id": "vfttDVNswDKkU76pyEVF",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fmagicorange.png?alt=media&token=4a6a45da-e7e9-42fe-816c-1684fc50136a",
+      "UpdatedAt": {
+        "seconds": 1713101760,
+        "nanoseconds": 557000000
+      },
+      "Name": "Magic orange flavoured drink",
+      "Category": "Drinks",
+      "Description": "",
+      "BuyPrice": 45,
+      "Stock": "In stock",
+      "Keywords": [],
+      "Size": "300ml",
+      "Price": 50,
+      "CreatedAt": {
+        "seconds": 1713101760,
+        "nanoseconds": 557000000
+      }
+    },
+    {
+      "id": "vx1zNtypZarLsP5JM7IP",
+      "Price": 150,
+      "Type": "Regular",
+      "BuyPrice": 140,
+      "Category": "Drinks",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2FMinuteMaidOrange1ltr.png?alt=media&token=37a8f11a-e1b1-4a4a-b18e-e3ac8635231f",
+      "CreatedAt": {
+        "seconds": 1710217236,
+        "nanoseconds": 129000000
+      },
+      "Stock": "In stock",
+      "Name": "Minute Maid Orange juice",
+      "Keywords": [],
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1710217236,
+        "nanoseconds": 129000000
+      },
+      "Size": "1ltr"
+    },
+    {
+      "id": "w3OsPvP2tTqRYdiSEqGa",
+      "Keywords": [],
+      "Price": 270,
+      "CreatedAt": {
+        "seconds": 1713592503,
+        "nanoseconds": 128000000
+      },
+      "Name": "Sunlight dishwashing liquid detergent with real lemon juice",
+      "Category": "Cleaning",
+      "Description": "",
+      "Size": "750ml",
+      "Stock": "In stock",
+      "BuyPrice": 240,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlightdishwashing.png?alt=media&token=5a7fcd15-d342-4122-9e20-c45318a3a720",
+      "UpdatedAt": {
+        "seconds": 1713592503,
+        "nanoseconds": 128000000
+      }
+    },
+    {
+      "id": "w7HVOJRyCev7Q0Z3UyoI",
+      "Name": "Sunlight 2in1 hand wash powder tropical sensations",
+      "BuyPrice": 4660,
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FCleaning%20essentials%2Fsunlighthandwashpowder.png?alt=media&token=5f331deb-2418-4e2a-8b60-2ef10f98bc6d",
+      "Category": "Cleaning",
+      "Keywords": [],
+      "Price": 5400,
+      "Size": "3.5kg x4 Carton",
+      "UpdatedAt": {
+        "seconds": 1713674480,
+        "nanoseconds": 912000000
+      },
+      "CreatedAt": {
+        "seconds": 1713674480,
+        "nanoseconds": 912000000
+      },
+      "Description": ""
+    },
+    {
+      "id": "wZM7IeOVbkOhPzTzJpNB",
+      "Size": "250ml",
+      "Description": "",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FPersonal%20care%2Fvaslineblueseal.png?alt=media&token=8e203522-ae41-4eaa-b5ae-1f396c7b2a14",
+      "BuyPrice": 240,
+      "Stock": "In stock",
+      "Name": "Vaseline Blue Seal original",
+      "Price": 260,
+      "Category": "PersonalCare",
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1714719094,
+        "nanoseconds": 121000000
+      },
+      "UpdatedAt": {
+        "seconds": 1714719094,
+        "nanoseconds": 121000000
+      }
+    },
+    {
+      "id": "wZcPyHibPvK5RDtCxQJk",
+      "UpdatedAt": {
+        "seconds": 1713101865,
+        "nanoseconds": 377000000
+      },
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1713101865,
+        "nanoseconds": 377000000
+      },
+      "Stock": "In stock",
+      "BuyPrice": 45,
+      "Description": "",
+      "Name": "Magic ginger ale flavoured drink",
+      "Category": "Drinks",
+      "Price": 50,
+      "Size": "300ml",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2Fmagicginger.png?alt=media&token=3bd0fecc-5aeb-455a-a9ec-b05c577453e7"
+    },
+    {
+      "id": "wb3hRyhlFhNWUKBkcdXl",
+      "Type": "Popular",
+      "Name": "Nestle nan opti pro milk premium follow-up",
+      "Price": 1800,
+      "Description": "",
+      "CreatedAt": {
+        "seconds": 1710243705,
+        "nanoseconds": 455000000
+      },
+      "Keywords": [],
+      "Size": "400g",
+      "Stock": "Out of stock",
+      "BuyPrice": 1610,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2FNestleNanoptipro400g.png?alt=media&token=340591ec-ff75-414b-8adc-0459efaa191b",
+      "UpdatedAt": {
+        "seconds": 1710243705,
+        "nanoseconds": 455000000
+      },
+      "Category": "BabyCare"
+    },
+    {
+      "id": "wvnV5PsNqdFQlRF3Eqw7",
+      "Price": 700,
+      "CreatedAt": {
+        "seconds": 1713595548,
+        "nanoseconds": 726000000
+      },
+      "Category": "BabyCare",
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713595548,
+        "nanoseconds": 726000000
+      },
+      "BuyPrice": 650,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FBaby%20care%2FsoftcaredaiperXL.png?alt=media&token=a8979372-1061-46ca-93f4-7fa1ff7a3fe7",
+      "Keywords": [],
+      "Size": "36pcs",
+      "Stock": "In stock",
+      "Name": "Softcare baby diaper XL"
+    },
+    {
+      "id": "xL12mfPNDLoxiuryLE2b",
+      "Price": 2100,
+      "CreatedAt": {
+        "seconds": 1713595675,
+        "nanoseconds": 959000000
+      },
+      "Category": "BabyCare",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FBaby%20care%2Fpampers4.png?alt=media&token=a1b3e51a-ba06-419f-b6cd-d6b76ce99e5a",
+      "BuyPrice": 1677,
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1713595675,
+        "nanoseconds": 959000000
+      },
+      "Stock": "In stock",
+      "Size": "50pcs",
+      "Keywords": [],
+      "Name": "Pampers pants size 4"
+    },
+    {
+      "id": "xbGSH7js6u5ICveEk3L3",
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1713596043,
+        "nanoseconds": 708000000
+      },
+      "Size": "72pcs",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FBaby%20care%2Fhananbabywipes.png?alt=media&token=69e2aebd-02d4-4888-a661-ff7a034c3443",
+      "BuyPrice": 140,
+      "Name": "Hanan baby wipes",
+      "Category": "BabyCare",
+      "UpdatedAt": {
+        "seconds": 1713596043,
+        "nanoseconds": 708000000
+      },
+      "Price": 180,
+      "Description": ""
+    },
+    {
+      "id": "xfyxz1YxpYqobvyFpgSn",
+      "Keywords": [],
+      "Category": "Drinks",
+      "Name": "Fanta orange flavoured drink",
+      "Price": 200,
+      "Size": "2ltr",
+      "Type": "Regular",
+      "BuyPrice": 185,
+      "Stock": "Out of stock",
+      "Description": "",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDrinks%2FFantaOrange2ltr.png?alt=media&token=8e82e799-a948-4cf6-aade-45becaeb1554",
+      "UpdatedAt": {
+        "seconds": 1710218107,
+        "nanoseconds": 534000000
+      },
+      "CreatedAt": {
+        "seconds": 1710218107,
+        "nanoseconds": 534000000
+      }
+    },
+    {
+      "id": "yDpoLNhz3E2xGuBdBBxY",
+      "Price": 160,
+      "Name": "Tropical Heat pure ground ginger spice",
+      "BuyPrice": 135,
+      "Size": "100g",
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1713554527,
+        "nanoseconds": 27000000
+      },
+      "Category": "OtherFoods",
+      "Stock": "In stock",
+      "UpdatedAt": {
+        "seconds": 1713554527,
+        "nanoseconds": 27000000
+      },
+      "Description": "",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Ftropicalheatginger.png?alt=media&token=544a9787-0002-4f24-854f-4207b4c1b33d"
+    },
+    {
+      "id": "yL7RifBTLjOoYHI1IfXb",
+      "Name": "Chaguo la mama maize flour",
+      "Price": 150,
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fchaguolamama1kg.png?alt=media&token=79f1467e-3ee4-4380-85db-a0c472474b52",
+      "BuyPrice": 120,
+      "Category": "DryFoods",
+      "Keywords": [],
+      "Description": "",
+      "UpdatedAt": {
+        "seconds": 1714734620,
+        "nanoseconds": 116000000
+      },
+      "Size": "1kg",
+      "CreatedAt": {
+        "seconds": 1714734620,
+        "nanoseconds": 116000000
+      },
+      "Stock": "In stock"
+    },
+    {
+      "id": "yjBeHaCL9xuPweWzKv9o",
+      "Price": 1750,
+      "Name": "Mortein Doom all insect killer",
+      "Description": "",
+      "Keywords": [],
+      "Size": "600ml",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FHome%20M%2Fdoom.png?alt=media&token=1adb4d32-284a-41db-8f4d-305343629c41",
+      "UpdatedAt": {
+        "seconds": 1714719967,
+        "nanoseconds": 640000000
+      },
+      "BuyPrice": 1250,
+      "Category": "HomeM",
+      "CreatedAt": {
+        "seconds": 1714719967,
+        "nanoseconds": 640000000
+      },
+      "Stock": "In stock"
+    },
+    {
+      "id": "ykv8MpiZiu6LAIAQabIU",
+      "Price": 1250,
+      "Name": "Rinsun sunflower oil",
+      "Description": "",
+      "Stock": "In stock",
+      "BuyPrice": 945,
+      "Category": "OilButter",
+      "Keywords": [],
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOil%2Frinsun3ltr.png?alt=media&token=35bf0777-31cb-4f84-9058-e00efd1f599a",
+      "Size": "3ltr",
+      "UpdatedAt": {
+        "seconds": 1713777914,
+        "nanoseconds": 166000000
+      },
+      "CreatedAt": {
+        "seconds": 1713777914,
+        "nanoseconds": 166000000
+      }
+    },
+    {
+      "id": "zGVJDhM1lw05giKEHx3M",
+      "CreatedAt": {
+        "seconds": 1714633241,
+        "nanoseconds": 477000000
+      },
+      "UpdatedAt": {
+        "seconds": 1714633241,
+        "nanoseconds": 477000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FGas%2Fsafegas13kg.png?alt=media&token=598dc39a-cc7a-4fb5-959c-ecee08a55ee5",
+      "Category": "Gas",
+      "Size": "13kg",
+      "Name": "Safe gas full kit Container + Gas regulator + Pipe",
+      "Stock": "In stock",
+      "Description": "",
+      "Keywords": [],
+      "Price": 12500,
+      "BuyPrice": 11750
+    },
+    {
+      "id": "zSKQKqHkzbpeSHQWKG4Z",
+      "Description": "",
+      "Price": 170,
+      "BuyPrice": 140,
+      "Size": "100g",
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1713554952,
+        "nanoseconds": 714000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Ftropicalheattumeric.png?alt=media&token=eac393e2-39c7-42ca-aa74-e42ef8939e10",
+      "Category": "OtherFoods",
+      "UpdatedAt": {
+        "seconds": 1713554952,
+        "nanoseconds": 714000000
+      },
+      "Name": "Tropical Heat pure ground tumeric spice",
+      "Stock": "In stock"
+    },
+    {
+      "id": "zTWJdaDgcvZavIN5bsKT",
+      "Category": "Snacks",
+      "Size": "1pc",
+      "Keywords": [],
+      "Description": "",
+      "Stock": "Out of stock",
+      "Price": 15,
+      "Name": "Oscar special chocolate",
+      "BuyPrice": 10,
+      "UpdatedAt": {
+        "seconds": 1712839731,
+        "nanoseconds": 694000000
+      },
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FSnacks%2Foscarspecialchoc.png?alt=media&token=d05fd1eb-a7b0-4c6c-9928-0734f2b2df44",
+      "CreatedAt": {
+        "seconds": 1712839731,
+        "nanoseconds": 694000000
+      }
+    },
+    {
+      "id": "zUhPipVtPMZFfx96RICI",
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1714732660,
+        "nanoseconds": 1000000
+      },
+      "Name": "Brookside whole milk Long Life\t",
+      "BuyPrice": 30,
+      "Description": "",
+      "Price": 40,
+      "Category": "Dairy",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDairy%2Fbrookside200ml.png?alt=media&token=ded7cf97-98f9-4220-a4e3-bc12ceecc0a3",
+      "Size": "200ml",
+      "UpdatedAt": {
+        "seconds": 1714732660,
+        "nanoseconds": 1000000
+      }
+    },
+    {
+      "id": "zaG4rCKaFwkPaScTEulW",
+      "Description": "",
+      "BuyPrice": 125,
+      "Keywords": [],
+      "CreatedAt": {
+        "seconds": 1714739825,
+        "nanoseconds": 144000000
+      },
+      "Category": "OtherFoods",
+      "UpdatedAt": {
+        "seconds": 1714739825,
+        "nanoseconds": 144000000
+      },
+      "Name": "Hilwa Tuna",
+      "Stock": "In stock",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FOtherFoods%2Fhilwatuna185g.png?alt=media&token=cfefa42f-d1c4-44b0-bea1-3839f9fe5fc2",
+      "Price": 140,
+      "Size": "185g"
+    },
+    {
+      "id": "zeVUw54bjhNVki8MTs6f",
+      "BuyPrice": 2450,
+      "Category": "DryFoods",
+      "Name": "Chaguo la mama maize flour",
+      "CreatedAt": {
+        "seconds": 1714734670,
+        "nanoseconds": 173000000
+      },
+      "Description": "",
+      "Image": "https://firebasestorage.googleapis.com/v0/b/adeego-6d3be.appspot.com/o/Products%20Image%2FDryFoods%2Fchaguolamama1kg.png?alt=media&token=79f1467e-3ee4-4380-85db-a0c472474b52",
+      "Keywords": [],
+      "Price": 2800,
+      "UpdatedAt": {
+        "seconds": 1714734670,
+        "nanoseconds": 173000000
+      },
+      "Stock": "In stock",
+      "Size": "1kg x 18 Carton"
+    }
+  ]
