@@ -17,6 +17,9 @@ import ringSound from "../../Assets/ring.wav";
 const OrdersTable = () => {
   // PLAY TONE FOR NEW ORDER
   const [audioInstance, setAudioInstance] = useState(null);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const newOrder = () => setIsPlayingAudio(true);
+  const processOrder = () => setIsPlayingAudio(false);
 
   const PlayAudio = () => {
     const sound = new Audio(ringSound);
@@ -33,6 +36,20 @@ const OrdersTable = () => {
       setAudioInstance(null);
     }
   };
+  useEffect(() => {
+    if (isPlayingAudio) {
+      PlayAudio();
+    } else {
+      StopAudio();
+    }
+
+    return () => {
+      if (audioInstance) {
+        audioInstance.pause();
+        setAudioInstance(null);
+      }
+    };
+  }, [isPlayingAudio]);
 
   // State variables for data, loading and error
   const [data, setData] = useState(null);
@@ -148,13 +165,13 @@ const OrdersTable = () => {
       <div className="flex items-center gap-3">
         <button
           className="bg-green-700 px-4 py-2 rounded-xl hover:bg-green-900 text-white font-medium"
-          onClick={PlayAudio}
+          onClick={newOrder}
         >
           Play
         </button>
         <button
           className="bg-red-700 px-4 py-2 rounded-xl hover:bg-red-900 text-white font-medium"
-          onClick={StopAudio}
+          onClick={processOrder}
         >
           stop
         </button>
