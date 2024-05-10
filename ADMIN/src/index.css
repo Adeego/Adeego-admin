@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,11 +10,14 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Inter" !important;
-
 }
 
-button{
+button {
   cursor: pointer !important;
+}
+
+body::-webkit-scrollbar {
+  display: none !important;
 }
 
 @layer components {
@@ -28,8 +30,6 @@ button{
     @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-400 pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-400 max-sm:rounded-full;
   } */
 }
-
-
 
 @layer utilities {
   .padding {

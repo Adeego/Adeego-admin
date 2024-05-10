@@ -13,7 +13,7 @@ export const columns = [
       const [imageLoading, setImageLoading] = useState(true);
       const image = row.original.Image;
       return (
-        <div className="h-10 aspect-square rounded-[0.3rem] overflow-hidden bg-neutral-200">
+        <div className="h-10 lg:h-12 aspect-square rounded-[0.3rem] overflow-hidden bg-neutral-200">
           <div
             className={`w-full h-full ${
               !imageLoading && "hidden"

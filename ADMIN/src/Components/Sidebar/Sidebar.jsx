@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "../../Assets/icon.png";
@@ -52,36 +52,22 @@ import MobileSidebar from "./comps/MobileSidebar";
 const links = [
   {
     label: "Dashboard",
-    icon: (
-      <Home className="md:h-4 md:w-4 lg:h-[18px] lg:w-[18px]" strokeWidth={2} />
-    ),
+    icon: <Home className=" h-[18px] w-[18px]" strokeWidth={2} />,
     pageLink: "/dashboard",
   },
   {
     label: "Products",
-    icon: (
-      <ShoppingBag
-        className="md:h-4 md:w-4 lg:h-[18px] lg:w-[18px]"
-        strokeWidth={2}
-      />
-    ),
+    icon: <ShoppingBag className=" h-[18px] w-[18px]" strokeWidth={2} />,
     pageLink: "/products",
   },
   {
     label: "Orders",
-    icon: (
-      <ShoppingCart
-        className="md:h-4 md:w-4 lg:h-[18px] lg:w-[18px]"
-        strokeWidth={2}
-      />
-    ),
+    icon: <ShoppingCart className=" h-[18px] w-[18px]" strokeWidth={2} />,
     pageLink: "/orders",
   },
   {
     label: "Agents",
-    icon: (
-      <UsersRound className="md:h-4 md:w-4 lg:h-5 lg:w-5" strokeWidth={2} />
-    ),
+    icon: <UsersRound className=" h-[18px] w-[18px]" strokeWidth={2} />,
     pageLink: "/agents",
   },
 ];
@@ -175,6 +161,8 @@ const Sidebar = () => {
     return <div></div>;
   }
 
+  const [isSideBarEnlarged, setSideBarEnlarged] = useState(true);
+  const toggleSideBarState = () => setSideBarEnlarged(!isSideBarEnlarged);
   return (
     <>
       {/* Navbar */}
@@ -193,46 +181,90 @@ const Sidebar = () => {
         </div>
       </nav>
 
-      <div className="w-14 lg:w-44 xl:w-52 h-screen b-black shrink-0 relative z-20 hidden md:flex">
-        <div className="md:flex md:flex-col items-center lg:items-start border-r border-neutral-200 p-3   gap-10 bg-white h-screen fixed  w-14 lg:w-44 xl:w-52 top-0 left-0">
-          <div>
-            <div className="rounded-[0.3rem] overflow-hidden h-9 aspect-square">
+      <div
+        className={` ${
+          isSideBarEnlarged ? "lg:w-44 xl:w-52" : "w-14"
+        }  h-screen b-black shrink-0 relative z-20 hidden md:flex transition-all duration-200`}
+      >
+        <div
+          className={`${
+            isSideBarEnlarged ? "lg:w-44 xl:w-52" : "w-14"
+          } md:flex md:flex-col items-center lg:items-start border-r border-neutral-200  bg-white h-screen fixed  top-0 left-0 transition-all duration-200`}
+        >
+          <div className="h-14 flex items-center justify-center lg:justify-start border-b w-full lg:p-3 lg:flex gap-2">
+            <div className="rounded-[0.3rem] overflow-hidden h-9 aspect-square shrink-0">
               <img src={logo} alt="" className="w-full h-full object-cover" />
             </div>
+            {isSideBarEnlarged && (
+              <p className="font-bold text-green-900 hidden lg:block">Adeego</p>
+            )}
           </div>
-
-          <div className="flex flex-col gap-4 md:gap-2 w-full">
+          <div
+            className={`w-full  hidden lg:flex ${
+              isSideBarEnlarged ? "px-3 justify-end" : "px-0 justify-center"
+            } my-4`}
+          >
+            <button
+              onClick={toggleSideBarState}
+              className="grid place-items-center h-10 aspect-square border border-neutral-200 rounded-[0.4rem] hover:border-neutral-500 transition"
+            >
+              <PanelLeft
+                className="select-none pointer-events-none"
+                size={16}
+              />
+            </button>
+          </div>
+          <div
+            className={`flex flex-col gap-4 md:gap-2 w-full  items-left ${
+              isSideBarEnlarged ? "px-1 lg:px-3" : "pl-3"
+            } mt-4 lg:mt-0 transition-all duration-200`}
+          >
             {links.map((link, i) => {
               return (
                 <TooltipProvider delayDuration={100}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Link className="!cursor-pointer" to={link.pageLink}>
-                        <div className="h-10 md:h-9 aspect-square lg:aspect-auto grid place-items-center lg:flex items-center gap-2 lg:gap-3 hover:bg-neutral-200/50 w-full px-2 rounded-[0.3rem] transition group/link">
+                      <Link
+                        className={`${
+                          pathname === link.pageLink
+                            ? "bg-neutral-200"
+                            : "bg-white"
+                        } ${
+                          isSideBarEnlarged ? "" : "max-w-fit w-10 lg:!w-12"
+                        } !cursor-pointer rounded-[0.4rem] m-aut w-full hover:bg-neutral-200/50`}
+                        to={link.pageLink}
+                      >
+                        <div
+                          className={` h-10 md:h-9 shrink-0 aspect-square xl:aspect-auto grid place-items-center lg:flex items-center gap-2 lg:gap-3   px-2 rounded-[0.3rem] transition group/link`}
+                        >
                           <div
                             className={`${
                               pathname === link.pageLink
                                 ? "text-black"
-                                : "text-neutral-400 lg:text-neutral-500"
+                                : "text-neutral-500 lg:text-neutral-500"
                             } group-hover/link:text-neutral-700 transition`}
                           >
                             {link.icon}
                           </div>
-                          <div
-                            className={`${
-                              pathname === link.pageLink
-                                ? "text-black"
-                                : "text-neutral-400 lg:text-neutral-500"
-                            } group-hover/link:text-neutral-700 transition hidden lg:block`}
-                          >
-                            {link.label}
-                          </div>
+                          {isSideBarEnlarged && (
+                            <div
+                              className={`${
+                                pathname === link.pageLink
+                                  ? "text-black"
+                                  : "text-neutral-400 lg:text-neutral-500"
+                              } group-hover/link:text-neutral-700 transition hidden lg:block text-sm`}
+                            >
+                              {link.label}
+                            </div>
+                          )}
                         </div>
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent
                       side="right"
-                      className="bg-white rounded-[0.3rem] text-xs lg:hidden"
+                      className={`bg-white rounded-[0.3rem] text-xs ${
+                        isSideBarEnlarged ? "lg:hidden" : ""
+                      } `}
                     >
                       <p>{link.label}</p>
                     </TooltipContent>

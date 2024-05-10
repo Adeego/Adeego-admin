@@ -9,6 +9,7 @@ import Login from "./Auth/Login";
 import Logout from "./Pages/Logout";
 import Json from "./Components/Products/Json";
 import { NextUIProvider } from "@nextui-org/react";
+import { Toaster } from "@/components/ui/sonner";
 
 const App = () => {
   return (
@@ -25,6 +26,9 @@ const App = () => {
             <Route path="/orders" element={<Orders />} />
             <Route path="/customers" element={<Customers />} />
           </Routes>
+          <div className="fixed z-[999]">
+            <Toaster position="top-center" />
+          </div>
         </Router>
       </div>
     </NextUIProvider>

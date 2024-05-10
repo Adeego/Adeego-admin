@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import {
   Check,
   CircleAlert,
+  CircleCheck,
   MoreHorizontal,
   Pencil,
   Trash,
@@ -24,9 +25,20 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogFooter,
+  DialogClose,
 } from "@/components/ui/dialog";
+import { toast } from "sonner";
 
 const DeleteDialog = ({ product }) => {
+  const deleteProduct = () => {
+    toast(
+      <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-end gap-2 w-full">
+        <CircleCheck size={16} className="stroke-neutral-600 md:text-sm text-neutral-800" />
+        Product successfully deleted
+      </div>
+    );
+  };
+
   return (
     <DialogContent className="bg-white w-[90%] !rounded-[0.5rem] gap-5">
       <DialogHeader>
@@ -58,13 +70,14 @@ const DeleteDialog = ({ product }) => {
       </div>
       <DialogFooter className="flex items-end">
         <div className="flex justify-end w-full gap-2">
-          <button className="bg-black text-white rounded-[0.4rem] text-xs py-2 p-3 flex items-center gap-1 md:gap-2 font-medium md:text-base lg:px-6">
-            {/* <Check
-              className="h-[12px] w-[12px] md:w-[14px] md:h-[14px]"
-              strokeWidth={3}
-            /> */}
-            Confirm
-          </button>
+          <DialogClose>
+            <button
+              onClick={deleteProduct}
+              className="bg-black text-white rounded-[0.4rem] text-xs py-2 p-3 flex items-center gap-1 md:gap-2 font-medium md:text-base lg:px-6"
+            >
+              Confirm
+            </button>
+          </DialogClose>
         </div>
       </DialogFooter>
     </DialogContent>

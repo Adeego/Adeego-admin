@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 
 export function DataTablePagination({ table }) {
   return (
-    <div className="flex items-center w-full">
+    <div className="flex items-center w-full max-w-sm ml-auto">
       <div className="flex-1 text-sm text-muted-foreground hidden">
         {table.getFilteredSelectedRowModel().rows.length} of{" "}
         {table.getFilteredRowModel().rows.length} row(s) selected.
@@ -43,7 +43,7 @@ export function DataTablePagination({ table }) {
             </SelectContent>
           </Select>
         </div>
-        <div className="flex items-center justify-center text-xs text-neutral-500 font-medium">
+        <div className="flex items-center justify-center text-xs md:text-sm text-neutral-500 font-medium">
            Page{" "}
           <span className="text-black mx-1">
             {table.getState().pagination.pageIndex + 1}
