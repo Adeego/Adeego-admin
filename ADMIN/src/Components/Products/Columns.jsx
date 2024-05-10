@@ -1,5 +1,7 @@
 "use client";
 
+import ActionsMenu from "./ActionsMenu";
+
 export const columns = [
   {
     accessorKey: "Name",
@@ -43,8 +45,15 @@ export const columns = [
       return <div className="text-right font-medium ">{formatted}</div>;
     },
   },
-  //   {
-  //     accessorKey: "total sales",
-  //     header: "Total Sales",
-  //   },
+  {
+    id: "actions",
+    cell: ({ row, props }) => {
+      const product = row.original;
+      console.log(row)
+      const deleteProduct = () => {
+        console.log("delete");
+      };
+      return <ActionsMenu deleteProduct={deleteProduct} product={product} />;
+    },
+  },
 ];

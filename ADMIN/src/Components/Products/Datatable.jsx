@@ -64,12 +64,16 @@ export function DataTable({ columns, data }) {
                   <TableCell
                     key={cell.id}
                     className={`${
-                      cell.column.id === "Name" || cell.column.id === "Price"
+                      cell.column.id === "Name" ||
+                      cell.column.id === "Price" ||
+                      cell.column.id === "actions"
                         ? "visible"
                         : "hidden"
                     }`}
                   >
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    {flexRender(cell.column.columnDef.cell, cell.getContext(), {
+                      item: "item",
+                    })}
                   </TableCell>
                 ))}
               </TableRow>
