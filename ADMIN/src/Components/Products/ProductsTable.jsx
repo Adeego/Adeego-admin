@@ -9,24 +9,51 @@ import {
   doc,
 } from "firebase/firestore";
 import app from "../../../firebaseConfig";
-import { Skeleton } from "@/components/ui/skeleton";
+
+// icons;
+import { Plus } from "lucide-react";
 
 // components;
 import { DataTable } from "./Datatable";
 import { columns } from "./Columns";
+import FilterMenu from "./FIlterMenu";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+const LoadingSkeleton = () => {
+  return (
+    <div>
+      <div className="w-full flex flex-col rounded-[0.4rem] overflow-hidden gap-[2px]">
+        {[...Array(20)].map((_, i) => (
+          <div className="w-ful">
+            <Skeleton
+              className={`w-full h-16 ${
+                i % 2 == 0 ? "bg-neutral-200" : "bg-neutral-200/60"
+              } `}
+              key={i}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const ProductsTable = () => {
   // State variables for data, loading and error
+  const [persistentData, setPersistentData] = useState([]);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // State variable for currently edited product ID
-  const [editingProductId, setEditingProductId] = useState(null);
+  // Products availability state;
+  const [activeStatus, SetActiveStatus] = useState("all");
 
-  // State variables for pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(10);
+  const toggleActiveStatus = (value) => {
+    SetActiveStatus(value);
+  };
+
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -43,6 +70,7 @@ const ProductsTable = () => {
             ...doc.data(),
           }));
           setData(products);
+          setPersistentData(products);
           setLoading(false);
         });
 
@@ -79,22 +107,7 @@ const ProductsTable = () => {
   };
 
   if (loading) {
-    return (
-      <div>
-        <div className="w-full flex flex-col rounded-[0.4rem] overflow-hidden gap-[2px]">
-          {[...Array(20)].map((_, i) => (
-            <div className="w-ful">
-              <Skeleton
-                className={`w-full h-16 ${
-                  i % 2 == 0 ? "bg-neutral-200" : "bg-neutral-200/60"
-                } `}
-                key={i}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    );
+    return <LoadingSkeleton />;
   }
 
   if (error) {
@@ -112,6 +125,25 @@ const ProductsTable = () => {
     );
   });
 
+  const SearchData = (value) => {
+    setSearchTerm(value);
+    const results = data.filter((product) => {
+      return (
+        product.id.toLowerCase().includes(value.toLowerCase()) ||
+        product.Name.toLowerCase().includes(value.toLowerCase()) ||
+        product.Stock.toLowerCase().includes(value.toLowerCase()) ||
+        product.Category.toLowerCase().includes(value.toLowerCase())
+      );
+    });
+
+    if (value === "") {
+      setData(persistentData);
+      return;
+    }
+
+    setData(results);
+  };
+
   // Function to handle edit true for a specific product
   const handleEditTrue = (productId) => {
     setEditingProductId(productId);
@@ -122,95 +154,46 @@ const ProductsTable = () => {
     setEditingProductId(null);
   };
 
-  // Calculate starting index and display appropriate products
-  const startIndex = (currentPage - 1) * productsPerPage;
-  const displayedProducts = filteredData.slice(
-    startIndex,
-    startIndex + productsPerPage
-  );
+  // active status;
 
   return (
-    <div className="w-full text-LightGrey">
-      <DataTable columns={columns} data={filteredData} />
-    </div>
+    <>
+      <header className="flex items-center justify-between px-2 gap-2">
+        <div className="w-full">
+          <Input
+            value={searchTerm}
+            onChange={(e) => {
+              SearchData(e.target.value);
+            }}
+            className="rounded-[0.4rem] w-full border-neutral-200/50 focus:border-neutral-400 placeholder:text-neutral-500"
+            placeholder="Search products"
+          />
+        </div>
+        <div className="flex gap-2 shrink-0 relative">
+          <div className="relative">
+            <FilterMenu
+              activeStatus={activeStatus}
+              toggleActiveStatus={toggleActiveStatus}
+            />
+          </div>
+          <Button
+            size="icon"
+            className="rounded-[0.3rem] border-neutral-200 grid place-items-center bg-black text-white"
+          >
+            <Plus size={15} strokeWidth={2} />
+          </Button>
+        </div>
+      </header>
+
+      <section className="p-2 flex flex-col gap-6 py-4">
+        <div className="px-2">
+          <h1 className="font-bold tracking-tight text-2xl">Products</h1>
+          <small className="text-neutral-500">Manage your products</small>
+        </div>
+        <DataTable columns={columns} data={filteredData} />
+      </section>
+    </>
   );
 };
 
 export default ProductsTable;
-
-{
-  /* <table className="table-fixed w-full">
-<thead className="table-header-group h-8 font-bold text-DarkGrey m-3 ">
-  <tr className="rounded-lg text-left text-sm ">
-    <th className="">Name</th>
-    <th className="">Category</th>
-    <th className="">Size</th>
-    <th className="">Stock</th>
-    <th className="">Buy Price</th>
-    <th className="">Sell Price</th>
-    <th>Action</th>
-  </tr>
-</thead>
-<tbody className="">
-  {displayedProducts.map((product) => (
-    <tr
-      className="border-y-1 border-slate-200 h-10 text-CharcoalGrey p-1 text-left font-medium font-sans text-xs"
-      key={product.id}
-    >
-      <td className=" ">
-        {product.Brand} {product.Name}
-      </td>
-      <td className=" ">{product.Category}</td>
-      <td className=" ">{product.Size}</td>
-      <td className=" ">{product.Stock}</td>
-      <td className=" ">{product.BuyPrice}</td>
-      <td className=" ">{product.Price}</td>
-      <td className=" flex, justify-around">
-        <button
-          className="bg-Gold h-6 p-1 text-xs font-bold rounded-xl text-CharcoalGrey"
-          onClick={() => handleEditTrue(product.id)}
-        >
-          EDIT
-        </button>
-        {editingProductId === product.id && (
-          <EditProduct
-            handleEditFalse={handleEditFalse}
-            product={product}
-          />
-        )}
-        <button
-          className="bg-Red h-6 p-1 text-xs font-bold rounded-xl text-LightGrey ml-1"
-          onClick={() => deleteProduct(product.id)}
-        >
-          DELETE
-        </button>
-      </td>
-    </tr>
-  ))}
-</tbody>
-</table>
-
-Pagination controls (adjust styling as needed) 
-<div className="bg-transparent h-10 flex items-center justify-end mt-5">
-<div className=" h-8 w-32 bg-LightGrey flex justify-around items-center mr-2 rounded-2xl border-2 border-CharcoalGrey">
-  <button
-    className="w-8 h-8 text-CharcoalGrey rounded-2xl flex justify-center items-center"
-    onClick={() => setCurrentPage(currentPage - 1)}
-    disabled={currentPage === 1}
-  >
-    <GrLinkPrevious />
-  </button>
-  <span className="w-16 h-8 bg-CharcoalGrey flex justify-center items-center text-sm">
-    {" "}
-    {currentPage} of {Math.ceil(data.length / productsPerPage)}{" "}
-  </span>
-  <button
-    className="w-8 h-8 text-CharcoalGrey rounded-2xl flex justify-center items-center"
-    onClick={() => setCurrentPage(currentPage + 1)}
-    disabled={currentPage === Math.ceil(data.length / productsPerPage)}
-  >
-    <GrLinkNext />
-  </button>
-</div>
-</div> */
-}
