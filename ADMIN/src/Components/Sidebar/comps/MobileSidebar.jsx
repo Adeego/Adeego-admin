@@ -46,7 +46,7 @@ const MobileSidebar = () => {
   const { pathname } = useLocation();
 
   return (
-    <Sheet>
+    <Sheet className='z-[999]'>
       <SheetTrigger>
         {" "}
         <Button
@@ -59,7 +59,7 @@ const MobileSidebar = () => {
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="bg-white text-left gap-10 flex flex-col w-[80%] max-w-sm"
+        className="bg-white text-left gap-10 flex flex-col w-[80%] max-w-sm z-[999]"
       >
         <SheetHeader>
           <div className="h-16 bg-white">

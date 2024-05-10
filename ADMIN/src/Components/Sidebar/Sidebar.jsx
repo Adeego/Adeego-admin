@@ -67,7 +67,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="w-full h-14 border border-neutral-100 flex items-center justify-between p-2 fixed top-0 left-0">
+      <nav className="w-full h-14 border border-neutral-100 flex items-center justify-between p-2 fixed top-0 left-0 bg-white z-[20]">
         <div className="relative">
           <MobileSidebar />
         </div>

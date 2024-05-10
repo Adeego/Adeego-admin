@@ -18,10 +18,18 @@ import {
   DropdownMenuTrigger,
   DropdownMenuCheckboxItem,
 } from "@/components/ui/dropdown-menu";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const FilterMenu = () => {
   return (
-    <DropdownMenu className=' bg-red-200'>
+    <DropdownMenu className=" bg-red-200">
       <DropdownMenuTrigger className="outline-none">
         <Button
           variant="outline"
@@ -32,9 +40,9 @@ const FilterMenu = () => {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="bg-white  border-neutral-100 w-44 shadow-neutral-100 rounded-[0.5rem] mr-14">
-        <DropdownMenuLabel>Filter by</DropdownMenuLabel>
-        <DropdownMenuSeparator />
+      <DropdownMenuContent className="bg-white  border-neutral-100 rounded-[0.3rem] mr-14">
+        {/* <DropdownMenuLabel>Filter by</DropdownMenuLabel> */}
+        {/* <DropdownMenuSeparator /> */}
         <DropdownMenuCheckboxItem checked={true} onCheckedChange={() => {}}>
           <small className="text-sm">All items</small>
         </DropdownMenuCheckboxItem>
@@ -102,6 +110,13 @@ const Products = () => {
           </Button>
         </div>
       </header>
+
+      <section className="p-2 flex flex-col gap-6 py-4">
+        <div className="px-2">
+          <h1 className="font-bold tracking-tight text-2xl">Products</h1>
+        </div>
+        <ProductsTable />
+      </section>
 
       {addProduct && <AddProduct handleFalse={handleFalse} />}
     </div>
