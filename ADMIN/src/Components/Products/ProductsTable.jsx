@@ -11,7 +11,7 @@ import {
 import app from "../../../firebaseConfig";
 
 // icons;
-import { Plus } from "lucide-react";
+import { CirclePlus, Search, SlidersHorizontal } from "lucide-react";
 
 // components;
 import { DataTable } from "./Datatable";
@@ -20,6 +20,7 @@ import FilterMenu from "./FIlterMenu";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import ViewMenu from "./ViewMenu";
 
 const LoadingSkeleton = () => {
   return (
@@ -64,6 +65,8 @@ const ProductsTable = () => {
     setData(persistentData);
     setActiveStatus("all");
   };
+
+
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -153,22 +156,34 @@ const ProductsTable = () => {
     setEditingProductId(null);
   };
 
+  
+
   // active status;
 
   return (
     <>
       <header className="flex items-center justify-between px-2 gap-2">
         <div className="w-full">
-          <Input
-            value={searchTerm}
-            onChange={(e) => {
-              SearchData(e.target.value);
-            }}
-            className="rounded-[0.4rem] w-full border-neutral-200/50 focus:border-neutral-400 placeholder:text-neutral-500"
-            placeholder="Search products"
-          />
+          <div className="max-w-sm relative">
+            <Search
+              className="absolute top-2/4 -translate-y-2/4 left-3 stroke-neutral-500"
+              size={16}
+              strokeWidth={2}
+            />
+            <Input
+              value={searchTerm}
+              onChange={(e) => {
+                SearchData(e.target.value);
+              }}
+              className="rounded-[0.4rem] pl-9 w-full border-neutral-200/50 focus:border-neutral-400 placeholder:text-neutral-500 max-w-sm md:border-neutral-200"
+              placeholder="Search products"
+            />
+          </div>
         </div>
         <div className="flex gap-2 shrink-0 relative">
+          <div className="relative">
+            {/* <ViewMenu /> */}
+          </div>
           <div className="relative">
             <FilterMenu
               activeStatus={activeStatus}
@@ -176,12 +191,12 @@ const ProductsTable = () => {
               resetFilter={resetFilter}
             />
           </div>
-          <Button
-            size="icon"
-            className="rounded-[0.3rem] border-neutral-200 grid place-items-center bg-black text-white"
-          >
-            <Plus size={15} strokeWidth={2} />
-          </Button>
+          <button className="w-10 aspect-square md:aspect-auto md:w-auto md:h-10 rounded-[0.4rem] border-neutral-200 grid place-items-center bg-black text-white md:flex gap-2 md:px-4 hover:bg-neutral-800 ">
+            <CirclePlus className="h-[15px] w-[15px] stroke-white  select-none pointer-events-none" />
+            <span className="hidden md:block text-xs font-medium select-none pointer-events-none">
+              Add Product
+            </span>
+          </button>
         </div>
       </header>
 

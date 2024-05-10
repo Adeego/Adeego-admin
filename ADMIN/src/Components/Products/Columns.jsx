@@ -53,7 +53,7 @@ export const columns = [
   },
   {
     accessorKey: "BuyPrice",
-    header: () => <div className="text-right">Buying Price</div>,
+    header: () => <div className="text-left">Buying Price</div>,
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("BuyPrice"));
       const formatted = new Intl.NumberFormat("en-US", {
@@ -61,7 +61,7 @@ export const columns = [
         currency: "KSH",
       }).format(amount);
 
-      return <div className="text-right font-medium">{formatted}</div>;
+      return <div className="text-left font-medium text-xs">{formatted}</div>;
     },
   },
   {
@@ -74,7 +74,7 @@ export const columns = [
         currency: "KES",
       }).format(amount);
 
-      return <div className="text-right font-medium text-xs">{formatted}</div>;
+      return <div className="text-left font-medium text-xs">{formatted}</div>;
     },
   },
   {

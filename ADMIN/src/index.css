@@ -14,6 +14,10 @@
 
 }
 
+button{
+  cursor: pointer !important;
+}
+
 @layer components {
   .max-container {
     max-width: 1440px;
@@ -24,6 +28,8 @@
     @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-400 pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-400 max-sm:rounded-full;
   } */
 }
+
+
 
 @layer utilities {
   .padding {

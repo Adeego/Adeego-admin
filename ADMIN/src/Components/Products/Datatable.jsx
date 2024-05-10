@@ -18,18 +18,29 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { DataTablePagination } from "./Pagination";
+import { useState } from "react";
+import ViewMenu from "./ViewMenu";
 
 export function DataTable({ columns, data }) {
+  // column visibilty;
+  const [columnVisibility, setColumnVisibility] = useState({});
+
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    onColumnVisibilityChange: setColumnVisibility,
+    state: {
+      columnVisibility,
+    },
   });
 
-
   return (
-    <>
+    <section className="relative">
+      <div className="w-full h-10 hidden md:flex justify-end absolute -top-14">
+        <ViewMenu table={table} />
+      </div>
       <div className="border border-neutral-300 rounded-[0.4rem]">
         <Table className="">
           <TableHeader className="">
@@ -39,13 +50,15 @@ export function DataTable({ columns, data }) {
                   return (
                     <TableHead
                       key={header.id}
-                      className={`text-neutral-500 text-xs ${
+                      className={`text-neutral-500 text-xs md:text-sm text-left ${
                         header.id === "Name" ||
                         header.id === "Price" ||
                         header.id === "Image" ||
                         header.id === "actions"
                           ? "visible"
-                          : "hidden"
+                          : header.id !== "BuyPrice"
+                          ? "invisible absolute z-[-1] md:visible md:relative md:z-0"
+                          : "invisible absolute z-[-1] xl:visible xl:relative md:z-0"
                       }`}
                     >
                       {header.isPlaceholder
@@ -79,15 +92,14 @@ export function DataTable({ columns, data }) {
                         cell.column.id === "Image" ||
                         cell.column.id === "actions"
                           ? "visible"
-                          : "hidden"
+                          : cell.column.id !== "BuyPrice"
+                          ? "invisible absolute z-[-1] md:visible md:relative md:z-0"
+                          : "invisible absolute z-[-1] xl:visible xl:relative md:z-0"
                       }`}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext(),
-                        {
-                          item: "item",
-                        }
+                        cell.getContext()
                       )}
                     </TableCell>
                   ))}
@@ -107,6 +119,6 @@ export function DataTable({ columns, data }) {
       <div className="relative h-20 flex items-center w-full">
         <DataTablePagination table={table} />
       </div>
-    </>
+    </section>
   );
 }
