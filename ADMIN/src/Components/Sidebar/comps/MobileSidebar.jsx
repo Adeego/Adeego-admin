@@ -73,7 +73,7 @@ const MobileSidebar = () => {
         <div className="w-full flex flex-col">
           {links.map((link, i) => {
             return (
-              <SheetClose asChild>
+              <SheetClose key={i} asChild>
                 <Link to={link.pageLink}>
                   <div
                     className={`flex gap-4 items-center py-3 active:bg-neutral-100 rounded-xl px-2 ${

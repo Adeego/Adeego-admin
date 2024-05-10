@@ -13,7 +13,7 @@ import { NextUIProvider } from "@nextui-org/react";
 const App = () => {
   return (
     <NextUIProvider>
-      <div className="lg:flex">
+      <div className="md:flex md:gap-4 md:pr-2">
         <Router>
           <Sidebar />
           <Routes>
