@@ -9,6 +9,7 @@ import {
   doc,
 } from "firebase/firestore";
 import app from "../../../firebaseConfig";
+import { Skeleton } from "@/components/ui/skeleton";
 
 // components;
 import { DataTable } from "./Datatable";
@@ -78,7 +79,22 @@ const ProductsTable = () => {
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div>
+        <div className="w-full flex flex-col rounded-[0.4rem] overflow-hidden gap-[2px]">
+          {[...Array(20)].map((_, i) => (
+            <div className="w-ful">
+              <Skeleton
+                className={`w-full h-16 ${
+                  i % 2 == 0 ? "bg-neutral-200" : "bg-neutral-200/60"
+                } `}
+                key={i}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   }
 
   if (error) {

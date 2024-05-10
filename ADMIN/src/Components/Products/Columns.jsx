@@ -42,7 +42,7 @@ export const columns = [
         currency: "Kes",
       }).format(amount);
 
-      return <div className="text-right font-medium ">{formatted}</div>;
+      return <div className="text-right font-medium text-xs">{formatted}</div>;
     },
   },
   {

@@ -5,29 +5,17 @@ import staffStore from "../Store/UserStore";
 import { useNavigate } from "react-router-dom";
 
 // components;
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowUpDown, ListFilter, Plus } from "lucide-react";
+import { ListFilter, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
   DropdownMenuCheckboxItem,
 } from "@/components/ui/dropdown-menu";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
-const FilterMenu = () => {
+const FilterMenu = ({ activeStatus, toggleActiveStatus }) => {
   return (
     <DropdownMenu className=" bg-red-200">
       <DropdownMenuTrigger className="outline-none">
@@ -40,17 +28,33 @@ const FilterMenu = () => {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="bg-white  border-neutral-100 rounded-[0.3rem] mr-14">
-        {/* <DropdownMenuLabel>Filter by</DropdownMenuLabel> */}
-        {/* <DropdownMenuSeparator /> */}
-        <DropdownMenuCheckboxItem checked={true} onCheckedChange={() => {}}>
-          <small className="text-sm">All items</small>
+      <DropdownMenuContent className="bg-white  border-neutral-100 rounded-[0.4rem] mr-14 w-32">
+        <DropdownMenuCheckboxItem
+          className='bg-white data-[state="checked"]:bg-neutral-100/60 rounded-[0.4rem]'
+          checked={activeStatus === "all"}
+          onCheckedChange={() => {
+            toggleActiveStatus("all");
+          }}
+        >
+          <small className="text-xs">All items</small>
         </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem checked={() => {}} onCheckedChange={() => {}}>
-          <small className="text-sm">In stock</small>
+        <DropdownMenuCheckboxItem
+          className='bg-white data-[state="checked"]:bg-neutral-100/60 rounded-[0.4rem]'
+          checked={activeStatus === "in_stock"}
+          onCheckedChange={() => {
+            toggleActiveStatus("in_stock");
+          }}
+        >
+          <small className="text-xs">In stock</small>
         </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem checked={() => {}} onCheckedChange={() => {}}>
-          <small className="text-sm">Out of stock</small>
+        <DropdownMenuCheckboxItem
+          className='bg-white data-[state="checked"]:bg-neutral-100/60 rounded-[0.4rem]'
+          checked={activeStatus === "no_stock"}
+          onCheckedChange={() => {
+            toggleActiveStatus("no_stock");
+          }}
+        >
+          <small className="text-xs">Out of stock</small>
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -80,6 +84,12 @@ const Products = () => {
     navigate("/json");
   };
 
+  const [activeStatus, SetActiveStatus] = useState("all");
+
+  const toggleActiveStatus = (value) => {
+    SetActiveStatus(value);
+  };
+
   return (
     <div className="w-full bg-LightGrey items-center mt-16 pt-2">
       {/* <div className="flex justify-end items-center h-16 p-3 w-full">
@@ -100,7 +110,10 @@ const Products = () => {
         </div>
         <div className="flex gap-2 shrink-0 relative">
           <div className="relative">
-            <FilterMenu />
+            <FilterMenu
+              activeStatus={activeStatus}
+              toggleActiveStatus={toggleActiveStatus}
+            />
           </div>
           <Button
             size="icon"
@@ -114,6 +127,7 @@ const Products = () => {
       <section className="p-2 flex flex-col gap-6 py-4">
         <div className="px-2">
           <h1 className="font-bold tracking-tight text-2xl">Products</h1>
+          <small className="text-neutral-500">Manage your products</small>
         </div>
         <ProductsTable />
       </section>
