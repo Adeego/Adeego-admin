@@ -39,7 +39,7 @@ export const columns = [
       const amount = parseFloat(row.getValue("Price"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
-        currency: "Kes",
+        currency: "Usd",
       }).format(amount);
 
       return <div className="text-right font-medium text-xs">{formatted}</div>;

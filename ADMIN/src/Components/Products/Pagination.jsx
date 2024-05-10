@@ -23,28 +23,28 @@ export function DataTablePagination({ table }) {
         {table.getFilteredRowModel().rows.length} row(s) selected.
       </div>
       <div className="flex items-center px-2 justify-between w-full">
-        <div className="md:flex items-center space-x-2 hidden">
-          <p className="text-sm font-medium">Rows per page</p>
+        <div className="md:flex items-center space-x-2">
+          {/* <p className="text-sm font-medium">Rows per page</p> */}
           <Select
             value={`${table.getState().pagination.pageSize}`}
             onValueChange={(value) => {
               table.setPageSize(Number(value));
             }}
           >
-            <SelectTrigger className="h-8 w-[70px]">
-              <SelectValue placeholder={table.getState().pagination.pageSize} />
+            <SelectTrigger className="h-8 w-[80px] rounded-[0.3rem] border border-neutral-400 text-xs p-2">
+              <SelectValue placeholder={`${table.getState().pagination.pageSize}`} />
             </SelectTrigger>
-            <SelectContent side="top">
+            <SelectContent side="top" className='bg-white rounded-[0.3rem]'>
               {[10, 20, 30, 40, 50].map((pageSize) => (
-                <SelectItem key={pageSize} value={`${pageSize}`}>
-                  {pageSize}
+                <SelectItem key={pageSize} value={`${pageSize}`} className=''>
+                {pageSize} rows
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
         </div>
         <div className="flex items-center justify-center text-xs text-neutral-500 font-medium">
-          Showing page{" "}
+           Page{" "}
           <span className="text-black mx-1">
             {table.getState().pagination.pageIndex + 1}
           </span>{" "}

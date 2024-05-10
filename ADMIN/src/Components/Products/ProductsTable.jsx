@@ -43,7 +43,7 @@ const LoadingSkeleton = () => {
 const ProductsTable = () => {
   // State variables for data, loading and error
   const [persistentData, setPersistentData] = useState([]);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -106,13 +106,7 @@ const ProductsTable = () => {
     }
   };
 
-  if (loading) {
-    return <LoadingSkeleton />;
-  }
-
-  if (error) {
-    return <p>Error: {error.message}</p>;
-  }
+ 
 
   // Filter data based on search term
   const filteredData = data.filter((product) => {
@@ -138,7 +132,6 @@ const ProductsTable = () => {
 
     if (value === "") {
       setData(persistentData);
-      return;
     }
 
     setData(results);
@@ -190,7 +183,13 @@ const ProductsTable = () => {
           <h1 className="font-bold tracking-tight text-2xl">Products</h1>
           <small className="text-neutral-500">Manage your products</small>
         </div>
-        <DataTable columns={columns} data={filteredData} />
+        {loading ? (
+          <LoadingSkeleton />
+        ) : error ? (
+          <div></div>
+        ) : (
+          <DataTable columns={columns} data={filteredData} />
+        )}{" "}
       </section>
     </>
   );

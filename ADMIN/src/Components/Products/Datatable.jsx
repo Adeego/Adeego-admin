@@ -30,16 +30,16 @@ export function DataTable({ columns, data }) {
 
   return (
     <>
-      <div className="border border-neutral-200/60 rounded-[0.4rem]">
-        <Table>
-          <TableHeader>
+      <div className="border border-neutral-300 rounded-[0.4rem]">
+        <Table className=''>
+          <TableHeader className=''>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow className='border-neutral-300' key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className={`text-neutral-500 ${
+                      className={`text-neutral-500  ${
                         header.id === "Name" || header.id === "Price"
                           ? "visible"
                           : "hidden"
@@ -63,8 +63,8 @@ export function DataTable({ columns, data }) {
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={`${row.column} ${
-                    row.id % 2 == 0 && "bg-neutral-100/40"
+                  className={`border-neutral-200 ${row.column} ${
+                    row.id % 2 == 0 && ""
                   }`}
                 >
                   {row.getVisibleCells().map((cell) => (
