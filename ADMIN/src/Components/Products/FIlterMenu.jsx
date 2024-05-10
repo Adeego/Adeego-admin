@@ -7,7 +7,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ListFilter } from "lucide-react";
 
-const FilterMenu = ({activeStatus}) => {
+const FilterMenu = ({ activeStatus, toggleActiveStatus, resetFilter }) => {
   return (
     <DropdownMenu className=" bg-red-200">
       <DropdownMenuTrigger className="outline-none">
@@ -24,26 +24,24 @@ const FilterMenu = ({activeStatus}) => {
         <DropdownMenuCheckboxItem
           className='bg-white data-[state="checked"]:bg-neutral-100/60 rounded-[0.4rem]'
           checked={activeStatus === "all"}
-          onCheckedChange={() => {
-            toggleActiveStatus("all");
-          }}
+          onCheckedChange={resetFilter}
         >
           <small className="text-xs">All items</small>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           className='bg-white data-[state="checked"]:bg-neutral-100/60 rounded-[0.4rem]'
-          checked={activeStatus === "in_stock"}
+          checked={activeStatus === "In stock"}
           onCheckedChange={() => {
-            toggleActiveStatus("in_stock");
+            toggleActiveStatus("In stock");
           }}
         >
           <small className="text-xs">In stock</small>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           className='bg-white data-[state="checked"]:bg-neutral-100/60 rounded-[0.4rem]'
-          checked={activeStatus === "no_stock"}
+          checked={activeStatus === "Out of stock"}
           onCheckedChange={() => {
-            toggleActiveStatus("no_stock");
+            toggleActiveStatus("Out of stock");
           }}
         >
           <small className="text-xs">Out of stock</small>

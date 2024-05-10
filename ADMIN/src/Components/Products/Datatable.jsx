@@ -31,16 +31,19 @@ export function DataTable({ columns, data }) {
   return (
     <>
       <div className="border border-neutral-300 rounded-[0.4rem]">
-        <Table className=''>
-          <TableHeader className=''>
+        <Table className="">
+          <TableHeader className="">
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow className='border-neutral-300' key={headerGroup.id}>
+              <TableRow className="border-neutral-300" key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className={`text-neutral-500  ${
-                        header.id === "Name" || header.id === "Price"
+                      className={`text-neutral-500 text-xs ${
+                        header.id === "Name" ||
+                        header.id === "Price" ||
+                        header.id === "Image" ||
+                        header.id === "actions"
                           ? "visible"
                           : "hidden"
                       }`}
@@ -73,6 +76,7 @@ export function DataTable({ columns, data }) {
                       className={`text-xs md:text-sm ${
                         cell.column.id === "Name" ||
                         cell.column.id === "Price" ||
+                        cell.column.id === "Image" ||
                         cell.column.id === "actions"
                           ? "visible"
                           : "hidden"

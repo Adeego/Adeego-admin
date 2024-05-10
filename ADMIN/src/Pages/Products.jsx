@@ -3,11 +3,6 @@ import ProductsTable from "../Components/Products/ProductsTable";
 import staffStore from "../Store/UserStore";
 import { useNavigate } from "react-router-dom";
 
-// components;
-import { Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-
 const Products = () => {
   const staff = staffStore((state) => state.staff);
   const navigate = useNavigate();

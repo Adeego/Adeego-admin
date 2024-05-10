@@ -1,8 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import ActionsMenu from "./ActionsMenu";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Image } from "lucide-react";
 
 export const columns = [
+  {
+    accessorKey: "Image",
+    header: () => <div className="text-left">Image</div>,
+    cell: ({ row }) => {
+      const [imageLoading, setImageLoading] = useState(true);
+      const image = row.original.Image;
+      return (
+        <div className="h-10 aspect-square rounded-[0.3rem] overflow-hidden bg-neutral-200">
+          <div
+            className={`w-full h-full ${
+              !imageLoading && "hidden"
+            } grid place-items-center`}
+          >
+            <Image className="stroke-neutral-600" size={16} />
+          </div>
+
+          <img
+            src={image}
+            onLoad={(e) => {
+              setImageLoading(false);
+              console.log("image");
+            }}
+            className={`${imageLoading && "hidden"}`}
+            alt="image"
+          />
+        </div>
+      );
+    },
+  },
   {
     accessorKey: "Name",
     header: () => <div className="text-left">Name</div>,
@@ -34,12 +66,12 @@ export const columns = [
   },
   {
     accessorKey: "Price",
-    header: () => <div className="text-right">Price</div>,
+    header: () => <div className="text-left">Price</div>,
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("Price"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
-        currency: "Usd",
+        currency: "KES",
       }).format(amount);
 
       return <div className="text-right font-medium text-xs">{formatted}</div>;
@@ -49,7 +81,6 @@ export const columns = [
     id: "actions",
     cell: ({ row, props }) => {
       const product = row.original;
-      console.log(row)
       const deleteProduct = () => {
         console.log("delete");
       };

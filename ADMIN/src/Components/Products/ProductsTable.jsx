@@ -26,7 +26,7 @@ const LoadingSkeleton = () => {
     <div>
       <div className="w-full flex flex-col rounded-[0.4rem] overflow-hidden gap-[2px]">
         {[...Array(20)].map((_, i) => (
-          <div className="w-ful">
+          <div key={i} className="w-full">
             <Skeleton
               className={`w-full h-16 ${
                 i % 2 == 0 ? "bg-neutral-200" : "bg-neutral-200/60"
@@ -48,10 +48,21 @@ const ProductsTable = () => {
   const [error, setError] = useState(null);
 
   // Products availability state;
-  const [activeStatus, SetActiveStatus] = useState("all");
+  const [activeStatus, setActiveStatus] = useState("");
 
   const toggleActiveStatus = (value) => {
-    SetActiveStatus(value);
+    setActiveStatus(value);
+
+    const filteredData = persistentData.filter(
+      (product) => product.Stock === value
+    );
+
+    setData(filteredData);
+  };
+
+  const resetFilter = () => {
+    setData(persistentData);
+    setActiveStatus("all");
   };
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -106,22 +117,16 @@ const ProductsTable = () => {
     }
   };
 
- 
-
-  // Filter data based on search term
-  const filteredData = data.filter((product) => {
-    // Customize search logic as needed
-    return (
-      product.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.Stock.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.Category.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
-
+  // Search for a product
   const SearchData = (value) => {
     setSearchTerm(value);
-    const results = data.filter((product) => {
+
+    const activeCategoryItems =
+      activeStatus === "all" || activeStatus === ""
+        ? persistentData
+        : persistentData.filter((product) => product.Stock === activeStatus);
+
+    const results = activeCategoryItems.filter((product) => {
       return (
         product.id.toLowerCase().includes(value.toLowerCase()) ||
         product.Name.toLowerCase().includes(value.toLowerCase()) ||
@@ -131,7 +136,8 @@ const ProductsTable = () => {
     });
 
     if (value === "") {
-      setData(persistentData);
+      setData(activeCategoryItems);
+      return;
     }
 
     setData(results);
@@ -167,6 +173,7 @@ const ProductsTable = () => {
             <FilterMenu
               activeStatus={activeStatus}
               toggleActiveStatus={toggleActiveStatus}
+              resetFilter={resetFilter}
             />
           </div>
           <Button
@@ -188,7 +195,7 @@ const ProductsTable = () => {
         ) : error ? (
           <div></div>
         ) : (
-          <DataTable columns={columns} data={filteredData} />
+          <DataTable columns={columns} data={data} />
         )}{" "}
       </section>
     </>
