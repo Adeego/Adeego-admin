@@ -168,12 +168,6 @@ const OrdersTable = () => {
             /> */}
             <OrderFilterMenu />
           </div>
-          <button className="w-10 aspect-square md:aspect-auto md:w-auto md:h-10 rounded-[0.4rem] border-neutral-200 grid place-items-center bg-black text-white md:flex gap-2 md:px-4 hover:bg-neutral-800 ">
-            <CirclePlus className="h-[15px] w-[15px] stroke-white  select-none pointer-events-none" />
-            <span className="hidden md:block text-xs font-medium select-none pointer-events-none">
-              Add Product
-            </span>
-          </button>
         </div>
       </header>
 

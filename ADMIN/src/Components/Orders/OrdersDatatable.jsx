@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/table";
 import { useState } from "react";
 import { DataTablePagination } from "../Products/Pagination";
+import OrdersViewMenu from "./OrdersViewMenu";
 
 export function OrdersDataTable({ columns, data }) {
   // column visibilty;
@@ -37,6 +38,9 @@ export function OrdersDataTable({ columns, data }) {
 
   return (
     <section className="relative">
+      <div className="w-full h-10 hidden md:flex justify-end absolute -top-14">
+        <OrdersViewMenu table={table} />
+      </div>
       <div className="border border-neutral-300 rounded-[0.4rem] w-full !overflow-hidden">
         <Table className="">
           <TableHeader className="">
