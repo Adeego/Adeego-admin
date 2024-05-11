@@ -13,7 +13,6 @@ const Orders = () => {
       navigate('/login')
     }
   }, [])
-  
 
   return (
     <div className='bg-LightGrey items-center'>

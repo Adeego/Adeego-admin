@@ -32,9 +32,9 @@ const Products = () => {
       <div className='flex justify-end items-center h-16 p-3 w-full'>
         <button className='bg-DeepGreen text-LightGrey h-8 w-36 text-sm font-bold rounded-xl' onClick={handleTrue}>ADD PRODUCT</button>
       </div>
-      {/* <div className='flex justify-end items-center h-16 p-3 w-full'>
+      <div className='flex justify-end items-center h-16 p-3 w-full'>
         <button className='bg-DeepGreen text-LightGrey h-8 w-36 text-sm font-bold rounded-xl' onClick={handleJsonredirect}>JSON</button>
-      </div> */}
+      </div>
       <div className=' bg-white rounded-xl  w-full shadow-lg'>
         <ProductsTable/>
       </div>
