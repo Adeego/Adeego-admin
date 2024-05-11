@@ -32,7 +32,7 @@ import { toast } from "sonner";
 const DeleteDialog = ({ product }) => {
   const deleteProduct = () => {
     toast(
-      <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-end gap-2 w-full">
+      <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
         <CircleCheck size={16} className="stroke-neutral-600 md:text-sm text-neutral-800" />
         Product successfully deleted
       </div>
@@ -56,7 +56,7 @@ const DeleteDialog = ({ product }) => {
       <div className="grid w-full items-center gap-1.5">
         <Label
           htmlFor="productName"
-          className="text-xs text-neutral-600 font-normal md:text-sm"
+          className="text-xs text-neutral-600 font-normal md:text-sm select-none pointer-events-none"
         >
           Enter the product name{" "}
           <span className="font-semibold">{product.Name}</span> to continue:

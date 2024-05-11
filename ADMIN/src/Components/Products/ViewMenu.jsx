@@ -66,7 +66,7 @@ const ViewMenu = ({ table }) => {
           .filter((column) => column.getCanHide())
           .map((column) => {
             const columnName =
-              column.id === formatColumns
+              column.id === "Size"
                 ? "Quantity"
                 : column.id === "Stock"
                 ? "Availability"

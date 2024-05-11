@@ -166,7 +166,11 @@ const Sidebar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="w-full h-14 border border-neutral-200 flex items-center justify-between p-2 fixed top-0 left-0 pl-20 lg:pl-[200px] xl:pl-60 md:border-b bg-white z-20">
+      <nav
+        className={`w-full h-14 border border-neutral-200 flex items-center justify-between p-2 fixed top-0 left-0 md:pl-20  md:border-b bg-white z-20 ${
+          isSideBarEnlarged ? "lg:pl-[200px] xl:pl-60" : "lg:pl-20 xl:pl-20"
+        } transition-all duration-200`}
+      >
         {/* breadcrumbs */}
         <div className="hidden md:block">
           <BreadcrumbComp />

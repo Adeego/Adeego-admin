@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 
 export function DataTablePagination({ table }) {
   return (
-    <div className="flex items-center w-full max-w-sm ml-auto">
+    <div className="flex items-center w-full max-w-lg ml-auto">
       <div className="flex-1 text-sm text-muted-foreground hidden">
         {table.getFilteredSelectedRowModel().rows.length} of{" "}
         {table.getFilteredRowModel().rows.length} row(s) selected.
@@ -31,7 +31,7 @@ export function DataTablePagination({ table }) {
               table.setPageSize(Number(value));
             }}
           >
-            <SelectTrigger className="h-8 w-[80px] rounded-[0.3rem] border border-neutral-400 text-xs p-2">
+            <SelectTrigger className="h-8 md:h-10 w-[80px] md:w-[100px] rounded-[0.3rem] border border-neutral-400 text-xs md:text-sm p-2">
               <SelectValue placeholder={`${table.getState().pagination.pageSize}`} />
             </SelectTrigger>
             <SelectContent side="top" className='bg-white rounded-[0.3rem]'>
@@ -54,7 +54,7 @@ export function DataTablePagination({ table }) {
         <div className="flex items-center space-x-2">
           <Button
             variant="outline"
-            className=" h-8 w-8 p-0 lg:flex  disabled:border-neutral-300 disabled:text-neutral-500 rounded-[0.3rem] hidden"
+            className=" h-8 w-8 md:h-10 md:w-10 p-0 lg:flex  disabled:border-neutral-300 disabled:text-neutral-500 rounded-[0.3rem] hidden"
             onClick={() => table.setPageIndex(0)}
             disabled={!table.getCanPreviousPage()}
           >
@@ -63,7 +63,7 @@ export function DataTablePagination({ table }) {
           </Button>
           <Button
             variant="outline"
-            className="h-8 w-8 p-0 flex border  disabled:border-neutral-300 disabled:text-neutral-500 rounded-[0.3rem]"
+            className="h-8 w-8 md:h-10 md:w-10 p-0 flex border  disabled:border-neutral-300 disabled:text-neutral-500 rounded-[0.3rem]"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
@@ -72,7 +72,7 @@ export function DataTablePagination({ table }) {
           </Button>
           <Button
             variant="outline"
-            className="h-8 w-8 p-0 border  disabled:border-neutral-300 disabled:text-neutral-500 rounded-[0.3rem]"
+            className="h-8 w-8 md:h-10 md:w-10 p-0 border  disabled:border-neutral-300 disabled:text-neutral-500 rounded-[0.3rem]"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
@@ -81,7 +81,7 @@ export function DataTablePagination({ table }) {
           </Button>
           <Button
             variant="outline"
-            className=" h-8 w-8 p-0 lg:flex   disabled:border-neutral-300 disabled:text-neutral-500 rounded-[0.3rem] hidden"
+            className=" h-8 w-8 md:h-10 md:w-10 p-0 lg:flex   disabled:border-neutral-300 disabled:text-neutral-500 rounded-[0.3rem] hidden"
             onClick={() => table.setPageIndex(table.getPageCount() - 1)}
             disabled={!table.getCanNextPage()}
           >
