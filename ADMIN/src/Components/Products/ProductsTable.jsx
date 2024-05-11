@@ -211,7 +211,7 @@ const ProductsTable = () => {
           <div></div>
         ) : (
           <DataTable columns={columns} data={data} />
-        )}{" "}
+        )}
       </section>
     </>
   );

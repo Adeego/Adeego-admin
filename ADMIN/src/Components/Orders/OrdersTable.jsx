@@ -8,7 +8,6 @@ import {
   doc,
 } from "firebase/firestore";
 import app from "../../../firebaseConfig";
-import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 import EditOrders from "./EditOrder";
 import Receipt from "./Receipt";
 
@@ -17,11 +16,34 @@ import { CirclePlus, Search, SlidersHorizontal } from "lucide-react";
 
 // components;
 import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
 import OrderFilterMenu from "./OrderFIlterMenu";
+import { OrdersDataTable } from "./OrdersDatatable";
+import { columns } from "./Columns";
+
+// components;
+const LoadingSkeleton = () => {
+  return (
+    <div>
+      <div className="w-full flex flex-col rounded-[0.4rem] overflow-hidden gap-[2px]">
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className="w-full">
+            <Skeleton
+              className={`w-full h-16 ${
+                i % 2 == 0 ? "bg-neutral-200" : "bg-neutral-200/60"
+              } `}
+              key={i}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const OrdersTable = () => {
   // State variables for data, loading and error
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -90,14 +112,6 @@ const OrdersTable = () => {
     // }
   };
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error.message}</p>;
-  }
-
   // Filter data based on search term
   const filteredData = data.filter((order) => {
     // Customize search logic as needed
@@ -128,7 +142,6 @@ const OrdersTable = () => {
     startIndex,
     startIndex + productsPerPage
   );
-
   return (
     <>
       <header className="flex items-center justify-between px-2 gap-2">
@@ -169,73 +182,16 @@ const OrdersTable = () => {
           <h1 className="font-bold tracking-tight text-2xl">Orders</h1>
           <small className="text-neutral-500">Manage your orders</small>
         </div>
+        {loading ? (
+          <LoadingSkeleton />
+        ) : error ? (
+          <div></div>
+        ) : (
+          <OrdersDataTable columns={columns} data={data} />
+        )}
       </section>
     </>
   );
 };
 
 export default OrdersTable;
-
-// <div className='p-3 w-full text-LightGrey'>
-//   <div className='bg-transparent w-96 h-12 p-2 rounded-md justify-center' >
-//     <select onChange={(e) => setStatusOption(e.target.value)} className='bg-LightGrey h-8 w-4/12 outline-none text-CharcoalGrey p-2 rounded-xl'>
-//       {orderStatusOptions.map(option => (
-//         <option key={option.status} value={option.value}>{option.status}</option>
-//       ))}
-//     </select>
-//   </div>
-
-//   <table className="table-fixed w-full">
-//     <thead className="table-header-group h-8 font-bold text-DarkGrey m-3 ">
-//       <tr className='rounded-lg text-left text-sm '>
-//         <th className='w-48'>Order Id</th>
-//         <th className='w-48'>Customer Id</th>
-//         <th className=''>Order Status</th>
-//         <th className=''>Status</th>
-//         <th className=''>Items</th>
-//         <th className=''>Amount</th>
-//         <th className=''>Payment Status</th>
-//         <th className='w-48'>Action</th>
-//       </tr>
-//     </thead>
-//     <tbody className=''>
-//       {displayedOrders.map((order) => (
-//         <tr className='border-y-1 border-slate-200 h-10 text-CharcoalGrey p-1 text-left font-medium font-sans text-xs' key={order.id}>
-//           <td className=' '>{order.id}</td>
-//           <td className=' '>{order.UserId}</td>
-//           <td className=' '>{order.OrderStatus}</td>
-//           <td className=' '>{order.Status}</td>
-//           <td className=' '>{order.TotalItems}</td>
-//           <td className=' '>{order.TotalAmount}</td>
-//           <td className=' '>{order.PaymentStatus}</td>
-//           <td className=' flex, justify-around'>
-//             <button className='bg-Gold h-6 p-1 text-xs font-bold rounded-xl text-CharcoalGrey' onClick={() => handleEditTrue(order.id)}>EDIT</button>
-//             {
-//               editingOrderId === order.id && (
-//                 <EditOrders handleEditFalse={handleEditFalse} order={order}/>
-//             )}
-//             {
-//               receiptOrderId === order.id && (
-//                 <Receipt handleReceiptFalse={handleReceiptFalse} orderData={order}/>
-//             )}
-//             <button className=' bg-green-700 h-6 p-1 text-xs font-bold rounded-xl text-LightGrey ml-1' onClick={() => handleReceiptTrue(order.id)}>INVOICE</button>
-//             <button className=' bg-Red h-6 p-1 text-xs font-bold rounded-xl text-LightGrey ml-1' onClick={() => deleteOrder(order.id)}>Delete</button>
-//           </td>
-//         </tr>
-//       ))}
-//     </tbody>
-//   </table>
-
-//   {/* Pagination controls (adjust styling as needed) */}
-//   <div className="bg-transparent h-10 flex items-center justify-end mt-5">
-//     <div className=' h-8 w-32 bg-LightGrey flex justify-around items-center mr-2 rounded-2xl border-2 border-CharcoalGrey'>
-//       <button className='w-8 h-8 text-CharcoalGrey rounded-2xl flex justify-center items-center' onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
-//         <GrLinkPrevious />
-//       </button>
-//       <span className='w-16 h-8 bg-CharcoalGrey flex justify-center items-center text-sm'> {currentPage} of {Math.ceil(data.length / productsPerPage)} </span>
-//       <button className='w-8 h-8 text-CharcoalGrey rounded-2xl flex justify-center items-center' onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(data.length / productsPerPage)}>
-//         <GrLinkNext />
-//       </button>
-//     </div>
-//   </div>
-// </div>

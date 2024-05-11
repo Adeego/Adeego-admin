@@ -9,6 +9,7 @@ import Login from "./Auth/Login";
 import Logout from "./Pages/Logout";
 import Json from "./Components/Products/Json";
 import { NextUIProvider } from "@nextui-org/react";
+
 import { Toaster } from "@/components/ui/sonner";
 
 const App = () => {

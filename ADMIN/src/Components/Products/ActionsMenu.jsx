@@ -31,12 +31,14 @@ import { toast } from "sonner";
 
 const DeleteDialog = ({ product }) => {
   const deleteProduct = () => {
-    toast(
-      <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
-        <CircleCheck size={16} className="stroke-neutral-600 md:text-sm text-neutral-800" />
-        Product successfully deleted
-      </div>
-    );
+
+  toast(
+    <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
+      <CircleCheck size={16} className="stroke-neutral-600 md:text-sm text-neutral-800" />
+      Product successfully deleted
+    </div>
+  );
+
   };
 
   return (
