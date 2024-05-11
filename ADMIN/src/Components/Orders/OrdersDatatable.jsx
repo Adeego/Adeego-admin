@@ -37,25 +37,33 @@ export function OrdersDataTable({ columns, data }) {
 
   return (
     <section className="relative">
-      <div className="border border-neutral-300 rounded-[0.4rem]">
+      <div className="border border-neutral-300 rounded-[0.4rem] w-full !overflow-hidden">
         <Table className="">
           <TableHeader className="">
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow className="border-neutral-300" key={headerGroup.id}>
+              <TableRow
+                className="border-neutral-300 relative"
+                key={headerGroup.id}
+              >
                 {headerGroup.headers.map((header) => {
+                  console.log(header);
                   return (
                     <TableHead
                       key={header.id}
+                      className={`text-neutral-500 text-xs md:text-sm text-left  ${
+                        header.id === "Id" ||
+                        header.id === "TotalAmount" ||
+                        header.id === "actions"
+                          ? "visible"
+                          : "hidden md:table-cell"
+                      }`}
                       //   className={`text-neutral-500 text-xs md:text-sm text-left ${
                       //     header.id === "Id" ||
-                      //     header.id === "OrderStatus" ||
-                      //     header.id === "TotalItems" ||
                       //     header.id === "TotalAmount" ||
                       //     header.id === "actions"
                       //       ? "visible"
-                      //       : header.id !== "BuyPrice"
-                      //       ? "invisible absolute z-[-1] md:visible md:relative md:z-0"
-                      //       : "invisible absolute z-[-1] xl:visible xl:relative md:z-0"
+                      //       :  "invisible absolute z-[-1] md:visible md:relative md:z-0"
+                      //     //   : "invisible absolute z-[-1] xl:visible xl:relative md:z-0"
                       //   }`}
                     >
                       {header.isPlaceholder
@@ -83,23 +91,26 @@ export function OrdersDataTable({ columns, data }) {
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
+                      className={`text-neutral-700 text-xs md:!text-sm text-left ${
+                        cell.column.id === "Id" ||
+                        cell.column.id === "TotalAmount" ||
+                        cell.column.id === "actions"
+                          ? "visible"
+                          : "hidden md:table-cell"
+                      }`}
                       //   className={`text-xs md:text-sm ${
                       //     cell.column.id === "Id" ||
-                      //     cell.column.id === "OrderStatus" ||
-                      //     cell.column.id === "TotalItems" ||
                       //     cell.column.id === "TotalAmount" ||
                       //     cell.column.id === "actions"
                       //       ? "visible"
-                      //       : cell.column.id !== "BuyPrice"
-                      //       ? "invisible absolute z-[-1] md:visible md:relative md:z-0"
-                      //       : "invisible absolute z-[-1] xl:visible xl:relative md:z-0"
+                      //       : "invisible absolute z-[-1] md:visible md:relative md:z-0"
+                      //     //   : "invisible absolute z-[-1] xl:visible xl:relative md:z-0"
                       //   }`}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
                       )}
-                      {/* {cell.column.id} */}
                     </TableCell>
                   ))}
                 </TableRow>
