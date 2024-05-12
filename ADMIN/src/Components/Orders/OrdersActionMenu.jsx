@@ -29,7 +29,7 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import EditOrder from "./EditOrder";
-import MoreDetailsComp from "./ModeDetails";
+import MoreDetailsComp from "./MoreDetails";
 
 const DeleteDialog = ({ order }) => {
   const deleteOrder = () => {

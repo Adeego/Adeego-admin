@@ -28,17 +28,19 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
+import DetailsComp from "./Details";
 
 const DeleteDialog = ({ product }) => {
   const deleteProduct = () => {
-
-  toast(
-    <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
-      <CircleCheck size={16} className="stroke-neutral-600 md:text-sm text-neutral-800" />
-      Product successfully deleted
-    </div>
-  );
-
+    toast(
+      <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
+        <CircleCheck
+          size={16}
+          className="stroke-neutral-600 md:text-sm text-neutral-800"
+        />
+        Product successfully deleted
+      </div>
+    );
   };
 
   return (
@@ -101,13 +103,16 @@ const ActionsMenu = ({ deleteProduct, product }) => {
             align="end"
             className="bg-white border-neutral-200/60 rounded-[0.4rem] flex flex-col gap-1"
           >
-            <DropdownMenuItem className="gap-2 items-center hover:!bg-neutral-200/60 transition rounded-lg">
-              Edit
+            <div className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition !cursor-pointer  rounded-[0.3rem] w-full text-left p-2">
+              <DetailsComp product={product} />
+            </div>
+            <DropdownMenuItem className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition !cursor-pointer  rounded-[0.3rem] w-full text-left ">
+              Edit product
             </DropdownMenuItem>
             <DialogTrigger asChild>
               <DropdownMenuItem
                 onClick={deleteProduct}
-                className="gap-2 items-center text-red-500 hover:!bg-red-100/60 active:bg-red-200 rounded-[0.4rem]"
+                className="gap-2 items-center text-xs md:text-sm text-red-500 hover:!bg-red-100/60 active:bg-red-200 rounded-[0.4rem]"
               >
                 Delete
               </DropdownMenuItem>
