@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import DetailsComp from "./Details";
+import EditProduct from "./EditProduct";
 
 const DeleteDialog = ({ product }) => {
   const deleteProduct = () => {
@@ -106,9 +107,9 @@ const ActionsMenu = ({ deleteProduct, product }) => {
             <div className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition !cursor-pointer  rounded-[0.3rem] w-full text-left p-2">
               <DetailsComp product={product} />
             </div>
-            <DropdownMenuItem className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition !cursor-pointer  rounded-[0.3rem] w-full text-left ">
-              Edit product
-            </DropdownMenuItem>
+            <div className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition !cursor-pointer  rounded-[0.3rem] w-full text-left">
+              <EditProduct product={product} />
+            </div>
             <DialogTrigger asChild>
               <DropdownMenuItem
                 onClick={deleteProduct}
