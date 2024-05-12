@@ -14,9 +14,9 @@ import { useState } from "react";
 const OrderItem = ({ item }) => {
   const [hasImageLoaded, setImageLoaded] = useState(true);
   return (
-    <div className="relative flex gap-2 p-2 border rounded-[0.3rem]">
+    <div className="relative flex gap-2 p-2 md:p-0 border md:border-none rounded-[0.3rem]">
       <div className="">
-        <div className="h-10 rounded-[0.3rem] overflow-hidden aspect-square relative">
+        <div className="h-10 md:h-12 rounded-[0.3rem] overflow-hidden aspect-square relative">
           <img
             src={item.Image}
             alt={item.Name}
@@ -33,9 +33,9 @@ const OrderItem = ({ item }) => {
         </div>
       </div>
       <div className="flex flex-col gap-1 leading-none">
-        <p className="text-xs font-medium text-neutral-800">{item.Name}</p>
+        <p className="text-xs md:text-sm font-medium text-neutral-800">{item.Name}</p>
         <div>
-          <p className="text-xs text-neutral-500">
+          <p className="text-xs md:text-sm text-neutral-500">
             Quantity : <span>{item.Quantity}</span>{" "}
           </p>
         </div>
@@ -54,11 +54,11 @@ const EditForm = ({ order }) => {
     order;
   return (
     <>
-      <form action="" className="p-2 px-4 flex flex-col gap-4">
+      <form action="" className="p-2 px-4 md:px-0 flex flex-col gap-4">
         <div className="grid w-full items-center gap-1.5">
           <Label
             htmlFor="userId"
-            className="text-xs text-neutral-700 font-normal md:text-sm select-none pointer-events-none"
+            className="font-medium text-xs md:text-sm select-none pointer-events-none"
           >
             User ID
           </Label>
@@ -67,34 +67,34 @@ const EditForm = ({ order }) => {
             id="userId"
             value={userId}
             placeholder="User Id"
-            className="border-neutral-200 rounded-[0.4rem] text-xs placeholder:text-neutral-500 w-full"
+            className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
           />
         </div>
         <div className="grid w-full items-center gap-1.5">
           <Label
             htmlFor="orderStatus"
-            className="text-xs text-neutral-700 font-normal md:text-sm select-none pointer-events-none"
+            className="font-medium text-xs md:text-sm select-none pointer-events-none"
           >
             Delivery Status
           </Label>
           <Select>
-            <SelectTrigger className="w-full text-neutral-700 text-xs border-neutra-200 rounded-[0.3rem]">
+            <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
               <SelectValue placeholder={`${status}`} />
             </SelectTrigger>
             <SelectContent className=" bg-white rounded-[0.3rem]">
-              <SelectItem className="text-xs" value="pending">
+              <SelectItem className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]" value="pending">
                 Pending
               </SelectItem>
-              <SelectItem className="text-xs" value="processin">
+              <SelectItem className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]" value="processin">
                 Processing
               </SelectItem>
-              <SelectItem className="text-xs" value="out_for_delivery">
+              <SelectItem className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]" value="out_for_delivery">
                 Out for delivery
               </SelectItem>
-              <SelectItem className="text-xs" value="delivered">
+              <SelectItem className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]" value="delivered">
                 Delivered
               </SelectItem>
-              <SelectItem className="text-xs" value="cancelled">
+              <SelectItem className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]" value="cancelled">
                 Cancelled
               </SelectItem>
             </SelectContent>
@@ -103,7 +103,7 @@ const EditForm = ({ order }) => {
         <div className="grid w-full items-center gap-1.5">
           <Label
             htmlFor="items"
-            className="text-xs text-neutral-700 font-normal md:text-sm select-none pointer-events-none"
+            className="font-medium text-xs md:text-sm select-none pointer-events-none"
           >
             Total Items
           </Label>
@@ -112,13 +112,13 @@ const EditForm = ({ order }) => {
             id="items"
             value={totalItems}
             placeholder="Total items"
-            className="border-neutral-200 rounded-[0.4rem] text-xs placeholder:text-neutral-500 w-full"
+            className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm placeholder:text-neutral-500 w-full focus:border-neutral-600"
           />
         </div>
         <div className="grid w-full items-center gap-1.5">
           <Label
             htmlFor="amount"
-            className="text-xs text-neutral-700 font-normal md:text-sm select-none pointer-events-none"
+            className="font-medium text-xs md:text-sm  select-none pointer-events-none"
           >
             Amount
           </Label>
@@ -127,38 +127,38 @@ const EditForm = ({ order }) => {
             value={totalAmount}
             id="amount"
             placeholder="Amount"
-            className="border-neutral-200 rounded-[0.4rem] text-xs placeholder:text-neutral-500 w-full"
+            className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm placeholder:text-neutral-500 w-full focus:border-neutral-600"
           />
         </div>
         <div className="grid w-full items-center gap-1.5">
           <Label
             htmlFor="orderStatus"
-            className="text-xs text-neutral-700 font-normal md:text-sm select-none pointer-events-none"
+            className="font-medium text-xs md:text-sm select-none pointer-events-none"
           >
             Payment Status
           </Label>
           <Select>
-            <SelectTrigger className="w-full text-neutral-700 text-xs border-neutra-200 rounded-[0.3rem]">
+            <SelectTrigger className="w-full text-xs md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
               <SelectValue placeholder={`${paymentStatus}`} />
             </SelectTrigger>
             <SelectContent className=" bg-white rounded-[0.3rem]">
-              <SelectItem className="text-xs" value="Unpaid">
+              <SelectItem className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]" value="Unpaid">
                 Unpaid
               </SelectItem>
-              <SelectItem className="text-xs" value="Paid">
+              <SelectItem className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]" value="Paid">
                 Paid
               </SelectItem>
             </SelectContent>
           </Select>
         </div>
       </form>
-      <hr className="my-6 border-neutral-100" />
+      <hr className="my-6 border-neutral-100 md:border-neutral-200" />
       <div className="">
-        <div className="grid w-full items-center gap-1.5 px-4">
-          <Label className="text-xs text-neutral-700 font-normal md:text-sm select-none pointer-events-none">
+        <div className="grid w-full items-center gap-1.5 px-4 md:px-0">
+          <Label className="text-xs md:text-sm select-none pointer-events-none">
             Available items
           </Label>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 py-2 md:py-4">
             {items.map((item, i) => (
               <OrderItem key={i} item={item} />
             ))}

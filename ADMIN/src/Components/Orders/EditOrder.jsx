@@ -24,7 +24,7 @@ import Receipt from "./Receipt";
 import { Link } from "react-router-dom";
 import { Image, X } from "lucide-react";
 import EditForm from "./EditForm";
-
+import LgEditForm from "./LgEditForm";
 
 function EditOrder({ order }) {
   // states for input fields
@@ -176,36 +176,44 @@ function EditOrder({ order }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        <button className="gap-2 items-center text-xs md:text-sm hover:bg-neutral-100 hover:md:!bg-neutral-200/60 transition !cursor-pointer text-start p-2 rounded-[0.3rem]">
-          Edit Order
-        </button>
-      </DrawerTrigger>
-      <DrawerContent className="bg-white  rounded-t-[1.4rem]">
-        <div className="h-full overflow-y-scroll max-h-[85vh]">
-          <DrawerHeader className="text-left">
-            <DrawerTitle>Edit Order</DrawerTitle>
-            <DrawerDescription className="text-xs text-neutral-500">
-              Make changes to your profile here. Click save when you're done.
-            </DrawerDescription>
-          </DrawerHeader>
-          <EditForm order={orderObj} />
-          <DrawerFooter className="">
-            <div className="flex items-center justify-end gap-2 w-full">
-              <DrawerClose asChild className="max-w-fit">
-                <button className="p-2 px-6 border border-neutral-200 text-xs  rounded-[0.3rem]">
-                  cancel
-                </button>
-              </DrawerClose>
-              <button className="p-2 px-6 bg-black text-white text-xs  rounded-[0.3rem]">
-                confirm
-              </button>
+    <>
+      <div className="md:hidden">
+        <Drawer open={open} onOpenChange={setOpen}>
+          <DrawerTrigger asChild>
+            <button className="gap-2 items-center text-xs md:text-sm hover:bg-neutral-100 hover:md:!bg-neutral-200/60 transition !cursor-pointer text-start p-2 rounded-[0.3rem]">
+              Edit Order
+            </button>
+          </DrawerTrigger>
+          <DrawerContent className="bg-white  rounded-t-[1.4rem]">
+            <div className="h-full overflow-y-scroll max-h-[85vh]">
+              <DrawerHeader className="text-left">
+                <DrawerTitle>Edit Order</DrawerTitle>
+                <DrawerDescription className="text-xs text-neutral-500">
+                  Make changes to your order here. Click save when you're
+                  done.
+                </DrawerDescription>
+              </DrawerHeader>
+              <EditForm order={orderObj} />
+              <DrawerFooter className="">
+                <div className="flex items-center justify-end gap-2 w-full">
+                  <DrawerClose asChild className="max-w-fit">
+                    <button className="p-2 px-6 border border-neutral-200 text-xs  rounded-[0.3rem]">
+                      cancel
+                    </button>
+                  </DrawerClose>
+                  <button className="p-2 px-6 bg-black text-white text-xs  rounded-[0.3rem]">
+                    confirm
+                  </button>
+                </div>
+              </DrawerFooter>
             </div>
-          </DrawerFooter>
-        </div>
-      </DrawerContent>
-    </Drawer>
+          </DrawerContent>
+        </Drawer>
+      </div>
+      <div className="hidden md:block w-full">
+        <LgEditForm order={orderObj} />
+      </div>
+    </>
   );
 }
 

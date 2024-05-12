@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import EditOrder from "./EditOrder";
+import MoreDetailsComp from "./ModeDetails";
 
 const DeleteDialog = ({ order }) => {
   const deleteOrder = () => {
@@ -88,13 +89,13 @@ const OrdersActionMenu = ({ order }) => {
             align="end"
             className="bg-white border-neutral-200/60 rounded-[0.4rem] flex flex-col gap-1"
           >
-            <div className="md-hidden">
+            <div className="w-full">
               <EditOrder order={order} />
             </div>
-            <DropdownMenuItem className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition rounded-lg !cursor-pointer">
-              Details
-            </DropdownMenuItem>
-            <DropdownMenuItem className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition rounded-lg !cursor-pointer">
+            <div className="w-full">
+              <MoreDetailsComp order={order} />
+            </div>
+            <DropdownMenuItem className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition !cursor-pointer p-1.5 px-2 rounded-[0.3rem] w-full text-left">
               Invoice
             </DropdownMenuItem>
             <DialogTrigger asChild>
