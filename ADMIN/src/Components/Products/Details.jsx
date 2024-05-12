@@ -143,7 +143,7 @@ const DetailsMobileComp = ({ product }) => {
                 <img
                   src={product.Image}
                   onLoad={() => setImageHasLoaded(true)}
-                  className={`${hasImageLoaded ? "block" : "hidden"}`}
+                  className={`${hasImageLoaded ? "block" : "hidden"} w-full h-full object-cover`}
                   alt={product.Name}
                 />
                 <Skeleton
@@ -195,7 +195,7 @@ const DetailsLgComp = ({ product }) => {
                 <img
                   src={product.Image}
                   onLoad={() => setImageHasLoaded(true)}
-                  className={`${hasImageLoaded ? "block" : "hidden"}`}
+                  className={`${hasImageLoaded ? "block" : "hidden"} w-full h-full object-cover`}
                   alt={product.Name}
                 />
                 <Skeleton

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { getFirestore, collection, doc, updateDoc } from "firebase/firestore";
 import app from "../../../firebaseConfig";
 import EditProductMobile from "./EditProductMobile";
+import EditProductLg from "./EditProductLg";
 
 function EditProduct({ handleEditFalse, product }) {
   // states for input fields
@@ -124,6 +125,7 @@ function EditProduct({ handleEditFalse, product }) {
   return (
     <>
       <EditProductMobile product={productObj} productFxns={productFxns} />
+      <EditProductLg product={productObj} productFxns={productFxns} />
     </>
   );
 }

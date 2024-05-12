@@ -54,6 +54,30 @@ const EditForm = ({ product, productFxns }) => {
         />
       </div>
       <div className="grid w-full items-center gap-1.5">
+        <Label className="font-medium text-xs md:text-sm select-none pointer-events-none">
+          Availability
+        </Label>
+        <Select>
+          <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
+            <SelectValue placeholder={`${product.stock}`} />
+          </SelectTrigger>
+          <SelectContent className=" bg-white rounded-[0.3rem]">
+            <SelectItem
+              className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+              value="available"
+            >
+              In stock
+            </SelectItem>
+            <SelectItem
+              className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+              value="not_available"
+            >
+              Out of stock{" "}
+            </SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+      <div className="grid w-full items-center gap-1.5">
         <Label
           htmlFor="b_price"
           className="font-medium text-xs md:text-sm select-none pointer-events-none"
