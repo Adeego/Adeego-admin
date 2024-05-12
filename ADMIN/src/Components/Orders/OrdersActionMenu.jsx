@@ -28,6 +28,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
+import EditOrder from "./EditOrder";
 
 const DeleteDialog = ({ order }) => {
   const deleteOrder = () => {
@@ -87,19 +88,19 @@ const OrdersActionMenu = ({ order }) => {
             align="end"
             className="bg-white border-neutral-200/60 rounded-[0.4rem] flex flex-col gap-1"
           >
-            <DropdownMenuItem className="gap-2 items-center hover:!bg-neutral-200/60 transition rounded-lg !cursor-pointer">
-              Edit
-            </DropdownMenuItem>
-            <DropdownMenuItem className="gap-2 items-center hover:!bg-neutral-200/60 transition rounded-lg !cursor-pointer">
+            <div className="md-hidden">
+              <EditOrder order={order} />
+            </div>
+            <DropdownMenuItem className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition rounded-lg !cursor-pointer">
               Details
             </DropdownMenuItem>
-            <DropdownMenuItem className="gap-2 items-center hover:!bg-neutral-200/60 transition rounded-lg !cursor-pointer">
+            <DropdownMenuItem className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition rounded-lg !cursor-pointer">
               Invoice
             </DropdownMenuItem>
             <DialogTrigger asChild>
               <DropdownMenuItem
                 //   onClick={deleteProduct}
-                className="gap-2 items-center text-red-500 hover:!bg-red-100/60 hover:!text-red-600 active:bg-red-200 rounded-[0.4rem] !cursor-pointer"
+                className="gap-2 items-center text-xs md:text-sm text-red-500 hover:!bg-red-100/60 hover:!text-red-600 active:bg-red-200 rounded-[0.4rem] !cursor-pointer"
               >
                 Delete
               </DropdownMenuItem>

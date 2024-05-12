@@ -50,7 +50,6 @@ export function OrdersDataTable({ columns, data }) {
                 key={headerGroup.id}
               >
                 {headerGroup.headers.map((header) => {
-                  console.log(header);
                   return (
                     <TableHead
                       key={header.id}
