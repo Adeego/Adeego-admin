@@ -1,163 +1,316 @@
-import React, { useState } from 'react'
-import app from '../../../firebaseConfig';
-import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
+import React, { useState } from "react";
+import app from "../../../firebaseConfig";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+} from "firebase/firestore";
 
-function AddProduct ({ handleFalse }) {
-    // State variables for adding new product
-    
-    const [name, setName] = useState('');
-    const [category, setCategory] = useState('');
-    const [stock, setStock] = useState('');
-    const [size, setSize] = useState('');
-    const [buyPrice, setBuyPrice] = useState('');
-    const [price, setPrice] = useState('');
-    const [image, setImage] = useState('');
-    const [description, setDescription] = useState('');
-    const [keywords, setKeywords] = useState([]);
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-    const categoryOptions = [
-      {category: ''},
-      {category: 'DryFoods'},
-      {category: 'Drinks'},
-      {category: 'Dairy'},
-      {category: 'Snacks'},
-      {category: 'OilButter'},
-      {category: 'OtherFoods'},
-      {category: 'Gas'},
-      {category: 'PersonalCare'},
-      {category: 'Cleaning'},
-      {category: 'BabyCare'},
-      {category: 'HomeM'},
-      {category: 'OtherE'},
-    ];
+import { CirclePlus } from "lucide-react";
 
-    const stockOptions = [
-      {stock: ''},
-      {stock: 'In stock'},
-      {stock: 'Out of stock'},
-    ];
+function AddProduct({ handleFalse }) {
+  // State variables for adding new product
 
-    const handleName = (e) => {
-      setName(e.target.value);
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("");
+  const [stock, setStock] = useState("");
+  const [size, setSize] = useState("");
+  const [buyPrice, setBuyPrice] = useState("");
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
+  const [description, setDescription] = useState("");
+  const [keywords, setKeywords] = useState([]);
+
+  const categoryOptions = [
+    { value: "DryFoods", label: "Dry Foods" },
+    { value: "OilButter", label: "Oil & Butter" },
+    { value: "OtherFoods", label: "Other Foods" },
+    { value: "BabyCare", label: "Baby Care" },
+    { value: "PersonalCare", label: "Personal Care" },
+    { value: "Cleaning", label: "Cleaning" },
+    { value: "OtherEssentials", label: "Other Essentials" },
+  ];
+
+  const stockOptions = [
+    { stock: "" },
+    { stock: "In stock" },
+    { stock: "Out of stock" },
+  ];
+
+  const handleName = (value) => {
+    setName(value);
+  };
+
+  const handleCategory = (value) => {
+    setCategory(value);
+  };
+
+  const handleStock = (value) => {
+    setStock(value);
+  };
+
+  const handleSize = (value) => {
+    setSize(value);
+  };
+
+  const handleBuyPrice = (value) => {
+    setBuyPrice(value);
+  };
+
+  const handlePrice = (value) => {
+    setPrice(value);
+  };
+
+  const handleImage = (value) => {
+    setImage(value);
+  };
+
+  const handleDescription = (value) => {
+    setDescription(value);
+  };
+
+  const handleKeywords = (value) => {
+    setKeywords(value);
+  };
+
+  // Clear input fields
+  const clearInputFields = () => {
+    setName("");
+    setCategory("");
+    setStock("");
+    setSize("");
+    setBuyPrice("");
+    setPrice("");
+    setImage("");
+    setDescription("");
+    setKeywords([]);
+  };
+
+  // Add new product
+  const addNewProduct = async () => {
+    try {
+      const db = getFirestore(app);
+      const productRef = collection(db, "Products");
+      const productData = {
+        Name: name,
+        Category: category,
+        Stock: stock,
+        Size: size,
+        BuyPrice: parseFloat(buyPrice),
+        Price: parseFloat(price),
+        Image: image,
+        Description: description,
+        Keywords: keywords,
+        CreatedAt: serverTimestamp(),
+        UpdatedAt: serverTimestamp(),
+      };
+
+      const newProductRef = await addDoc(productRef, productData);
+      console.log("Document written with ID: ", newProductRef.id);
+
+      clearInputFields();
+      handleFalse();
+
+      return newProductRef.id;
+    } catch (error) {
+      handleFalse();
+      console.error(error);
+      throw error;
     }
-
-    const handleCategory = (e) => {
-      setCategory(e.target.value);
-    }
-
-    const handleStock = (e) => {
-      setStock(e.target.value);
-    }
-
-    const handleSize = (e) => {
-      setSize(e.target.value);
-    }
-
-    const handleBuyPrice = (e) => {
-      setBuyPrice(e.target.value);
-    }
-
-    const handlePrice = (e) => {
-      setPrice(e.target.value);
-    }
-
-    const handleImage = (e) => {
-      setImage(e.target.value);
-    }
-
-    const handleDescription = (e) => {
-      setDescription(e.target.value);
-    }
-
-    const handleKeywords = (e) => {
-      setKeywords(e.target.value);
-    }
-
-    // Clear input fields
-    const clearInputFields = () => {
-      setName('');
-      setCategory('');
-      setStock('');
-      setSize('');
-      setBuyPrice('');
-      setPrice('');
-      setImage('');
-      setDescription('');
-      setKeywords([]);
-    }
-
-    // Add new product
-    const addNewProduct = async () => {
-        try {
-          const db = getFirestore(app);
-          const productRef = collection(db, 'Products');
-          const productData = {
-            Name: name,
-            Category: category,
-            Stock: stock,
-            Size: size,
-            BuyPrice: parseFloat(buyPrice),
-            Price: parseFloat(price),
-            Image: image,
-            Description: description,
-            Keywords: keywords,
-            CreatedAt: serverTimestamp(),
-            UpdatedAt: serverTimestamp(),
-          };
-      
-          const newProductRef = await addDoc(productRef, productData);
-          console.log('Document written with ID: ', newProductRef.id);
-
-          clearInputFields();
-          handleFalse();
-          
-          return newProductRef.id;
-        } catch (error) {
-            handleFalse();
-            console.error(error);
-            throw error;
-        }
-    };
+  };
 
   return (
-    <div className='w-full'>
-      <div className='bg-transparent absolute top-0 bottom-0 left-0 right-0'>
-        <div className='p-2 h-full backdrop-blur-lg flex justify-center items-center'>
-          <div className='flex flex-col h-3/6 w-3/6 bg-DeepGreen p-5 justify-between rounded-2xl'>
-            <div className='flex flex-row h-10 w-full justify-between mt-10'>
-              <input type="text" onChange={handleName} value={name} placeholder='Name' className='bg-LightGrey h-8 w-4/12 outline-none text-CharcoalGrey p-2 rounded-xl' />
-              {/* <input type="text" onChange={handleCategory} value={category} placeholder='Category' className='bg-LightGrey h-8 w-4/12 outline-none text-CharcoalGrey p-2 rounded-xl' /> */}
-              <select onChange={handleCategory} className='bg-LightGrey h-8 w-4/12 outline-none text-CharcoalGrey p-2 rounded-xl'>
-                {categoryOptions.map(option => (
-                  <option key={option.category} value={option.category}>{option.category}</option>
-                ))}
-              </select>
-              {/* <input type="text" onChange={handleStock} value={stock} placeholder='Stock' className='bg-LightGrey h-8 w-3/12 outline-none text-CharcoalGrey p-2 rounded-xl' /> */}
-              <select onChange={handleStock} className='bg-LightGrey h-8 w-3/12 outline-none text-CharcoalGrey p-2 rounded-xl'>
-                {stockOptions.map(option => (
-                  <option key={option.stock} value={option.stock}>{option.stock}</option>
-                ))}
-              </select>
-            </div>
-            <div className='flex flex-row h-10 w-full justify-between'>
-              <input type="text" onChange={handleSize} value={size} placeholder='Size' className='bg-LightGrey h-8 w-4/12 outline-none text-CharcoalGrey p-2 rounded-xl' />
-              <input type='number' onChange={handleBuyPrice} value={buyPrice} placeholder='Buy Price' className='bg-LightGrey h-8 w-4/12 outline-none text-CharcoalGrey p-2 rounded-xl' />
-              <input type='number' onChange={handlePrice} value={price} placeholder='Sell Price' className='bg-LightGrey h-8 w-3/12 outline-none text-CharcoalGrey p-2 rounded-xl' />
-            </div>
-            <div className='flex flex-row h-10 w-full justify-between'>
-              <input type="text" onChange={handleImage} value={image} placeholder='Image' className='bg-LightGrey h-8 w-4/12 outline-none text-CharcoalGrey p-2 rounded-xl' />
-              <input type="text" onChange={handleDescription} value={description} placeholder='Description' className='bg-LightGrey h-8 w-4/12 outline-none text-CharcoalGrey p-2 rounded-xl' />
-              <input type="text" onChange={handleKeywords} value={keywords} placeholder='Keywords' className='bg-LightGrey h-8 w-3/12 outline-none text-CharcoalGrey p-2 rounded-xl' />
-            </div>
-            <div className='flex flex-row h-10 w-full justify-between'>
-              <button className='bg-Red h-8 w-36 text-sm font-bold rounded-xl text-LightGrey' onClick={() => handleFalse()}>CANCEL</button>
-              <button className='bg-Gold h-8 w-36 text-sm font-bold rounded-xl text-CharcoalGrey' onClick={() => addNewProduct()}>ADD PRODUCT</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-};
+    <div>
+      <AlertDialog>
+        <AlertDialogTrigger className="w-full">
+          <button className="w-10 aspect-square md:aspect-auto md:w-auto md:h-10 rounded-[0.4rem] border-neutral-200 grid place-items-center bg-black text-white md:flex gap-2 md:px-4 hover:bg-neutral-800 ">
+            <CirclePlus className="h-[15px] w-[15px] stroke-white  select-none pointer-events-none" />
+            <span className="hidden md:block text-xs font-medium select-none pointer-events-none">
+              Add Product
+            </span>
+          </button>
+        </AlertDialogTrigger>
+        <AlertDialogContent className="bg-white !rounded-[0.5rem]">
+          <AlertDialogHeader>
+            <AlertDialogTitle>Add product</AlertDialogTitle>
+            <AlertDialogDescription>
+              Add a new product and click continue when you're done.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
 
-export default AddProduct
+          <form action="" className="p-2 px-4 md:px-0 flex flex-col gap-4">
+            <div className="grid w-full items-center gap-1.5">
+              <Label
+                htmlFor="userId"
+                className="font-medium text-xs md:text-sm select-none pointer-events-none"
+              >
+                Name <span className="text-red-500">*</span>
+              </Label>
+              <Input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => handleName(e.target.value)}
+                placeholder="Name"
+                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+              />
+            </div>
+            <div className="grid w-full items-center gap-1.5">
+              <Label
+                htmlFor="description"
+                className="font-medium text-xs md:text-sm select-none pointer-events-none"
+              >
+                Description
+              </Label>
+              <Textarea
+                id="name"
+                value={description}
+                onChange={(e) => {
+                  handleDescription(e.target.value);
+                }}
+                placeholder="Description"
+                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+              />
+            </div>
+            <div className="grid w-full items-center gap-1.5">
+              <Label
+                htmlFor="orderStatus"
+                className="font-medium text-xs md:text-sm select-none pointer-events-none"
+              >
+                Category
+              </Label>
+              <Select>
+                <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
+                  <SelectValue placeholder={`category`} />
+                </SelectTrigger>
+                <SelectContent className=" bg-white rounded-[0.3rem]">
+                  {categoryOptions.map((option) => (
+                    <SelectItem
+                      key={option.value}
+                      className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                      value={option.value}
+                    >
+                      {option.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="grid w-full items-center gap-1.5">
+              <Label className="font-medium text-xs md:text-sm select-none pointer-events-none">
+                Availability
+              </Label>
+              <Select>
+                <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
+                  <SelectValue placeholder={`In stock`} />
+                </SelectTrigger>
+                <SelectContent className=" bg-white rounded-[0.3rem]">
+                  <SelectItem
+                    className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                    value="available"
+                  >
+                    In stock
+                  </SelectItem>
+                  <SelectItem
+                    className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                    value="not_available"
+                  >
+                    Out of stock{" "}
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="grid w-full items-center gap-1.5">
+              <Label
+                htmlFor="b_price"
+                className="font-medium text-xs md:text-sm select-none pointer-events-none"
+              >
+                Buying price <span className="text-red-500">*</span>
+              </Label>
+              <Input
+                type="number"
+                id="b_price"
+                value={buyPrice}
+                onChange={(e) => {
+                  handleBuyPrice(e.target.value);
+                }}
+                placeholder="Buying Price"
+                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+              />
+            </div>
+            <div className="grid w-full items-center gap-1.5">
+              <Label
+                htmlFor="price"
+                className="font-medium text-xs md:text-sm select-none pointer-events-none"
+              >
+                Price <span className="text-red-500">*</span>
+              </Label>
+              <Input
+                type="number"
+                id="price"
+                value={price}
+                onChange={(e) => {
+                  handlePrice(e.target.value);
+                }}
+                placeholder="Price"
+                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+              />
+            </div>
+            <div className="grid w-full items-center gap-1.5">
+              <Label
+                htmlFor="price"
+                className="font-medium text-xs md:text-sm select-none pointer-events-none"
+              >
+                Quantity <span className="text-red-500">*</span>
+              </Label>
+              <Input
+                type="text"
+                id="size"
+                value={size}
+                onChange={(e) => {
+                  handleSize(e.target.value);
+                }}
+                placeholder="Quantity"
+                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+              />
+            </div>
+          </form>
+
+          <AlertDialogFooter>
+            <AlertDialogCancel className="border border-neutral-300 rounded-[0.3rem]">
+              Cancel
+            </AlertDialogCancel>
+            <AlertDialogAction className="bg-black text-white rounded-[0.3rem]">
+              Continue
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </div>
+  );
+}
+
+export default AddProduct;

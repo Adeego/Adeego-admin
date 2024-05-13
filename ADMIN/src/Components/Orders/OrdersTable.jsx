@@ -142,6 +142,8 @@ const OrdersTable = () => {
     startIndex,
     startIndex + productsPerPage
   );
+
+  console.log(data)
   return (
     <>
       <header className="flex items-center justify-between px-2 gap-2">

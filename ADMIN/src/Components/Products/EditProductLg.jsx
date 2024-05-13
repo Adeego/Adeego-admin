@@ -1,21 +1,22 @@
 import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-  } from "@/components/ui/alert-dialog";
-  import EditForm from "./EditForm";
-  
-  const EditProductLg = ({ product,productFxns }) => {
-    return (
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import EditForm from "./EditForm";
+
+const EditProductLg = ({ product, productFxns }) => {
+  return (
+    <div className="hidden md:block">
       <AlertDialog>
-        <AlertDialogTrigger className='w-full'>
-        <button className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition !cursor-pointer p-1.5 px-2 rounded-[0.3rem] w-full text-left">
+        <AlertDialogTrigger className="w-full">
+          <button className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition !cursor-pointer p-1.5 px-2 rounded-[0.3rem] w-full text-left">
             Edit product
           </button>
         </AlertDialogTrigger>
@@ -37,8 +38,8 @@ import {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-    );
-  };
-  
-  export default EditProductLg;
-  
+    </div>
+  );
+};
+
+export default EditProductLg;

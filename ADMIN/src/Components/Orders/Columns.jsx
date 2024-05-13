@@ -16,7 +16,7 @@ export const columns = [
     accessorKey: `Customer Id`,
     header: () => <div className="text-left text-xs md:text-sm">Customer Id</div>,
     cell: ({ row }) => {
-      const customerId = row.original.id;
+      const customerId = row.original.UserId;
       return <div className="text-xs md:text-sm">{customerId}</div>;
     },
   },

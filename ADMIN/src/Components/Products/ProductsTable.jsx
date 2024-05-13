@@ -21,6 +21,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import ViewMenu from "./ViewMenu";
+import AddProduct from "./AddProduct";
 
 const LoadingSkeleton = () => {
   return (
@@ -65,8 +66,6 @@ const ProductsTable = () => {
     setData(persistentData);
     setActiveStatus("all");
   };
-
-
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -156,8 +155,6 @@ const ProductsTable = () => {
     setEditingProductId(null);
   };
 
-  
-
   // active status;
 
   return (
@@ -181,9 +178,7 @@ const ProductsTable = () => {
           </div>
         </div>
         <div className="flex gap-2 shrink-0 relative">
-          <div className="relative">
-            {/* <ViewMenu /> */}
-          </div>
+          <div className="relative">{/* <ViewMenu /> */}</div>
           <div className="relative">
             <FilterMenu
               activeStatus={activeStatus}
@@ -191,12 +186,7 @@ const ProductsTable = () => {
               resetFilter={resetFilter}
             />
           </div>
-          <button className="w-10 aspect-square md:aspect-auto md:w-auto md:h-10 rounded-[0.4rem] border-neutral-200 grid place-items-center bg-black text-white md:flex gap-2 md:px-4 hover:bg-neutral-800 ">
-            <CirclePlus className="h-[15px] w-[15px] stroke-white  select-none pointer-events-none" />
-            <span className="hidden md:block text-xs font-medium select-none pointer-events-none">
-              Add Product
-            </span>
-          </button>
+          <AddProduct />
         </div>
       </header>
 

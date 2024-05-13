@@ -139,11 +139,13 @@ const DetailsMobileComp = ({ product }) => {
         <DrawerContent className="bg-white pb-4">
           <ScrollArea className="h-[80vh] ">
             <DrawerHeader className="text-left flex flex-col gap-6">
-              <div className="w-full aspect-square bg-neutral-300 rounded-[0.4rem] overflow-hidden">
+              <div className="w-full aspect-square bg-white rounded-[0.4rem] overflow-hidden relative">
                 <img
                   src={product.Image}
                   onLoad={() => setImageHasLoaded(true)}
-                  className={`${hasImageLoaded ? "block" : "hidden"} w-full h-full object-cover`}
+                  className={`${
+                    hasImageLoaded ? "block" : "hidden"
+                  } w-full h-full object-cover`}
                   alt={product.Name}
                 />
                 <Skeleton
@@ -152,7 +154,7 @@ const DetailsMobileComp = ({ product }) => {
                   }`}
                 >
                   <Image
-                    size={18}
+                    size={28}
                     className="stroke-neutral-400"
                     stroke-width={3}
                   />
@@ -190,25 +192,21 @@ const DetailsLgComp = ({ product }) => {
           className="bg-white w-full sm:max-w-lg flex flex-col gap-12 text-sm pt-10"
         >
           <ScrollArea className="h-full flex flex-col">
-            <SheetHeader className='text-left flex flex-col gap-4'>
-              <div className="w-full aspect-square bg-neutral-300 rounded-[0.4rem] overflow-hidden">
+            <SheetHeader className="text-left flex flex-col gap-4">
+              <div className="w-full aspect-square bg-neutral-300 rounded-[0.4rem] overflow-hidden relative">
                 <img
                   src={product.Image}
                   onLoad={() => setImageHasLoaded(true)}
-                  className={`${hasImageLoaded ? "block" : "hidden"} w-full h-full object-cover`}
+                  className={`${
+                    hasImageLoaded ? "block" : "hidden"
+                  } w-full h-full object-cover absolute`}
                   alt={product.Name}
                 />
                 <Skeleton
-                  className={`absolute w-full h-full top-0 left-0 grid place-items-center bg-neutral-300 ${
+                  className={`w-full h-full grid place-items-center bg-neutral-300 ${
                     hasImageLoaded && "hidden"
                   }`}
-                >
-                  <Image
-                    size={18}
-                    className="stroke-neutral-400"
-                    stroke-width={3}
-                  />
-                </Skeleton>
+                />
               </div>
               <SheetTitle className="tracking-tight">
                 {product ? (
