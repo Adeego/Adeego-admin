@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NewOrder from "../Components/Orders/NewOrder";
 import OrdersTable from "../Components/Orders/OrdersTable";
 import { useNavigate } from "react-router-dom";
 import staffStore from "../Store/UserStore";
+
+// sound;
+import ringSound from "../Assets/ring.wav";
 
 const Orders = () => {
   const staff = staffStore((state) => state.staff);
