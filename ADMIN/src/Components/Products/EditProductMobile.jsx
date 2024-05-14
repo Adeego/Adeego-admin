@@ -11,7 +11,7 @@ import {
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import EditForm from "./EditForm";
-const EditProductMobile = ({ product }) => {
+const EditProductMobile = ({ product, productFxns, handleApplyChanges }) => {
   return (
     <div className="md:hidden">
       <Drawer>
@@ -28,7 +28,7 @@ const EditProductMobile = ({ product }) => {
                 Make changes to your product here. Click save when you're done.
               </DrawerDescription>
             </DrawerHeader>
-            <EditForm product={product} />
+            <EditForm product={product} productFxns={productFxns} />
             <DrawerFooter className="">
               <div className="flex items-center justify-end gap-2 w-full">
                 <DrawerClose asChild className="max-w-fit">
@@ -36,9 +36,14 @@ const EditProductMobile = ({ product }) => {
                     cancel
                   </button>
                 </DrawerClose>
-                <button className="p-2 px-6 bg-black text-white text-xs  rounded-[0.3rem]">
-                  confirm
-                </button>
+                <DrawerClose>
+                  <button
+                    onClick={handleApplyChanges}
+                    className="p-2 px-6 bg-black text-white text-xs  rounded-[0.3rem]"
+                  >
+                    confirm
+                  </button>
+                </DrawerClose>
               </div>
             </DrawerFooter>
           </ScrollArea>

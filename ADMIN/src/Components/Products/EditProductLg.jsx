@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import EditForm from "./EditForm";
 
-const EditProductLg = ({ product, productFxns }) => {
+const EditProductLg = ({ product, productFxns, handleApplyChanges }) => {
   return (
     <div className="hidden md:block">
       <AlertDialog>
@@ -32,8 +32,13 @@ const EditProductLg = ({ product, productFxns }) => {
             <AlertDialogCancel className="border border-neutral-300 rounded-[0.3rem]">
               Cancel
             </AlertDialogCancel>
-            <AlertDialogAction className="bg-black text-white rounded-[0.3rem]">
-              Continue
+            <AlertDialogAction className="!scale-100">
+              <button
+                onClick={handleApplyChanges}
+                className="p-2 px-6 bg-black text-white  rounded-[0.3rem]"
+              >
+                confirm
+              </button>{" "}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

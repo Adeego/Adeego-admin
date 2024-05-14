@@ -40,43 +40,6 @@ function EditProduct({ handleEditFalse, product }) {
     updateKeywords: (value) => setKeywords(value),
   };
 
-  //Functions to handle input fields changes
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
-  };
-
-  const handleStockChange = (e) => {
-    setStock(e.target.value);
-  };
-
-  const handleSizeChange = (e) => {
-    setSize(e.target.value);
-  };
-
-  const handleBuyPriceChange = (e) => {
-    setBuyPrice(e.target.value);
-  };
-
-  const handlePriceChange = (e) => {
-    setPrice(e.target.value);
-  };
-
-  const handleImageChange = (e) => {
-    setImage(e.target.value);
-  };
-
-  const handleDescriptionChange = (e) => {
-    setDescription(e.target.value);
-  };
-
-  const handleKeywordsChange = (e) => {
-    setKeywords(e.target.value);
-  };
-
   // Clear input fields
   const clearInputFields = () => {
     setName("");
@@ -113,9 +76,8 @@ function EditProduct({ handleEditFalse, product }) {
       console.log("Product updated successfully!");
 
       // Clear input fields
-      clearInputFields();
+      // clearInputFields();
       // Call handleEditFalse if needed
-      handleEditFalse();
     } catch (error) {
       // Handle errors (e.g., display an error message to the user)
       console.error("Error updating product:", error);
@@ -124,8 +86,8 @@ function EditProduct({ handleEditFalse, product }) {
 
   return (
     <>
-      <EditProductMobile product={productObj} productFxns={productFxns} />
-      <EditProductLg product={productObj} productFxns={productFxns} />
+      <EditProductMobile product={productObj} productFxns={productFxns} handleApplyChanges={handleApplyChanges} />
+      <EditProductLg product={productObj} productFxns={productFxns} handleApplyChanges={handleApplyChanges} />
     </>
   );
 }

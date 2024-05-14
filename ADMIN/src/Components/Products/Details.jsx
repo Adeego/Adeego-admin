@@ -48,7 +48,7 @@ const DetailsBody = ({ product }) => {
   return (
     <div className="px-4 flex flex-col gap-6 md:px-0 md:mt-4">
       <div className="flex flex-col gap-3">
-        <div className="text-xs md:text-sm font-medium border border-green-300 bg-green-100 rounded-[0.3rem] max-w-fit p-1 px-2">
+        <div className={`${product.Stock === "In stock" ? "bg-green-100 border-green-300" : "bg-red-100 border-red-300"} text-xs md:text-sm font-medium border rounded-[0.3rem] max-w-fit p-1 px-2`}>
           {product.Stock === "In stock" ? (
             <p className="text-green-500">In stock</p>
           ) : (

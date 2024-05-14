@@ -1,3 +1,7 @@
+// firebase stuff;
+import { getFirestore, deleteDoc, doc } from "firebase/firestore";
+import app from "../../../firebaseConfig";
+
 import { Button } from "@/components/ui/button";
 import {
   Check,
@@ -32,16 +36,34 @@ import DetailsComp from "./Details";
 import EditProduct from "./EditProduct";
 
 const DeleteDialog = ({ product }) => {
-  const deleteProduct = () => {
-    toast(
-      <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
-        <CircleCheck
-          size={16}
-          className="stroke-neutral-600 md:text-sm text-neutral-800"
-        />
-        Product successfully deleted
-      </div>
-    );
+  const [confirmText, setConfirmText] = useState("");
+
+  const id = product.id;
+
+  const deleteProduct = async () => {
+    if (confirmText === product.Name) {
+      try {
+        const db = getFirestore(app);
+        const productRef = doc(db, "Products", id);
+        await deleteDoc(productRef);
+        console.log(`Product with ID ${id} deleted successfully`);
+        toast(
+          <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
+            <CircleCheck
+              size={16}
+              className="stroke-neutral-600 md:text-sm text-neutral-800"
+            />
+            Product successfully deleted
+          </div>
+        );
+        setConfirmText(" ");
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
+    } else {
+      alert("Enter the confimation text");
+    }
   };
 
   return (
@@ -70,6 +92,11 @@ const DeleteDialog = ({ product }) => {
           type="text"
           id="productName"
           placeholder=""
+          value={confirmText}
+          onChange={(e) => {
+            setConfirmText(e.target.value);
+            console.log(confirmText, product.Name);
+          }}
           className="border-neutral-200 rounded-[0.4rem] text-xs"
         />
       </div>

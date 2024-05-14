@@ -107,6 +107,7 @@ const ProductsTable = () => {
   }, []);
 
   // Function to delete a product
+  
   const deleteProduct = async (productId) => {
     try {
       const db = getFirestore(app);

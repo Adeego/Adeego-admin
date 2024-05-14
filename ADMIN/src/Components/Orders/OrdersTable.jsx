@@ -7,52 +7,43 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
-import app from "../../../firebaseConfig";
-import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
-import EditOrders from "./EditOrder";
-import Receipt from "./Receipt";
+import app, {
+  RequestPermission,
+  onMessageListener,
+} from "../../../firebaseConfig";
 
 import ringSound from "../../Assets/ring.wav";
+import { Search } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
+import { Input } from "@/components/ui/input";
+import OrderFilterMenu from "./OrderFIlterMenu";
+import { OrdersDataTable } from "./OrdersDatatable";
+import { columns } from "./Columns";
+import { Skeleton } from "@/components/ui/skeleton";
+
+const LoadingSkeleton = () => {
+  return (
+    <div>
+      <div className="w-full flex flex-col rounded-[0.4rem] overflow-hidden gap-[2px]">
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className="w-full">
+            <Skeleton
+              className={`w-full h-16 ${
+                i % 2 == 0 ? "bg-neutral-200" : "bg-neutral-200/60"
+              } `}
+              key={i}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const OrdersTable = () => {
-  // PLAY TONE FOR NEW ORDER
-  const [audioInstance, setAudioInstance] = useState(null);
-  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
-  const newOrder = () => setIsPlayingAudio(true);
-  const processOrder = () => setIsPlayingAudio(false);
-
-  const PlayAudio = () => {
-    const sound = new Audio(ringSound);
-    sound.play();
-    sound.addEventListener("ended", () => {
-      sound.currentTime = 0;
-      sound.play();
-    });
-    setAudioInstance(sound);
-  };
-  const StopAudio = () => {
-    if (audioInstance) {
-      audioInstance.pause();
-      setAudioInstance(null);
-    }
-  };
-  useEffect(() => {
-    if (isPlayingAudio) {
-      PlayAudio();
-    } else {
-      StopAudio();
-    }
-
-    return () => {
-      if (audioInstance) {
-        audioInstance.pause();
-        setAudioInstance(null);
-      }
-    };
-  }, [isPlayingAudio]);
+  const [data, setData] = useState([]);
 
   // State variables for data, loading and error
-  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -193,8 +184,11 @@ const OrdersTable = () => {
           <div></div>
         ) : (
           <OrdersDataTable columns={columns} data={data} />
+          // <OrdersData  />
         )}
       </section>
+
+      <RequestPermission />
     </>
   );
 };

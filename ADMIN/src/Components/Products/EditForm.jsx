@@ -20,6 +20,28 @@ const categoryOptions = [
 ];
 
 const EditForm = ({ product, productFxns }) => {
+  const {
+    updateName,
+    updateCategory,
+    updateStock,
+    updateSize,
+    updateBuyPrice,
+    updatePrice,
+    updateImage,
+    updateDescription,
+    updateKeywords,
+  } = productFxns;
+  const {
+    name,
+    category,
+    stock,
+    size,
+    buyPrice,
+    price,
+    image,
+    description,
+    keywords,
+  } = product;
   return (
     <form action="" className="p-2 px-4 md:px-0 flex flex-col gap-4">
       <div className="grid w-full items-center gap-1.5">
@@ -32,8 +54,10 @@ const EditForm = ({ product, productFxns }) => {
         <Input
           type="text"
           id="name"
-          value={product.name}
-          onChange={() => {}}
+          value={name}
+          onChange={(e) => {
+            updateName(e.target.value);
+          }}
           placeholder="Name"
           className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
         />
@@ -47,8 +71,10 @@ const EditForm = ({ product, productFxns }) => {
         </Label>
         <Textarea
           id="name"
-          value={product.description}
-          onChange={() => {}}
+          value={description}
+          onChange={(e) => {
+            updateDescription(e.target.value);
+          }}
           placeholder="Description"
           className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
         />
@@ -57,20 +83,20 @@ const EditForm = ({ product, productFxns }) => {
         <Label className="font-medium text-xs md:text-sm select-none pointer-events-none">
           Availability
         </Label>
-        <Select>
+        <Select onValueChange={(value) => updateStock(value)}>
           <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
-            <SelectValue placeholder={`${product.stock}`} />
+            <SelectValue placeholder={`${stock}`} />
           </SelectTrigger>
           <SelectContent className=" bg-white rounded-[0.3rem]">
             <SelectItem
               className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
-              value="available"
+              value="In stock"
             >
               In stock
             </SelectItem>
             <SelectItem
               className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
-              value="not_available"
+              value="Out of stock"
             >
               Out of stock{" "}
             </SelectItem>
@@ -87,8 +113,10 @@ const EditForm = ({ product, productFxns }) => {
         <Input
           type="number"
           id="b_price"
-          value={product.buyPrice}
-          onChange={() => {}}
+          value={buyPrice}
+          onChange={(e) => {
+            updateBuyPrice(e.target.value);
+          }}
           placeholder="Buying Price"
           className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
         />
@@ -103,24 +131,28 @@ const EditForm = ({ product, productFxns }) => {
         <Input
           type="number"
           id="price"
-          value={product.price}
-          onChange={() => {}}
+          value={price}
+          onChange={(e) => {
+            updatePrice(e.target.value);
+          }}
           placeholder="Price"
           className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
         />
       </div>
       <div className="grid w-full items-center gap-1.5">
         <Label
-          htmlFor="price"
+          htmlFor="size"
           className="font-medium text-xs md:text-sm select-none pointer-events-none"
         >
           Quantity
         </Label>
         <Input
-          type="number"
+          type="text"
           id="size"
-          value={product.size}
-          onChange={() => {}}
+          value={size}
+          onChange={(e) => {
+            updateSize(e.target.value);
+          }}
           placeholder="Quantity"
           className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
         />
@@ -132,9 +164,9 @@ const EditForm = ({ product, productFxns }) => {
         >
           Category
         </Label>
-        <Select>
+        <Select onValueChange={(value) => updateCategory(value)}>
           <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
-            <SelectValue placeholder={`${product.category}`} />
+            <SelectValue placeholder={`${category}`} />
           </SelectTrigger>
           <SelectContent className=" bg-white rounded-[0.3rem]">
             {categoryOptions.map((option) => (
