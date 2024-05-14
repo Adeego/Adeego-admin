@@ -26,7 +26,7 @@ const customerTable = () => {
     const fetchData = async () => {
       try {
         const db = getFirestore(app);
-        const q = query(collection(db, "User"));
+        const q = query(collection(db, "User")); // change user to agents.
   
         unsubscribe = onSnapshot(q, (querySnapshot) => {
           const user = querySnapshot.docs.map((doc) => ({
