@@ -99,18 +99,7 @@ const OrdersTable = () => {
     };
   }, []);
 
-  // Function to delete a order
-  const deleteOrder = async (OrderId) => {
-    // try {
-    //   const db = getFirestore(app);
-    //   const orderRef = doc(db, 'Orders', OrderId);
-    //   await deleteDoc(orderRef);
-    //   console.log(`Product with ID ${OrderId} deleted successfully`);
-    // } catch (error) {
-    //   console.error(error);
-    //   throw error;
-    // }
-  };
+  
 
   // Filter data based on search term
   const filteredData = data.filter((order) => {

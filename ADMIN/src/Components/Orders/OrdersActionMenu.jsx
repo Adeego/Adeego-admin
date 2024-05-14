@@ -1,12 +1,7 @@
-import { Button } from "@/components/ui/button";
-import {
-  Check,
-  CircleAlert,
-  CircleCheck,
-  MoreHorizontal,
-  Pencil,
-  Trash,
-} from "lucide-react";
+import { getFirestore, deleteDoc, doc } from "firebase/firestore";
+import app from "../../../firebaseConfig";
+
+import { CircleCheck, MoreHorizontal } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -32,16 +27,31 @@ import EditOrder from "./EditOrder";
 import MoreDetailsComp from "./MoreDetails";
 
 const DeleteDialog = ({ order }) => {
-  const deleteOrder = () => {
-    toast(
-      <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
-        <CircleCheck
-          size={16}
-          className="stroke-neutral-600 md:text-sm text-neutral-800"
-        />
-        Product successfully deleted
-      </div>
-    );
+  const [confirmText, setConfirmText] = useState("");
+
+  const deleteOrder = async () => {
+    if (confirmText === order.id) {
+      try {
+        const db = getFirestore(app);
+        const orderRef = doc(db, "Orders", order.id);
+        await deleteDoc(orderRef);
+        console.log(`Product with ID ${order.id} deleted successfully`);
+        toast(
+          <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
+            <CircleCheck
+              size={16}
+              className="stroke-neutral-600 md:text-sm text-neutral-800"
+            />
+            Order successfully deleted
+          </div>
+        );
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
+    } else {
+      alert("Enter the confimation text");
+    }
   };
 
   return (
@@ -57,7 +67,25 @@ const DeleteDialog = ({ order }) => {
       <div className="flex text-xs md:text-sm items-center gap-2 bg-red-100 max-w-fit rounded-[0.3rem] p-1 pl-2 pr-3 text-red-500">
         <p>This action is unreversible</p>
       </div>
-
+      <div className="grid w-full items-center gap-1.5">
+        <Label
+          htmlFor="productName"
+          className="text-xs text-neutral-600 font-normal md:text-sm select-none pointer-events-none"
+        >
+          Enter the product name{" "}
+          <span className="font-semibold">{order.id}</span> to continue:
+        </Label>
+        <Input
+          type="text"
+          id="productName"
+          placeholder=""
+          value={confirmText}
+          onChange={(e) => {
+            setConfirmText(e.target.value);
+          }}
+          className="border-neutral-200 rounded-[0.4rem] text-xs"
+        />
+      </div>
       <DialogFooter className="flex items-end">
         <div className="flex justify-end w-full gap-2">
           <DialogClose>

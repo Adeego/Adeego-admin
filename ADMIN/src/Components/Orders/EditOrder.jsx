@@ -26,15 +26,34 @@ import { Image, X } from "lucide-react";
 import EditForm from "./EditForm";
 import LgEditForm from "./LgEditForm";
 
+const orderStatusOptions = [
+  { status: "Pending", value: "Pending" },
+  { status: "Completed", value: "Completed" },
+];
+
+const statusOptions = [
+  { status: "Pending", value: "Pending" },
+  { status: "Processing", value: "Processing" },
+  { status: "Out for Delivery", value: "Out for Delivery" },
+  { status: "Delivered", value: "Delivered" },
+  { status: "Cancelled", value: "Cancelled" },
+];
+
+const paymentOptions = [
+  { status: "Unpaid", value: "Unpaid" },
+  { status: "Paid", value: "Paid" },
+];
+
+// comp;
 function EditOrder({ order }) {
   // states for input fields
   const [userId, setUserId] = useState(order.UserId);
   const [orderStatus, setOrderStatus] = useState(order.OrderStatus);
   const [status, setStatus] = useState(order.Status);
-  const [totalItems, setTotalItems] = useState(order.TotalItems);
   const [totalAmount, setTotalAmount] = useState(order.TotalAmount);
   const [paymentStatus, setPaymentStatus] = useState(order.PaymentStatus);
   const [items, setItems] = useState(order.Items);
+  const [totalItems, setTotalItems] = useState(items.length);
   const [customer, setCustomer] = useState(null);
   const [addressId, setAddressId] = useState(null);
   const [addressData, setAddressData] = useState(null);
@@ -49,23 +68,15 @@ function EditOrder({ order }) {
     items,
   };
 
-  const orderStatusOptions = [
-    { status: "Pending", value: "Pending" },
-    { status: "Completed", value: "Completed" },
-  ];
-
-  const statusOptions = [
-    { status: "Pending", value: "Pending" },
-    { status: "Processing", value: "Processing" },
-    { status: "Out for Delivery", value: "Out for Delivery" },
-    { status: "Delivered", value: "Delivered" },
-    { status: "Cancelled", value: "Cancelled" },
-  ];
-
-  const paymentOptions = [
-    { status: "Unpaid", value: "Unpaid" },
-    { status: "Paid", value: "Paid" },
-  ];
+  const editOrderFxns = {
+    updateUserId: (value) => setUserId(value),
+    updateOrderStatus: (value) => setOrderStatus(value),
+    updateStatus: (value) => setStatus(value),
+    removeItem: (value) =>
+      setItems(items.filter((item) => item.Name !== value)),
+    updateAmount: (value) => setAmount(value),
+    updatePaymentStatus: (value) => setPaymentStatus(value),
+  };
 
   async function getData(collectionName, userId) {
     try {
@@ -164,8 +175,6 @@ function EditOrder({ order }) {
       // Handle success (e.g., display a success message or navigate back)
       alert("Product updated successfully!");
 
-      // Clear input fields
-      clearInputFields();
       // Callif needed
     } catch (error) {
       // Handle errors (e.g., display an error message to the user)
@@ -189,11 +198,10 @@ function EditOrder({ order }) {
               <DrawerHeader className="text-left">
                 <DrawerTitle>Edit Order</DrawerTitle>
                 <DrawerDescription className="text-xs text-neutral-500">
-                  Make changes to your order here. Click save when you're
-                  done.
+                  Make changes to your order here. Click save when you're done.
                 </DrawerDescription>
               </DrawerHeader>
-              <EditForm order={orderObj} />
+              <EditForm order={orderObj} editOrderFxns={editOrderFxns} />
               <DrawerFooter className="">
                 <div className="flex items-center justify-end gap-2 w-full">
                   <DrawerClose asChild className="max-w-fit">
@@ -201,7 +209,10 @@ function EditOrder({ order }) {
                       cancel
                     </button>
                   </DrawerClose>
-                  <button className="p-2 px-6 bg-black text-white text-xs  rounded-[0.3rem]">
+                  <button
+                    onClick={handleApplyChanges}
+                    className="p-2 px-6 bg-black text-white text-xs  rounded-[0.3rem]"
+                  >
                     confirm
                   </button>
                 </div>
@@ -211,7 +222,11 @@ function EditOrder({ order }) {
         </Drawer>
       </div>
       <div className="hidden md:block w-full">
-        <LgEditForm order={orderObj} />
+        <LgEditForm
+          order={orderObj}
+          editOrderFxns={editOrderFxns}
+          handleApplyChanges={handleApplyChanges}
+        />
       </div>
     </>
   );

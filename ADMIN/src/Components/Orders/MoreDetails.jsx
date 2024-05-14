@@ -45,9 +45,10 @@ const SkeletonComp = () => {
 };
 
 const DetailsBody = ({ order, user, address }) => {
-  const subTotal = order.Items.map((item) => item.Price).reduce(
-    (a, b) => a + b
-  );
+  const subTotal =
+    order.Items.length > 0
+      ? order.Items.map((item) => item.Price).reduce((a, b) => a + b)
+      : 0;
   const formatSubtotal = formatPrice(subTotal);
   const shipping = formatPrice(200);
   const totalPrice = formatPrice(subTotal + 200);
@@ -58,24 +59,28 @@ const DetailsBody = ({ order, user, address }) => {
         <div className="flex flex-col gap-3">
           <h1 className="font-semibold">Order details</h1>
           <div>
-            {order.Items.map((item, i) => {
-              const formatPrice = new Intl.NumberFormat("en-US", {
-                style: "currency",
-                currency: "KES",
-              }).format(item.Price);
-              return (
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-neutral-600">
-                      {item.Name} x {item.Quantity}
-                    </p>
+            {order.Items.length > 0 ? (
+              order.Items.map((item, i) => {
+                const formatPrice = new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "KES",
+                }).format(item.Price);
+                return (
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-neutral-600">
+                        {item.Name} x {item.Quantity}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-black font-medium">{formatPrice}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-black font-medium">{formatPrice}</p>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })
+            ) : (
+              <div className="text-neutral-500">No items available</div>
+            )}
           </div>
         </div>
         <Separator orientation="horizontal" className="bg-neutral-200" />

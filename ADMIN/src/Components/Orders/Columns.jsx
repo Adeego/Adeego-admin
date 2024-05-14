@@ -14,7 +14,9 @@ export const columns = [
   },
   {
     accessorKey: `Customer Id`,
-    header: () => <div className="text-left text-xs md:text-sm">Customer Id</div>,
+    header: () => (
+      <div className="text-left text-xs md:text-sm">Customer Id</div>
+    ),
     cell: ({ row }) => {
       const customerId = row.original.UserId;
       return <div className="text-xs md:text-sm">{customerId}</div>;
@@ -25,30 +27,46 @@ export const columns = [
     header: () => <div className="text-left text-xs md:text-sm">Items</div>,
   },
   {
-    accessorKey: "Status",
-    header: () => <div className="text-left text-xs md:text-sm ">Order Status</div>,
+    accessorKey: "OrderStatus",
+    header: () => (
+      <div className="text-left text-xs md:text-sm ">Order Status</div>
+    ),
     cell: ({ row }) => {
-      const status = row.getValue("Status");
+      const status = row.original.OrderStatus;
       const bg =
-        status === "Delivered"
+        status === "Completed"
           ? "bg-green-600"
           : status === "Pending"
           ? "bg-blue-600"
           : "bg-red-600";
 
-      const svg =
-        status === "Delivered" ? (
-          <Check size={12} strokeWidth="3" />
-        ) : status === "Pending" ? (
-          <Loader size={12} strokeWidth="3" />
-        ) : (
-          <X size={12} strokeWidth="3" />
-        );
       return (
         <div className="flex items-center gap-2">
-          <div className={`${bg} rounded-full  grid place-items-center h-[6px] aspect-square`}>
-            {/* {svg} */}
-          </div>
+          <div
+            className={`${bg} rounded-full  grid place-items-center h-[6px] aspect-square`}
+          ></div>
+          <p className={`font-medium text-xs md:text-sm`}>{status}</p>
+        </div>
+      );
+    },
+  },
+  {
+    accessorKey: "Status",
+    header: () => <div className="text-left text-xs md:text-sm ">Status</div>,
+    cell: ({ row }) => {
+      const status = row.original.Status;
+      const bg =
+        status === "Completed"
+          ? "bg-green-600"
+          : status === "Pending"
+          ? "bg-blue-600"
+          : "bg-red-600";
+
+      return (
+        <div className="flex items-center gap-2">
+          {/* <div
+            className={`${bg} rounded-full  grid place-items-center h-[6px] aspect-square`}
+          ></div> */}
           <p className={`font-medium text-xs md:text-sm`}>{status}</p>
         </div>
       );
@@ -64,12 +82,18 @@ export const columns = [
         currency: "KES",
       }).format(amount);
 
-      return <div className="text-left font-medium text-xs md:text-sm">{formatted}</div>;
+      return (
+        <div className="text-left font-medium text-xs md:text-sm">
+          {formatted}
+        </div>
+      );
     },
   },
   {
     accessorKey: "PaymentStatus",
-    header: () => <div className="text-left text-xs md:text-sm">Payment Status</div>,
+    header: () => (
+      <div className="text-left text-xs md:text-sm">Payment Status</div>
+    ),
     cell: ({ row }) => {
       const status = row.original.PaymentStatus;
       const textColor = status === "Paid" ? "bg-green-600" : "bg-red-600";
@@ -83,7 +107,9 @@ export const columns = [
 
       return (
         <div className="flex items-center gap-2">
-          <div className={`${textColor} rounded-full  grid place-items-center h-[6px] aspect-square`}>
+          <div
+            className={`${textColor} rounded-full  grid place-items-center h-[6px] aspect-square`}
+          >
             {/* {svg} */}
           </div>
           <p className={`font-medium text-xs md:text-sm`}>{status}</p>

@@ -11,11 +11,11 @@ import {
 } from "@/components/ui/alert-dialog";
 import EditForm from "./EditForm";
 
-const LgEditForm = ({ order }) => {
+const LgEditForm = ({ order, editOrderFxns, handleApplyChanges }) => {
   return (
     <AlertDialog>
-      <AlertDialogTrigger className='w-full'>
-      <button className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition !cursor-pointer p-1.5 px-2 rounded-[0.3rem] w-full text-left">
+      <AlertDialogTrigger className="w-full">
+        <button className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200/60 transition !cursor-pointer p-1.5 px-2 rounded-[0.3rem] w-full text-left">
           Edit Order
         </button>
       </AlertDialogTrigger>
@@ -26,13 +26,18 @@ const LgEditForm = ({ order }) => {
             Make changes to your order here. Click save when you're done.
           </AlertDialogDescription>
         </AlertDialogHeader>
-        <EditForm order={order} />
+        <EditForm order={order} editOrderFxns={editOrderFxns} />
         <AlertDialogFooter>
           <AlertDialogCancel className="border border-neutral-300 rounded-[0.3rem]">
             Cancel
           </AlertDialogCancel>
-          <AlertDialogAction className="bg-black text-white rounded-[0.3rem]">
-            Continue
+          <AlertDialogAction>
+            <button
+              onClick={handleApplyChanges}
+              className="p-2 px-6 bg-black text-white  rounded-[0.3rem]"
+            >
+              confirm
+            </button>
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
