@@ -12,6 +12,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import Notification from "./Components/PushNotification";
 
 import { Toaster } from "@/components/ui/sonner";
+import Agents from "./Pages/Agents";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/customers" element={<Customers />} />
+            <Route path="/agents" element={<Agents />} />
           </Routes>
           <div className="fixed z-[999]">
             <Toaster position="top-center" />

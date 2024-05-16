@@ -7,7 +7,6 @@ import {
   getPaginationRowModel,
 } from "@tanstack/react-table";
 
-
 import {
   Table,
   TableBody,
@@ -16,12 +15,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { DataTablePagination } from "./Pagination";
+import { DataTablePagination } from "../Products/Pagination";
 import { useState } from "react";
 import ViewMenu from "./ViewMenu";
 
-export function DataTable({ columns, data }) {
-  // column visibilty;
+const AgentDataTable = ({ columns, data }) => {
   const [columnVisibility, setColumnVisibility] = useState({});
 
   const table = useReactTable({
@@ -34,6 +32,8 @@ export function DataTable({ columns, data }) {
       columnVisibility,
     },
   });
+
+  console.log(data)
 
   return (
     <section className="relative">
@@ -50,14 +50,12 @@ export function DataTable({ columns, data }) {
                     <TableHead
                       key={header.id}
                       className={`text-neutral-500 text-xs md:text-sm text-left ${
-                        header.id === "Name" ||
-                        header.id === "Price" ||
-                        header.id === "Image" ||
+                        header.id === "FullName" ||
+                        header.id === "Code" ||
+                        header.id === "Wallet" ||
                         header.id === "actions"
                           ? "visible"
-                          : header.id !== "BuyPrice"
-                          ? "invisible absolute z-[-1] md:visible md:relative md:z-0"
-                          : "invisible absolute z-[-1] xl:visible xl:relative md:z-0"
+                          : "invisible absolute z-[-1] md:visible md:relative md:z-0"
                       }`}
                     >
                       {header.isPlaceholder
@@ -86,14 +84,12 @@ export function DataTable({ columns, data }) {
                     <TableCell
                       key={cell.id}
                       className={`text-xs md:text-sm ${
-                        cell.column.id === "Name" ||
-                        cell.column.id === "Price" ||
-                        cell.column.id === "Image" ||
+                        cell.column.id === "FullName" ||
+                        cell.column.id === "Code" ||
+                        cell.column.id === "Wallet" ||
                         cell.column.id === "actions"
                           ? "visible"
-                          : cell.column.id !== "BuyPrice"
-                          ? "invisible absolute z-[-1] md:visible md:relative md:z-0"
-                          : "invisible absolute z-[-1] xl:visible xl:relative md:z-0"
+                          : "invisible absolute z-[-1] md:visible md:relative md:z-0"
                       }`}
                     >
                       {flexRender(
@@ -120,4 +116,6 @@ export function DataTable({ columns, data }) {
       </div>
     </section>
   );
-}
+};
+
+export default AgentDataTable;

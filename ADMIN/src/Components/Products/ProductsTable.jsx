@@ -11,7 +11,7 @@ import {
 import app from "../../../firebaseConfig";
 
 // icons;
-import { CirclePlus, Search, SlidersHorizontal } from "lucide-react";
+import { Search } from "lucide-react";
 
 // components;
 import { DataTable } from "./Datatable";
@@ -54,7 +54,6 @@ const ProductsTable = () => {
 
   const toggleActiveStatus = (value) => {
     setActiveStatus(value);
-
     const filteredData = persistentData.filter(
       (product) => product.Stock === value
     );
@@ -107,7 +106,7 @@ const ProductsTable = () => {
   }, []);
 
   // Function to delete a product
-  
+
   const deleteProduct = async (productId) => {
     try {
       const db = getFirestore(app);
@@ -145,7 +144,6 @@ const ProductsTable = () => {
 
     setData(results);
   };
-
 
   return (
     <>
