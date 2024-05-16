@@ -1,14 +1,22 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import logo from "../../../Assets/icon.png";
+
+import {
+  Home,
+  PanelLeft,
+  ShoppingBag,
+  ShoppingCart,
+  UsersRound,
+  Users
+} from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const links = [
   {
@@ -31,22 +39,21 @@ const links = [
     icon: <UsersRound size={20} strokeWidth={2} />,
     pageLink: "/agents",
   },
+  ,
+  {
+    label: "Customers",
+    icon: <Users size={20} strokeWidth={2} />,
+    pageLink: "/customers",
+  },
 ];
 
-import {
-  Home,
-  PanelLeft,
-  ShoppingBag,
-  ShoppingCart,
-  UsersRound,
-} from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+
 
 const MobileSidebar = () => {
   const { pathname } = useLocation();
 
   return (
-    <Sheet className='z-[999]'>
+    <Sheet className="z-[999]">
       <SheetTrigger>
         {" "}
         <Button

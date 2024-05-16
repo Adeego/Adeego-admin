@@ -146,17 +146,6 @@ const ProductsTable = () => {
     setData(results);
   };
 
-  // Function to handle edit true for a specific product
-  const handleEditTrue = (productId) => {
-    setEditingProductId(productId);
-  };
-
-  // Function to handle edit false
-  const handleEditFalse = () => {
-    setEditingProductId(null);
-  };
-
-  // active status;
 
   return (
     <>

@@ -9,6 +9,7 @@ import {
   LogOut,
   Bell,
   PanelLeft,
+  Users,
   Home,
   ShoppingBag,
   ShoppingCart,
@@ -70,6 +71,11 @@ const links = [
     icon: <UsersRound className=" h-[18px] w-[18px]" strokeWidth={2} />,
     pageLink: "/agents",
   },
+  {
+    label: "Customers",
+    icon: <Users className=" h-[18px] w-[18px]" strokeWidth={2} />,
+    pageLink: "/customers",
+  }
 ];
 
 // Profile Menu;
