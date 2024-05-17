@@ -36,8 +36,8 @@ const DeleteModal = ({ agent }) => {
     if (confirmText === agent.FullName) {
       try {
         const db = getFirestore(app);
-        const productRef = doc(db, "Agents", id);
-        await deleteDoc(productRef);
+        const agentRef = doc(db, "Agents", id);
+        await deleteDoc(agentRef);
         toast(
           <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
             <CircleCheck

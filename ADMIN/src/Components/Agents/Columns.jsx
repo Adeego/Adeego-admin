@@ -4,11 +4,11 @@ import AgentsActionMenu from "./ActionsMenu";
 export const columns = [
   {
     accessorKey: "id",
-    header: () => <div className="text-left">Image</div>,
+    header: () => <div className="text-left">Agent ID</div>,
   },
   {
     accessorKey: "FullName",
-    header: () => <div className="text-left">Image</div>,
+    header: () => <div className="text-left">Name</div>,
   },
   {
     accessorKey: "Code",

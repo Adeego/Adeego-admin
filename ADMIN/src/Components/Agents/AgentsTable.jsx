@@ -14,6 +14,7 @@ import { columns } from "./Columns";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import RegisterAgent from "./RegisterAgent";
 
 const LoadingSkeleton = () => {
   return (
@@ -115,7 +116,9 @@ const AgentsTable = () => {
             />
           </div>
         </div>
-        <div className="flex gap-2 shrink-0 relative"></div>
+        <div className="flex gap-2 shrink-0 relative">
+          <RegisterAgent />
+        </div>
       </header>
 
       <section className="p-2 flex flex-col gap-6 py-4">
