@@ -20,6 +20,7 @@ import OrderFilterMenu from "./OrderFIlterMenu";
 import { OrdersDataTable } from "./OrdersDatatable";
 import { columns } from "./Columns";
 import { Skeleton } from "@/components/ui/skeleton";
+import CreateOrder from "./CreateOrder";
 
 const LoadingSkeleton = () => {
   return (
@@ -99,8 +100,6 @@ const OrdersTable = () => {
     };
   }, []);
 
-  
-
   // Filter data based on search term
   const filteredData = data.filter((order) => {
     // Customize search logic as needed
@@ -150,14 +149,9 @@ const OrdersTable = () => {
           </div>
         </div>
         <div className="flex gap-2 shrink-0 relative">
-          <div className="relative">{/* <ViewMenu /> */}</div>
-          <div className="relative">
-            {/* <FilterMenu
-              activeStatus={activeStatus}
-              toggleActiveStatus={toggleActiveStatus}
-              resetFilter={resetFilter}
-            /> */}
+          <div className="relative flex gap-2">
             <OrderFilterMenu />
+            <CreateOrder />
           </div>
         </div>
       </header>
