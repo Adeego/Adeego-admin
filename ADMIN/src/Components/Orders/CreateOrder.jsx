@@ -49,6 +49,7 @@ import {
 import { CommandList } from "cmdk";
 
 const SelectUser = () => {
+ 
   const [data, setData] = useState([]);
   const [user, setUser] = useState(null);
 
@@ -67,7 +68,10 @@ const SelectUser = () => {
           }));
           setData(user);
         });
-      } catch (error) {}
+        console.log(user);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     fetchData();
@@ -79,7 +83,7 @@ const SelectUser = () => {
       }
     };
   }, []);
-  console.log(data);
+
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -93,35 +97,40 @@ const SelectUser = () => {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[300px] p-0 rounded-[0.4rem] bg-white">
-        <Command>
-          <CommandInput placeholder="Search User..." className="h-9 bg-white" />
-          <CommandEmpty>No User found.</CommandEmpty>
-          <CommandGroup className="w-full bg-white ">
-            <CommandList className="max-h-[300px] overflow-y-scroll custom_scrollbar">
-              {data.map((userItem) => {
-                const name = userItem.FirstName + " " + userItem.LastName;
-                return (
-                  <CommandItem
-                    value={name}
-                    key={user.id}
-                    onSelect={() => {
-                      setUser(name);
-                    }}
-                    className="capitalize w-full flex items-center justify-between hover:!bg-neutral-200 "
-                  >
-                    {name}
-                    <Check
-                      className={`${
-                        name === user ? "opacity-100" : "opacity-0"
-                      }`}
-                      size={18}
-                    />
-                  </CommandItem>
-                );
-              })}
-            </CommandList>
-          </CommandGroup>
-        </Command>
+        {data.length > 0 && (
+          <Command>
+            <CommandInput
+              placeholder="Search User..."
+              className="h-9 bg-white"
+            />
+            <CommandEmpty>No User found.</CommandEmpty>
+            <CommandGroup className="w-full bg-white ">
+              <CommandList className="max-h-[300px] overflow-y-scroll custom_scrollbar">
+                {data.map((userItem) => {
+                  const name = userItem.FirstName + " " + userItem.LastName;
+                  return (
+                    <CommandItem
+                      value={name}
+                      key={name}
+                      onSelect={() => {
+                        setUser(name);
+                      }}
+                      className="capitalize w-full flex items-center justify-between hover:!bg-neutral-200 "
+                    >
+                      {name}
+                      <Check
+                        className={`${
+                          name === user ? "opacity-100" : "opacity-0"
+                        }`}
+                        size={18}
+                      />
+                    </CommandItem>
+                  );
+                })}
+              </CommandList>
+            </CommandGroup>
+          </Command>
+        )}
       </PopoverContent>
     </Popover>
   );
@@ -183,7 +192,8 @@ const CreateOrder = () => {
               <Label className="font-medium text-xs md:text-sm select-none pointer-events-none">
                 Select user <span className="text-red-500">*</span>
               </Label>
-              <SelectUser />
+              {/* Select user full search */}
+              {/* <SelectUser /> */}
             </div>
           </form>
 
