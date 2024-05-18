@@ -1,4 +1,14 @@
 import {
+  getFirestore,
+  updateDoc,
+  doc,
+  serverTimestamp,
+} from "firebase/firestore";
+
+import app from "../../../firebaseConfig";
+
+//!COMPONNTS;
+import {
   Drawer,
   DrawerClose,
   DrawerContent,
@@ -21,7 +31,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-
 
 const EditAgent = ({ agent }) => {
   // states for input fields
@@ -59,12 +68,14 @@ const EditAgent = ({ agent }) => {
       Occupation,
       Referred,
       Wallet,
+      Updated: serverTimestamp(),
     };
-
     try {
       const db = getFirestore(app);
-      await updateDoc(doc(db, "agents", agent.id), fieldsToUpdate);
-    } catch (error) {}
+      await updateDoc(doc(db, "Agents", agent.id), fieldsToUpdate);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

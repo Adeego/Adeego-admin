@@ -1,4 +1,9 @@
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+} from "firebase/firestore";
 
 import app from "../../../firebaseConfig";
 
@@ -36,6 +41,8 @@ const RegisterAgent = () => {
         Occupation: occupation,
         Referred: 0,
         Wallet: 0,
+        Updated: serverTimestamp(),
+        Joined: serverTimestamp(),
       };
 
       const newAgent = await addDoc(agentRef, agentData);

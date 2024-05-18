@@ -25,8 +25,8 @@ import {
 } from "@/components/ui/dialog";
 
 import { toast } from "sonner";
-import EditAgent from "./EditAgent";
 import MoreDetailsComp from "./MoreDetails";
+import EditAgent from "./EditAgent";
 
 const DeleteModal = ({ agent }) => {
   const [confirmText, setConfirmText] = useState("");

@@ -17,7 +17,7 @@ import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Skeleton } from "@/components/ui/skeleton";
 
-import { formatPrice } from "../../lib/utils";
+import { convertFirestoreTimestampToDate, formatPrice } from "../../lib/utils";
 import { Timestamp } from "firebase/firestore";
 
 const SkeletonComp = () => {
@@ -39,12 +39,10 @@ const SkeletonComp = () => {
 };
 
 const DetailsBody = ({ agent }) => {
-  // Date to Timestamp
-  const t = Timestamp.fromDate(new Date(agent.Joined.nanoseconds));
-  // Timestamp to Date
-  const date = t.toDate().toDateString();
-
-  console.log(date);
+  const formattedDate = convertFirestoreTimestampToDate(agent.Joined);
+  const lastUpdated = agent.Joined ? convertFirestoreTimestampToDate(agent.Updated)
+    : formattedDate;
+    console.log(agent)
   return (
     <>
       <div className="flex flex-col gap-6 text-xs md:text-sm">
@@ -108,7 +106,7 @@ const DetailsBody = ({ agent }) => {
             <h1 className="font-semibold">Registration information</h1>
             <div className="w-full flex items-center justify-between">
               <div className="text-neutral-500">Date of Registration</div>
-              <div className="text-black">{date}</div>
+              <div className="text-black">{formattedDate}</div>
             </div>
           </div>
         ) : (
@@ -117,7 +115,7 @@ const DetailsBody = ({ agent }) => {
       </div>
       <div className="mt-10 pb-3">
         <small className="text-neutral-600 text-xs md:text-md">
-          Updated on November 28, 2024
+          Updated on {lastUpdated}
         </small>
       </div>
     </>
@@ -155,7 +153,7 @@ const MoreDetailsLg = ({ agent }) => {
     <div className="hidden md:block ">
       <Sheet>
         <SheetTrigger className="w-full">
-        <button className="gap-2 text-left items-center text-xs md:text-sm  rounded-[0.4rem] !cursor-pointer hover:!bg-neutral-200 w-full h-full transition-all px-2 py-1.5">
+          <button className="gap-2 text-left items-center text-xs md:text-sm  rounded-[0.4rem] !cursor-pointer hover:!bg-neutral-200 w-full h-full transition-all px-2 py-1.5">
             More details
           </button>
         </SheetTrigger>
