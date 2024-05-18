@@ -28,18 +28,18 @@ const OrderFilterMenu = ({ activeStatus, toggleActiveStatus, resetFilter }) => {
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           className='bg-white data-[state="checked"]:bg-neutral-100/60 data-[state="checked"]:md:bg-neutral-200/60 hover:bg-neutral-100 transition rounded-[0.4rem]'
-          checked={activeStatus === "In stock"}
+          checked={activeStatus === "Pending"}
           onCheckedChange={() => {
-            toggleActiveStatus("In stock");
+            toggleActiveStatus("Pending");
           }}
         >
           <small className="text-xs md:text-sm">Pending</small>
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           className='bg-white data-[state="checked"]:bg-neutral-100/60 data-[state="checked"]:md:bg-neutral-200/60 hover:bg-neutral-100 transition rounded-[0.4rem]'
-          checked={activeStatus === "Out of stock"}
+          checked={activeStatus === "Completed"}
           onCheckedChange={() => {
-            toggleActiveStatus("Out of stock");
+            toggleActiveStatus("Completed");
           }}
         >
           <small className="text-xs md:text-sm">Completed</small>
