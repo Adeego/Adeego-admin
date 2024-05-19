@@ -47,18 +47,20 @@ const SkeletonComp = () => {
 const DetailsBody = ({ order, user, address }) => {
   const subTotal =
     order.Items.length > 0
-      ? order.Items.map((item) => item.Price).reduce((a, b) => a + b)
+      ? order.Items.map((item) => item.Price*item.Quantity).reduce((a, b) => a + b)
       : 0;
   const formatSubtotal = formatPrice(subTotal);
   const shipping = formatPrice(200);
-  const totalPrice = formatPrice(subTotal + 200);
+  const totalPrice = formatPrice(subTotal);
+
+  
   return (
     <>
-      <div className="flex flex-col gap-6 text-xs md:text-sm">
+      <div className="flex flex-col gap-6 text-xs md:text-sm mt-16">
         {/* order details */}
         <div className="flex flex-col gap-3">
           <h1 className="font-semibold">Order details</h1>
-          <div>
+          <div className="flex flex-col gap-1">
             {order.Items.length > 0 ? (
               order.Items.map((item, i) => {
                 const formatPrice = new Intl.NumberFormat("en-US", {
@@ -68,12 +70,12 @@ const DetailsBody = ({ order, user, address }) => {
                 return (
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-neutral-600">
-                        {item.Name} x {item.Quantity}
+                      <p className="text-neutral-500">
+                        {item.Quantity} x {item.Name} ({item.Size})
                       </p>
                     </div>
                     <div>
-                      <p className="text-black font-medium">{formatPrice}</p>
+                      <p className="text-black">{formatPrice}</p>
                     </div>
                   </div>
                 );
@@ -91,16 +93,16 @@ const DetailsBody = ({ order, user, address }) => {
           </div>
           <div className="w-full flex items-center justify-between">
             <div className="text-neutral-500">Shipping</div>
-            <div className="text-black">{shipping}</div>
+            <div className="text-black">N/A</div>
           </div>
-          <div className="w-full flex items-center justify-between">
+          <div className="w-full flex items-center justify-between mt-2">
             <div className="text-neutral-800">Total</div>
-            <div className="text-black">{totalPrice}</div>
+            <div className="text-black font-semibold">{totalPrice}</div>
           </div>
         </div>
         <Separator orientation="horizontal" className="bg-neutral-200" />
         {/* customer info */}
-        {user ? (
+        {user.FirstName ? (
           <div className="flex flex-col gap-3">
             <h1 className="font-semibold">Customer information</h1>
             <div className="w-full flex items-center justify-between">
@@ -222,24 +224,26 @@ const MoreDetailsLg = ({ order, user, address }) => {
         </SheetTrigger>
         <SheetContent
           side="right"
-          className="bg-white w-full sm:max-w-lg flex flex-col gap-12 text-sm md:text- py-16"
+          className="bg-white w-full sm:max-w-lg  text-sm "
         >
-          <SheetHeader>
-            <SheetTitle className="tracking-tight">
-              Order <code className="">{order.id}</code>
-            </SheetTitle>
-            <p className="text-sm text-neutral-600 leading-none">
-              Date: November 23, 2023
-            </p>
+          <ScrollArea className='w-full max-h-[100vh] flex flex-col gap-12 pb-10'>
+            <SheetHeader className='pt-8'>
+              <SheetTitle className="tracking-tight">
+                Order <code className="">{order.id}</code>
+              </SheetTitle>
+              <p className="text-sm text-neutral-600 leading-none">
+                Date: November 23, 2023
+              </p>
 
-            <p className="pt-4 text-neutral-600">
-              Status :{" "}
-              <span className="text-black font-medium">
-                {order.OrderStatus}
-              </span>
-            </p>
-          </SheetHeader>
-          <DetailsBody order={order} user={user} address={address} />
+              <p className="pt-4 text-neutral-600">
+                Status :{" "}
+                <span className="text-black font-medium">
+                  {order.OrderStatus}
+                </span>
+              </p>
+            </SheetHeader>
+            <DetailsBody order={order} user={user} address={address} />
+          </ScrollArea>
         </SheetContent>
       </Sheet>
     </div>

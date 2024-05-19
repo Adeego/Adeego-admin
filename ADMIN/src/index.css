@@ -64,3 +64,12 @@ body::-webkit-scrollbar {
     @apply font-montserrat text-slate-gray text-lg leading-7;
   }
 }
+
+.custom_scrollbar::-webkit-scrollbar {
+  background: transparent !important;
+  width: 10px;
+}
+.custom_scrollbar::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 10px;
+}

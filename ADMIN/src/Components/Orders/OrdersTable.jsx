@@ -7,19 +7,15 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
-import app, {
-  RequestPermission,
-  onMessageListener,
-} from "../../../firebaseConfig";
+import app, { RequestPermission } from "../../../firebaseConfig";
 
-import ringSound from "../../Assets/ring.wav";
 import { Search } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
 import { Input } from "@/components/ui/input";
 import OrderFilterMenu from "./OrderFIlterMenu";
 import { OrdersDataTable } from "./OrdersDatatable";
 import { columns } from "./Columns";
 import { Skeleton } from "@/components/ui/skeleton";
+import CreateOrder from "./CreateOrder";
 
 const LoadingSkeleton = () => {
   return (
@@ -42,26 +38,28 @@ const LoadingSkeleton = () => {
 
 const OrdersTable = () => {
   const [data, setData] = useState([]);
+  const [persistentData, setPersistentData] = useState([]);
 
   // State variables for data, loading and error
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // State variable for currently edited order ID
-  const [editingOrderId, setEditingOrderId] = useState(null);
-  const [receiptOrderId, setReceiptOrderId] = useState(null);
+  // filter orders availability state;
+  const [activeStatus, setActiveStatus] = useState("");
 
-  // State variables for pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(10);
-  const [statusOption, setStatusOption] = useState("");
+  const toggleActiveStatus = (value) => {
+    setActiveStatus(value);
+    const filteredData = persistentData.filter(
+      (order) => order.OrderStatus === value
+    );
 
-  // Select options for Order Status
-  const orderStatusOptions = [
-    { status: "All", value: "" },
-    { status: "Pending", value: "Pending" },
-    { status: "Completed", value: "Completed" },
-  ];
+    setData(filteredData);
+  };
+
+  const resetFilter = () => {
+    setData(persistentData);
+    setActiveStatus("all");
+  };
 
   useEffect(() => {
     let unsubscribe;
@@ -77,6 +75,7 @@ const OrdersTable = () => {
             ...doc.data(),
           }));
           setData(orders);
+          setPersistentData(orders);
           setLoading(false);
         });
 
@@ -98,40 +97,6 @@ const OrdersTable = () => {
       }
     };
   }, []);
-
-  
-
-  // Filter data based on search term
-  const filteredData = data.filter((order) => {
-    // Customize search logic as needed
-    return order.OrderStatus.toLowerCase().includes(statusOption.toLowerCase());
-  });
-
-  // Function to handle edit true for a specific order
-  const handleEditTrue = (OrderId) => {
-    setEditingOrderId(OrderId);
-  };
-
-  // Function to handle edit false
-  const handleEditFalse = () => {
-    setEditingOrderId(null);
-  };
-
-  const handleReceiptTrue = (OrderId) => {
-    setReceiptOrderId(OrderId);
-  };
-
-  const handleReceiptFalse = () => {
-    setReceiptOrderId(null);
-  };
-
-  // Calculate starting index and display appropriate orders
-  const startIndex = (currentPage - 1) * productsPerPage;
-  const displayedOrders = filteredData.slice(
-    startIndex,
-    startIndex + productsPerPage
-  );
-
   console.log(data);
   return (
     <>
@@ -150,14 +115,13 @@ const OrdersTable = () => {
           </div>
         </div>
         <div className="flex gap-2 shrink-0 relative">
-          <div className="relative">{/* <ViewMenu /> */}</div>
-          <div className="relative">
-            {/* <FilterMenu
+          <div className="relative flex gap-2">
+            <OrderFilterMenu
               activeStatus={activeStatus}
               toggleActiveStatus={toggleActiveStatus}
               resetFilter={resetFilter}
-            /> */}
-            <OrderFilterMenu />
+            />
+            <CreateOrder />
           </div>
         </div>
       </header>
