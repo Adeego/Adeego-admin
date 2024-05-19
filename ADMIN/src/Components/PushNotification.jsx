@@ -50,7 +50,7 @@ function Notification() {
     return () => {
       unsubscribe.catch((err) => console.log("failed: ", err));
     };
-  }, []);
+  }, [notification]);
 
   return (
     <div>
