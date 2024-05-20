@@ -1,10 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getMessaging, getToken, onMessage } from 'firebase/messaging';
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import tokenStore from "./src/Store/TokenStore";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import React, { useEffect } from 'react'; // Import useEffect hook
+import React, { useEffect } from "react"; // Import useEffect hook
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,7 +17,7 @@ const firebaseConfig = {
   storageBucket: "adeego-6d3be.appspot.com",
   messagingSenderId: "1038474343982",
   appId: "1:1038474343982:web:8f068b428737ebf06951bf",
-  measurementId: "G-21WJK467DS"
+  measurementId: "G-21WJK467DS",
 };
 
 // Initialize Firebase
@@ -38,12 +38,11 @@ export default app;
 //   }
 // };
 
-
-export const RequestPermission = () => { // Use uppercase for React components
+export const RequestPermission = () => {
+  // Use uppercase for React components
   const token = tokenStore((state) => state.token);
   const setToken = tokenStore((state) => state.setToken);
   const clearToken = tokenStore((state) => state.clearToken);
-
 
   // useEffect(() => {
   //   clearToken();
@@ -60,28 +59,32 @@ export const RequestPermission = () => { // Use uppercase for React components
         if (permission === "granted") {
           console.log("Notification User Permission Granted.");
 
-          const currentToken = await getToken(messaging, { vapidKey: "BFwu4x55Ol5h5cnlkt6BSUbTKfmwibmCTJJxMvgB5ib-c_UEQf9_e8StabiOTtVKGdHcxzJEpZZG0gmwvX5s0W8" });
-          console.log('Client Token: ', currentToken);
+          const currentToken = await getToken(messaging, {
+            vapidKey:
+              "BFwu4x55Ol5h5cnlkt6BSUbTKfmwibmCTJJxMvgB5ib-c_UEQf9_e8StabiOTtVKGdHcxzJEpZZG0gmwvX5s0W8",
+          });
+          console.log("Client Token: ", currentToken);
 
-          if (currentToken && !token) { // Check for both token existence and null value
-            
+          if (currentToken && !token) {
+            // Check for both token existence and null value
+
             setToken(currentToken); // Update the token in Zustand store only if it's new
             // Add the token to the Token collection (assuming a Firebase function exists)
 
-            const db = getFirestore(app)
-            const tokenRef = collection(db, "Token")
+            const db = getFirestore(app);
+            const tokenRef = collection(db, "Token");
             const newToken = await addDoc(tokenRef, {
-              Token: currentToken
-            })
-            console.log(newToken)
+              Token: currentToken,
+            });
+            console.log(newToken);
           } else {
-            console.log('Token already exists or failed to generate.');
+            console.log("Token already exists or failed to generate.");
           }
         } else {
           console.log("User Permission Denied.");
         }
       } catch (err) {
-        console.error('An error occurred:', err);
+        console.error("An error occurred:", err);
       }
     };
 
@@ -91,11 +94,10 @@ export const RequestPermission = () => { // Use uppercase for React components
   return null; // Or return any JSX content you need
 };
 
-
 export const onMessageListener = () =>
   new Promise((resolve) => {
     onMessage(messaging, (payload) => {
       resolve(payload);
-      console.log(payload)
+      console.log(payload);
     });
-});
+  });
