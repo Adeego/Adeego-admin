@@ -9,6 +9,8 @@ import {
 
 import app from "../../../firebaseConfig";
 
+import CreateOrderComp from "./ProductSearch/CreateOrderComp";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -195,6 +197,10 @@ const CreateOrder = () => {
               {/* Select user full search */}
               {/* <SelectUser /> */}
             </div>
+            <div className="grid w-full items-center gap-1.5">
+              <CreateOrderComp />
+            </div>
+            
           </form>
 
           <AlertDialogFooter>
