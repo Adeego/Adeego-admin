@@ -92,8 +92,8 @@ const DetailsBody = ({ order, user, address }) => {
             <div className="text-black">{formatSubtotal}</div>
           </div>
           <div className="w-full flex items-center justify-between">
-            <div className="text-neutral-500">Shipping</div>
-            <div className="text-black">N/A</div>
+            <div className="text-neutral-500">Delivery</div>
+            <div className="text-black">Free</div>
           </div>
           <div className="w-full flex items-center justify-between mt-2">
             <div className="text-neutral-800">Total</div>
@@ -127,7 +127,7 @@ const DetailsBody = ({ order, user, address }) => {
         {/* shipping info */}
         {address ? (
           <div className="flex flex-col gap-3">
-            <h1 className="font-semibold">Shipping information</h1>
+            <h1 className="font-semibold">Address information</h1>
             <div className="w-full flex items-center justify-between">
               <div className="text-neutral-500">Area of residence</div>
               <div className="text-black">
@@ -165,7 +165,7 @@ const DetailsBody = ({ order, user, address }) => {
           </div>
           <div className="w-full flex items-center justify-between">
             <div className="text-neutral-500">Payment method</div>
-            <div className="text-black flex items-center gap-2">MPESA</div>
+            <div className="text-black flex items-center gap-2">{order.PMethod}</div>
           </div>
         </div>
       </div>
