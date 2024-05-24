@@ -115,8 +115,6 @@ const customerTable = () => {
   //   }
   // };
 
-  
-
   // search logic
   const [searchTerm, setSearchTerm] = useState("");
   const SearchData = (value) => {
@@ -136,7 +134,7 @@ const customerTable = () => {
 
     setData(results);
   };
-
+  console.log(data);
   return (
     <>
       <header className="flex items-center justify-between px-2 gap-2">
@@ -161,7 +159,9 @@ const customerTable = () => {
       </header>
       <section className="p-2 flex flex-col gap-6 py-4">
         <div className="px-2">
-          <h1 className="font-bold tracking-tight text-2xl">Customers</h1>
+          <h1 className="font-bold tracking-tight text-2xl">
+            Customers ({data.length})
+          </h1>
           <small className="text-neutral-500">Manage your customers</small>
         </div>
         {loading ? (

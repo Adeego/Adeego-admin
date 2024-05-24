@@ -16,6 +16,10 @@ export const columns = [
     },
   },
   {
+    accessorKey: "ReferredBy",
+    header: () => <div className="text-left text-xs md:text-sm">Referred By</div>,
+  },
+  {
     accessorKey: "Tier",
     header: () => <div className="text-left text-xs md:text-sm">Tier</div>,
   },

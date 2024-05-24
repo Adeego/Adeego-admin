@@ -19,6 +19,7 @@ const EditForm = ({ customer, editCustomerFxns }) => {
     addressId,
     cartId,
     tier,
+    referredBy,
   } = customer;
 
   const {
@@ -30,6 +31,7 @@ const EditForm = ({ customer, editCustomerFxns }) => {
     updateAddressId,
     updateCartId,
     updateTier,
+    updateReferredBy,
   } = editCustomerFxns;
 
   return (
@@ -95,6 +97,22 @@ const EditForm = ({ customer, editCustomerFxns }) => {
           value={phone}
           placeholder="Phone"
           onChange={(e) => updatePhone(e.target.value)}
+          className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+        />
+      </div>
+      <div className="grid w-full items-center gap-1.5">
+        <Label
+          htmlFor="agent code"
+          className="font-medium text-xs md:text-sm select-none pointer-events-none"
+        >
+          Agent Code
+        </Label>
+        <Input
+          type="text"
+          id="agent code"
+          value={referredBy}
+          placeholder="Phone"
+          onChange={(e) => updateReferredBy(e.target.value)}
           className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
         />
       </div>

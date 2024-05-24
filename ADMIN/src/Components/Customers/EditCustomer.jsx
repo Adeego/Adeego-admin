@@ -1,3 +1,6 @@
+import { doc, updateDoc, getFirestore } from "firebase/firestore";
+import app from "../../../firebaseConfig";
+
 import {
   Drawer,
   DrawerClose,
@@ -21,6 +24,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { CircleCheck } from "lucide-react";
+
 const EditCustomer = ({ customer }) => {
   // states for input fields
   const [userId, setUserId] = useState(customer.id);
@@ -31,6 +36,7 @@ const EditCustomer = ({ customer }) => {
   const [addressId, setAddressId] = useState(customer.AddressId);
   const [cartId, setCartId] = useState(customer.CartId);
   const [tier, setTier] = useState(customer.Tier);
+  const [referredBy, setReferredBy] = useState(customer.ReferredBy);
 
   const customerObj = {
     userId,
@@ -41,6 +47,7 @@ const EditCustomer = ({ customer }) => {
     addressId,
     cartId,
     tier,
+    referredBy,
   };
 
   const editCustomerFxns = {
@@ -52,6 +59,7 @@ const EditCustomer = ({ customer }) => {
     updateAddressId: (value) => setAddressId(value),
     updateCartId: (value) => setCartId(value),
     updateTier: (value) => setTier(value),
+    updateReferredBy: (value) => setReferredBy(value),
   };
 
   // Update the product details
@@ -65,25 +73,29 @@ const EditCustomer = ({ customer }) => {
       AddressId: addressId,
       CartId: cartId,
       Tier: tier,
+      ReferredBy: referredBy,
     };
+
+    console.log(fieldsToUpdate);
 
     try {
       const db = getFirestore(app);
-      // Update the product in Firestore
-      await updateDoc(doc(db, "Customers", customer.id), fieldsToUpdate);
+      await updateDoc(doc(db, "User", customer.id), fieldsToUpdate);
 
-      // Handle success (e.g., display a success message or navigate back)
-      console.log("Customer updated successfully!");
-
-      // Clear input fields
-      // clearInputFields();
-      // Call handleEditFalse if needed
+      toast(
+        <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
+          <CircleCheck
+            size={16}
+            className="stroke-neutral-600 md:text-sm text-neutral-800"
+          />
+          Customer edited successfully.
+        </div>
+      );
     } catch (error) {
-      // Handle errors (e.g., display an error message to the user)
-      console.error("Error updating customer:", error);
+      console.error(error);
     }
   };
-  console.log(customer);
+
   return (
     <>
       <div className="md:hidden">
