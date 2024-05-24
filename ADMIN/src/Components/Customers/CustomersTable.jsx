@@ -159,7 +159,9 @@ const customerTable = () => {
       </header>
       <section className="p-2 flex flex-col gap-6 py-4">
         <div className="px-2">
-          <h1 className="font-bold tracking-tight text-2xl">Customers</h1>
+          <h1 className="font-bold tracking-tight text-2xl">
+            Customers ({data.length})
+          </h1>
           <small className="text-neutral-500">Manage your customers</small>
         </div>
         {loading ? (

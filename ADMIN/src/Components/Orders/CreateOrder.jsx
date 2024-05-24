@@ -51,7 +51,6 @@ import {
 import { CommandList } from "cmdk";
 
 const SelectUser = () => {
- 
   const [data, setData] = useState([]);
   const [user, setUser] = useState(null);
 
@@ -112,7 +111,7 @@ const SelectUser = () => {
                   const name = userItem.FirstName + " " + userItem.LastName;
                   return (
                     <CommandItem
-                      value={name}
+                      value={name + userItem.Phone}
                       key={name}
                       onSelect={() => {
                         setUser(name);
@@ -197,10 +196,9 @@ const CreateOrder = () => {
               {/* Select user full search */}
               <SelectUser />
             </div>
-            <div className="grid">
+            <div className="grid w-full items-center gap-1.5">
               <CreateOrderComp />
             </div>
-            
           </form>
 
           <AlertDialogFooter>

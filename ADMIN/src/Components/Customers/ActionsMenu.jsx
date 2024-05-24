@@ -38,10 +38,10 @@ import MoreDetailsComp from "./Moredetails";
 const DeleteDialog = ({ customer }) => {
   const [confirmText, setConfirmText] = useState("");
 
-  const userId = customer.Id;
+  const userId = customer.id;
 
   const deletecustomer = async () => {
-    if (confirmText === customer.Id) {
+    if (confirmText == userId) {
       try {
         const db = getFirestore(app);
 
@@ -56,7 +56,6 @@ const DeleteDialog = ({ customer }) => {
 
         // Delete cart document (assuming userId is the reference)
         await db.collection("Cart").doc(userId).delete();
-        console.log("User and related documents deleted successfully!");
         toast(
           <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
             <CircleCheck
@@ -105,7 +104,6 @@ const DeleteDialog = ({ customer }) => {
           value={confirmText}
           onChange={(e) => {
             setConfirmText(e.target.value);
-            console.log(confirmText, customer.Name);
           }}
           className="border-neutral-200 rounded-[0.4rem] text-xs"
         />

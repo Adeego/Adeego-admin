@@ -41,15 +41,28 @@ function OrderList() {
   }, [items, setItemList]);
 
   const handleRemoveItem = (id) => {
-    const remove = {
-      ProductId: id,
-    };
-    removeItem(remove);
-    // Update itemList after removing the item
-    setItemList(itemList.filter((item) => item.id !== id));
+    const itemIndex = itemList.findIndex((item) => item.id === id);
+
+    if (itemIndex === -1) {
+      console.log(`Item with ID ${id} not found in itemList.`);
+      return;
+    }
+
+    const item = itemList[itemIndex];
+
+    if (item.Quantity > 1) {
+      item.Quantity -= 1;
+      // Update the item list directly (assuming in-place modification is allowed)
+      itemList[itemIndex] = item;
+    } else {
+      const remove = {
+        ProductId: id,
+      };
+      removeItem(remove);
+      setItemList(itemList.filter((item) => item.id !== id));
+    }
   };
 
-  console.log(itemList);
   return (
     <div className="p-4 flex flex-col gap-4">
       <div className="text-sm font-medium">
@@ -69,7 +82,8 @@ function OrderList() {
               />
               <div className="leading-0 text-sm flex flex-col gap-1">
                 <p className="text-sm font-">
-                  {item.Name} {item.Size} <span className="font-semibold">x {item.Quantity}</span>
+                  {item.Name} {item.Size}{" "}
+                  <span className="font-semibold">x {item.Quantity}</span>
                 </p>
 
                 <div className="flex justify-between items-center  rounded-md w-full">

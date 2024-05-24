@@ -6,9 +6,7 @@ import {
   connectInfiniteHits,
 } from "react-instantsearch-dom";
 import OrderStore from "../../../Store/OrderStore";
-import { IoAdd } from "react-icons/io5";
 import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
 import { Plus } from "lucide-react";

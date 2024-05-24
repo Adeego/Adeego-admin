@@ -10,6 +10,11 @@ export const columns = [
     accessorKey: "FullName",
     header: () => <div className="text-left">Name</div>,
   },
+  ,
+  {
+    accessorKey: "Phone",
+    header: () => <div className="text-left">Phone</div>,
+  },
   {
     accessorKey: "Code",
     header: () => <div className="text-left">Code</div>,
