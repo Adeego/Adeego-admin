@@ -142,7 +142,7 @@ const CreateOrder = () => {
   const [paymentMethod, setPaymentMethod] = useState("");
 
   return (
-    <div>
+    <div className="w-ful">
       <AlertDialog>
         <AlertDialogTrigger className="w-full">
           <button className="w-10 aspect-square md:aspect-auto md:w-auto md:h-10 rounded-[0.4rem] border-neutral-200 grid place-items-center bg-black text-white md:flex gap-2 md:px-4 hover:bg-neutral-800 ">
@@ -152,7 +152,7 @@ const CreateOrder = () => {
             </span>
           </button>
         </AlertDialogTrigger>
-        <AlertDialogContent className="bg-white !rounded-[0.5rem] w-[95%] text-left">
+        <AlertDialogContent className="bg-white !rounded-[0.5rem] md:max-w-[750px] text-left">
           <AlertDialogHeader>
             <AlertDialogTitle className="text-left">
               Create Order
@@ -195,9 +195,9 @@ const CreateOrder = () => {
                 Select user <span className="text-red-500">*</span>
               </Label>
               {/* Select user full search */}
-              {/* <SelectUser /> */}
+              <SelectUser />
             </div>
-            <div className="grid w-full items-center gap-1.5">
+            <div className="grid">
               <CreateOrderComp />
             </div>
             

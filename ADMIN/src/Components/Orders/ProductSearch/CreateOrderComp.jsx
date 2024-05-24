@@ -1,20 +1,18 @@
-import React from 'react'
-import Search from './ProductSearch'
-import OrderList from './OrderList'
+import React from "react";
+import Search from "./ProductSearch";
+import OrderList from "./OrderList";
 
 function CreateOrderComp() {
   return (
-    <div className=' h-screen flex flex-1 justify-center items-center'>
-        <div className=' container flex flex-row justify-center items-center h-[400px] w-5/6'>
-            <div className=' w-1/2 h-full justify-center border-2 border-black'>
-                <Search />
-            </div>
-            <div className=' w-1/2 h-full justify-center border-2 border-black'>
-                <OrderList />
-            </div>
-        </div>
+    <div className="grid grid-cols-2 h-full w-full border border-neutral-200 divide-x divide-neutral-200 rounded-[0.2rem]">
+      <div className="w-full flex justify-center p-2">
+        <Search />
+      </div>
+      <div className="w-full">
+        <OrderList />
+      </div>
     </div>
-  )
+  );
 }
 
-export default CreateOrderComp
+export default CreateOrderComp;

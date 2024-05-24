@@ -1,4 +1,4 @@
-import "instantsearch.css/themes/algolia-min.css";
+// import "instantsearch.css/themes/algolia-min.css";
 import React, { useState } from "react";
 import {
   InstantSearch, connectSearchBox, connectInfiniteHits

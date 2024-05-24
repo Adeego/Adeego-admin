@@ -67,9 +67,9 @@ body::-webkit-scrollbar {
 
 .custom_scrollbar::-webkit-scrollbar {
   background: transparent !important;
-  width: 10px;
+  width: 7px;
 }
 .custom_scrollbar::-webkit-scrollbar-thumb {
-  background: #777;
+  background: #bebebe;
   border-radius: 10px;
 }
