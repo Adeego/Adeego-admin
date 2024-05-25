@@ -21,7 +21,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import { Separator } from "@/components/ui/separator";
-import { formatPrice } from "../../lib/utils";
+import { convertFirestoreTimestampToDate, formatPrice } from "../../lib/utils";
 import app from "../../../firebaseConfig";
 import { useEffect, useState } from "react";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
@@ -45,6 +45,7 @@ const SkeletonComp = () => {
 };
 
 const DetailsBody = ({ user, address }) => {
+  console.log(user);
   return (
     <>
       <div className="flex flex-col gap-6 text-xs md:text-sm">
@@ -101,10 +102,20 @@ const DetailsBody = ({ user, address }) => {
         ) : (
           <SkeletonComp />
         )}
+        <Separator orientation="horizontal" className="bg-neutral-200" />
+        <div className="flex flex-col gap-3">
+          <h1 className="font-semibold">Registration information</h1>
+          <div className="w-full flex items-center justify-between">
+            <div className="text-neutral-500">Joined on</div>
+            <div className="text-black">
+              {convertFirestoreTimestampToDate(user.CreatedAt)}
+            </div>
+          </div>
+        </div>
       </div>
       <div className="mt-10 pb-3">
         <small className="text-neutral-600 text-xs md:text-md">
-          Updated on November 28, 2024
+          Updated on {convertFirestoreTimestampToDate(user.UpdatedAt)}
         </small>
       </div>
     </>
