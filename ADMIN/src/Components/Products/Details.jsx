@@ -24,10 +24,10 @@ import { Fragment, useState } from "react";
 
 import { Image } from "lucide-react";
 import { formatPrice } from "../../lib/utils";
+import { convertFirestoreTimestampToDate } from "../../lib/utils";
 
 const DetailsBody = ({ product }) => {
   const price = formatPrice(product.Price);
-
   const category =
     product.Category === "DryFoods"
       ? "Dry Foods"
@@ -118,7 +118,7 @@ const DetailsBody = ({ product }) => {
 
       <div className="text-xs pt-5">
         <div className="text-neutral-500 text-xs">
-          Added on January 20, 2024
+          Added on {convertFirestoreTimestampToDate(product.CreatedAt)}
         </div>
       </div>
     </div>

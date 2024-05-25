@@ -47,13 +47,15 @@ const SkeletonComp = () => {
 const DetailsBody = ({ order, user, address }) => {
   const subTotal =
     order.Items.length > 0
-      ? order.Items.map((item) => item.Price*item.Quantity).reduce((a, b) => a + b)
+      ? order.Items.map((item) => item.Price * item.Quantity).reduce(
+          (a, b) => a + b
+        )
       : 0;
   const formatSubtotal = formatPrice(subTotal);
   const shipping = formatPrice(200);
   const totalPrice = formatPrice(subTotal);
+  console.log(order);
 
-  
   return (
     <>
       <div className="flex flex-col gap-6 text-xs md:text-sm mt-16">
@@ -165,7 +167,9 @@ const DetailsBody = ({ order, user, address }) => {
           </div>
           <div className="w-full flex items-center justify-between">
             <div className="text-neutral-500">Payment method</div>
-            <div className="text-black flex items-center gap-2">{order.PMethod}</div>
+            <div className="text-black flex items-center gap-2">
+              {order.PMethod}
+            </div>
           </div>
         </div>
       </div>
@@ -226,8 +230,8 @@ const MoreDetailsLg = ({ order, user, address }) => {
           side="right"
           className="bg-white w-full sm:max-w-lg  text-sm "
         >
-          <ScrollArea className='w-full max-h-[100vh] flex flex-col gap-12 pb-10'>
-            <SheetHeader className='pt-8'>
+          <ScrollArea className="w-full max-h-[100vh] flex flex-col gap-12 pb-10">
+            <SheetHeader className="pt-8">
               <SheetTitle className="tracking-tight">
                 Order <code className="">{order.id}</code>
               </SheetTitle>

@@ -11,46 +11,74 @@ import { Label } from "@/components/ui/label";
 import { Image, X } from "lucide-react";
 import { useState } from "react";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 const OrderItem = ({ item, removeItem }) => {
   const [hasImageLoaded, setImageLoaded] = useState(true);
   return (
-    <div className="relative flex gap-2 p-2 md:p-0 border md:border-none rounded-[0.3rem]">
-      <div className="">
-        <div className="h-10 md:h-12 rounded-[0.3rem] overflow-hidden aspect-square relative">
-          <img
-            src={item.Image}
-            alt={item.Name}
-            onLoad={() => setImageLoaded(false)}
-            className={`${hasImageLoaded ? "hidden" : "block"}`}
-          />
-          <div
-            className={`absolute top-0 left-0 w-full h-full grid place-items-center bg-neutral-200 ${
-              hasImageLoaded ? "block" : "hidden"
-            } text-neutral-500`}
-          >
-            <Image size={16} />
+    <Dialog>
+      <div className="relative flex gap-2 p-2 md:p-0 border md:border-none rounded-[0.3rem]">
+        <div className="">
+          <div className="h-10 md:h-12 rounded-[0.3rem] overflow-hidden aspect-square relative">
+            <img
+              src={item.Image}
+              alt={item.Name}
+              onLoad={() => setImageLoaded(false)}
+              className={`${hasImageLoaded ? "hidden" : "block"}`}
+            />
+            <div
+              className={`absolute top-0 left-0 w-full h-full grid place-items-center bg-neutral-200 ${
+                hasImageLoaded ? "block" : "hidden"
+              } text-neutral-500`}
+            >
+              <Image size={16} />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col gap-1 leading-none">
-        <p className="text-xs md:text-sm font-medium text-neutral-800">
-          {item.Name}
-        </p>
-        <div>
-          <p className="text-xs md:text-sm text-neutral-500">
-            Quantity : <span>{item.Quantity}</span>{" "}
+        <div className="flex flex-col gap-1 leading-none">
+          <p className="text-xs md:text-sm font-medium text-neutral-800">
+            {item.Name}
           </p>
+          <div>
+            <p className="text-xs md:text-sm text-neutral-500">
+              Quantity : <span>{item.Quantity}</span>{" "}
+            </p>
+          </div>
         </div>
-      </div>
 
-      {/* button */}
-      <button
-        onClick={() => removeItem(item.Name)}
-        className="h-5 aspect-square bg-black rounded-full grid place-items-center absolute top-1 right-1 text-white"
-      >
-        <X size={12} />
-      </button>
-    </div>
+        <DialogTrigger>
+          {/* button */}
+          <button className="h-5 aspect-square bg-black rounded-full grid place-items-center absolute top-1 right-1 text-white">
+            <X size={12} />
+          </button>{" "}
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-[425px] bg-white !rounded-[0.4rem]">
+          <DialogHeader>
+            <DialogTitle>Remove product</DialogTitle>
+            <DialogDescription>
+              Are you sure you want to remove this product?
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <button
+              className="font-medium p-2 px-3 bg-black rounded-[0.4rem] text-sm grid place-items-center text-white"
+              onClick={() => removeItem(item.Name)}
+              type="submit"
+            >
+              Confirm
+            </button>
+          </DialogFooter>
+        </DialogContent>
+      </div>
+    </Dialog>
   );
 };
 

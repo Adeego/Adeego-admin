@@ -59,8 +59,8 @@ const DeleteModal = ({ agent }) => {
   return (
     <Dialog>
       <DialogTrigger className="w-full">
-        <button className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200 w-full h-full rounded-[0.4rem] !cursor-pointer transition-all  px-2 py-1.5 text-left">
-          Remove User
+        <button className="gap-2 items-center text-xs md:text-sm hover:!bg-neutral-200 w-full h-full rounded-[0.4rem] !cursor-pointer transition-all  px-2 py-1.5 text-left text-red-600">
+          Remove Agent
         </button>
       </DialogTrigger>
       <DialogContent className="bg-white w-[90%] !rounded-[0.5rem] gap-5">
@@ -117,7 +117,7 @@ const BanModal = ({ agent }) => {
     <Dialog>
       <DialogTrigger className="w-full">
         <button className="gap-2 text-left items-center text-xs md:text-sm  rounded-[0.4rem] !cursor-pointer hover:!bg-neutral-200 w-full h-full transition-all px-2 py-1.5">
-          Ban User
+          Ban Agent
         </button>
       </DialogTrigger>
       <DialogContent className="bg-white w-[90%] !rounded-[0.5rem] gap-5">
