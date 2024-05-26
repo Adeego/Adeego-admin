@@ -121,10 +121,8 @@ export const columns = [
     id: "actions",
     cell: ({ row, props }) => {
       const order = row.original;
-      const deleteOrder = () => {
-        console.log("delete");
-      };
-      return <OrdersActionMenu deleteProduct={deleteOrder} order={order} />;
+      
+      return <OrdersActionMenu  order={order} />;
     },
   },
 ];

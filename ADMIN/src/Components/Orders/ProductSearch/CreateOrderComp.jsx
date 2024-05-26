@@ -11,6 +11,8 @@ import { Input } from "@/components/ui/input";
 
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
 import { Minus, Plus } from "lucide-react";
+import { doc, getDoc, getFirestore } from "@firebase/firestore";
+import app from "../../../../firebaseConfig";
 
 //! SEARCH LOGIC
 
@@ -198,6 +200,7 @@ const OrderList = () => {
         // Filter out any null results and set the state
         setItemList(productDocs.filter((doc) => doc !== null));
       } catch (error) {
+        console.error(error);
         // Replace with your error handling logic
         console.log("Error fetching product documents");
       }
