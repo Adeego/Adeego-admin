@@ -33,7 +33,6 @@ const AgentDataTable = ({ columns, data }) => {
     },
   });
 
-  console.log(data)
 
   return (
     <section className="relative">

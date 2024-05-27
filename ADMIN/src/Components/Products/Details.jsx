@@ -126,7 +126,6 @@ const DetailsBody = ({ product }) => {
 };
 
 const DetailsMobileComp = ({ product }) => {
-  console.log(product);
   const [hasImageLoaded, setImageHasLoaded] = useState(false);
   return (
     <div className="md:hidden">

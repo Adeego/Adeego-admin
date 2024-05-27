@@ -5,6 +5,8 @@ import {
   collection,
   deleteDoc,
   doc,
+  serverTimestamp,
+  addDoc,
 } from "firebase/firestore";
 
 import app from "../../../firebaseConfig";
@@ -54,7 +56,13 @@ import OrderStore from "../../Store/OrderStore";
 
 const SelectUser = ({ updateUser }) => {
   // update functions
-  const { updateAddress, updatePhoneNumber, updateReferredBy } = updateUser;
+  const {
+    updateAddress,
+    updatePhoneNumber,
+    updateReferredBy,
+    updateUserId,
+    updateAddressId,
+  } = updateUser;
 
   const [data, setData] = useState([]);
   const [user, setUser] = useState(null);
@@ -75,7 +83,6 @@ const SelectUser = ({ updateUser }) => {
           }));
           setData(user);
         });
-        console.log(user);
       } catch (error) {
         console.error(error);
       }
@@ -92,6 +99,8 @@ const SelectUser = ({ updateUser }) => {
   }, []);
 
   const fetchAddress = async (id) => {
+    updateAddressId(id);
+
     const data = await getData("Address", id);
     updateAddress(
       `${data.Estate} House ${data.HouseNo}, ${data.Area}, ${data.City}, ${data.Country}`
@@ -130,6 +139,7 @@ const SelectUser = ({ updateUser }) => {
                         setUser(name);
                         updateReferredBy(userItem.ReferredBy);
                         updatePhoneNumber(userItem.Phone);
+                        updateUserId(userItem.UserId);
                         fetchAddress(userItem.AddressId);
                       }}
                       className="capitalize w-full flex items-center justify-between hover:!bg-neutral-200 "
@@ -154,29 +164,82 @@ const SelectUser = ({ updateUser }) => {
 };
 
 const CreateOrder = () => {
+  const [userId, setUserId] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
   const [address, setAddress] = useState("");
   const [totalItems, setTotalItems] = useState("");
   const [amount, setAmount] = useState("");
   const [referredBy, setReferredBy] = useState("");
   const [phone, setPhone] = useState("");
+  const [addressId, setAddressId] = useState("");
+  const [cashback, setCashback] = useState(0);
+  const [selectedItems, setSelectedItems] = useState([]);
+
+  const updateSelectedItems = (values) => setSelectedItems([...values]);
 
   // functions
   const updateUser = {
     updateReferredBy: (value) => setReferredBy(value),
     updateAddress: (value) => setAddress(value),
     updatePhoneNumber: (value) => setPhone(value),
+    updateUserId: (value) => setUserId(value),
+    updateAddressId: (value) => setAddressId(value),
   };
 
   // import order store
-  const { items, itemList } = OrderStore();
+
   const totalAmount =
-    itemList.length > 0
-      ? itemList
+    selectedItems.length > 0
+      ? selectedItems
           .map((item) => item.Price * item.Quantity)
           .reduce((a, b) => a + b)
       : 0;
-  console.log(itemList);
+
+  const buyingPrice =
+    selectedItems.length > 0
+      ? selectedItems
+          .map((item) => item.BuyPrice * item.Quantity)
+          .reduce((a, b) => a + b)
+      : 0;
+
+  const profit = totalAmount - buyingPrice;
+
+  const createOrder = async () => {
+    try {
+      const db = getFirestore(app);
+      const ordersRef = collection(db, "Orders");
+
+      const orderData = {
+        UserId: userId,
+        AddessId: addressId,
+        ReferredBy: referredBy,
+        OrderStatus: "Pending",
+        Status: "Pending",
+        PaymentStatus: "Unpaid",
+        PMethod: paymentMethod,
+        Profit: profit,
+        Items: selectedItems,
+        TotalItems: selectedItems.length,
+        TotalAmount: totalAmount,
+        UpdatedAt: serverTimestamp(),
+        CreatedAt: serverTimestamp(),
+      };
+
+      const newOrderRef = await addDoc(ordersRef, orderData);
+
+      // if (couponApplied) {
+      //   // Deduct 1 from the "Remaining" field in the "Coupons" collection
+      //   const db = getFirestore(app);
+      //   const couponRef = doc(db, "Coupons", couponId);
+      //   updateDoc(couponRef, { Remaining: couponData.Remaining - 1 });
+      // }
+
+      //  !reset local data to empty
+    } catch (error) {
+      console.error("Error adding order: ", error);
+    }
+  };
+
   return (
     <div className="w-full">
       <AlertDialog>
@@ -248,6 +311,24 @@ const CreateOrder = () => {
                   className="font-medium text-xs md:text-sm select-none pointer-events-none"
                   htmlFor="number"
                 >
+                  Address Id
+                </Label>
+                <Input
+                  id="text"
+                  type="text"
+                  value={addressId}
+                  // onChange={(e) => setAddressId(e.target.value)}
+                  placeholder="Address"
+                  className="border-neutral-200 cursor-not-allowed rounded-[0.4rem] text-xs md:text-sm placeholder:text-neutral-500 w-full"
+                  required
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                  htmlFor="number"
+                >
                   Address
                 </Label>
                 <Input
@@ -262,6 +343,7 @@ const CreateOrder = () => {
               </div>
 
               <div className="grid gap-2">
+                {}
                 <Label
                   className="font-medium text-xs md:text-sm select-none pointer-events-none"
                   htmlFor="number"
@@ -271,7 +353,7 @@ const CreateOrder = () => {
                 <Input
                   id="number"
                   type="number"
-                  value={itemList.length}
+                  value={selectedItems.length}
                   // onChange={(e) => setTotalItems(e.target.value)}
                   placeholder="Total Items"
                   className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
@@ -317,26 +399,27 @@ const CreateOrder = () => {
                     </SelectItem>
                     <SelectItem
                       className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
-                      value="Cash"
+                      value="CASH"
                     >
-                      Cash
+                      CASH
                     </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="grid w-full items-center gap-1.5">
-                <CreateOrderComp />
+                <CreateOrderComp updateSelectedItems={updateSelectedItems} />
               </div>
             </form>
 
-            <AlertDialogFooter>
+            <AlertDialogFooter className="mt-4">
               <AlertDialogCancel className="border border-neutral-300 rounded-[0.3rem]">
                 Cancel
               </AlertDialogCancel>
               <button
                 onClick={(e) => {
                   e.preventDefault();
+                  createOrder();
                 }}
                 className="bg-black text-white rounded-[0.3rem] text-sm font-medium p-2 px-3"
               >

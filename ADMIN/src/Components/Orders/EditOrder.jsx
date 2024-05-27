@@ -46,15 +46,16 @@ const paymentOptions = [
 
 // comp;
 function EditOrder({ order }) {
-  
+  console.log(order);
   // states for input fields
   const [userId, setUserId] = useState(order.UserId);
   const [orderStatus, setOrderStatus] = useState(order.OrderStatus);
   const [status, setStatus] = useState(order.Status);
   const [totalAmount, setTotalAmount] = useState(order.TotalAmount);
   const [paymentStatus, setPaymentStatus] = useState(order.PaymentStatus);
+  const [paymentMethod, setPaymentMethod] = useState(order.PMethod || "");
   const [items, setItems] = useState(order.Items);
-  const [totalItems, setTotalItems] = useState(items.length);
+  const [totalItems, setTotalItems] = useState(order.Items.length);
   const [customer, setCustomer] = useState(null);
   const [addressId, setAddressId] = useState(null);
   const [addressData, setAddressData] = useState(null);
@@ -67,6 +68,7 @@ function EditOrder({ order }) {
     totalAmount,
     paymentStatus,
     items,
+    paymentMethod,
   };
 
   const editOrderFxns = {
@@ -77,6 +79,7 @@ function EditOrder({ order }) {
       setItems(items.filter((item) => item.Name !== value)),
     updateAmount: (value) => setAmount(value),
     updatePaymentStatus: (value) => setPaymentStatus(value),
+    updatePaymentMethod: (value) => setPaymentMethod(value),
   };
 
   async function getData(collectionName, userId) {
@@ -121,51 +124,19 @@ function EditOrder({ order }) {
     fetchAddress();
   }, [addressId]);
 
-  //Functions to handle input fields changes
-  const handleOrderStatusChange = (e) => {
-    setOrderStatus(e.target.value);
-  };
-
-  const handleStatusChange = (e) => {
-    setStatus(e.target.value);
-  };
-
-  const handlePaymentStatusChange = (e) => {
-    setPaymentStatus(e.target.value);
-  };
-
-  const handleDeleteItem = async (itemToDelete) => {
-    const filteredItems = items.filter((item) => item !== itemToDelete);
-    const newTotalAmount = filteredItems.reduce(
-      (sum, item) => sum + item.Quantity * item.Price,
-      0
-    );
-
-    setItems(filteredItems);
-    setTotalItems(filteredItems.length);
-    setTotalAmount(newTotalAmount);
-  };
-
-  // Clear input fields
-  const clearInputFields = () => {
-    setUserId("");
-    setOrderStatus("");
-    setStatus("");
-    setTotalItems("");
-    setTotalAmount("");
-    setPaymentStatus("");
-    setItems([]);
-  };
-
   // Update the order details
   const handleApplyChanges = async () => {
     const fieldsToUpdate = {
+      UserId: userId,
+      AddessId: addressId,
       OrderStatus: orderStatus,
       Status: status,
-      Items: items,
-      TotalItems: totalItems,
-      TotalAmount: totalAmount,
       PaymentStatus: paymentStatus,
+      PMethod: paymentMethod,
+      Profit: profit,
+      items: itemList,
+      TotalItems: itemList.length,
+      TotalAmount: totalAmount,
     };
 
     try {

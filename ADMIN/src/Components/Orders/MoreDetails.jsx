@@ -21,7 +21,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import { Separator } from "@/components/ui/separator";
-import { formatPrice } from "../../lib/utils";
+import { convertFirestoreTimestampToDate, formatPrice } from "../../lib/utils";
 import app from "../../../firebaseConfig";
 import { useEffect, useState } from "react";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
@@ -54,7 +54,6 @@ const DetailsBody = ({ order, user, address }) => {
   const formatSubtotal = formatPrice(subTotal);
   const shipping = formatPrice(200);
   const totalPrice = formatPrice(subTotal);
-  console.log(order);
 
   return (
     <>
@@ -175,7 +174,9 @@ const DetailsBody = ({ order, user, address }) => {
       </div>
       <div className="mt-10 pb-3">
         <small className="text-neutral-600 text-xs md:text-md">
-          Updated on November 28, 2024
+          Updated on{" "}
+          {convertFirestoreTimestampToDate(order.UpdatedAt) ||
+            "January 14, 2024"}
         </small>
       </div>
     </>
@@ -198,7 +199,9 @@ const MoreDetailsMobile = ({ order, address, user }) => {
                 Order <code className="">{order.id}</code>
               </DrawerTitle>
               <p className="text-xs text-neutral-600 leading-none">
-                Date: November 23, 2023
+                Date:{" "}
+                {convertFirestoreTimestampToDate(order.CreatedAt) ||
+                  "January 14, 2024"}
               </p>
               <p className=" text-neutral-600 text-xs pt-2">
                 Status :{" "}
@@ -236,7 +239,9 @@ const MoreDetailsLg = ({ order, user, address }) => {
                 Order <code className="">{order.id}</code>
               </SheetTitle>
               <p className="text-sm text-neutral-600 leading-none">
-                Date: November 23, 2023
+                Date:{" "}
+                {convertFirestoreTimestampToDate(order.CreatedAt) ||
+                  "January 14, 2024"}
               </p>
 
               <p className="pt-4 text-neutral-600">
@@ -302,7 +307,6 @@ const MoreDetailsComp = ({ order }) => {
     fetchAddress();
   }, [addressId]);
 
-  console.log(order);
 
   return (
     <>

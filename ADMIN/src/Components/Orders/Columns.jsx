@@ -2,6 +2,7 @@
 
 import { Check, Loader, X } from "lucide-react";
 import OrdersActionMenu from "./OrdersActionMenu";
+import { convertFirestoreTimestampToDate } from "../../lib/utils";
 
 export const columns = [
   {
@@ -10,6 +11,15 @@ export const columns = [
     cell: ({ row }) => {
       const orderId = row.original.id;
       return <p className="text-xs md:text-sm">{orderId}</p>;
+    },
+  },
+  {
+    accessorKey: "CreatedAt",
+    header: () => <div className="text-left text-xs md:text-sm">Created on</div>,
+    cell: ({ row }) => {
+      const date =
+        convertFirestoreTimestampToDate(row.original.CreatedAt) || "-";
+      return <p className="text-xs md:text-sm">{date}</p>;
     },
   },
   {
@@ -121,8 +131,8 @@ export const columns = [
     id: "actions",
     cell: ({ row, props }) => {
       const order = row.original;
-      
-      return <OrdersActionMenu  order={order} />;
+
+      return <OrdersActionMenu order={order} />;
     },
   },
 ];

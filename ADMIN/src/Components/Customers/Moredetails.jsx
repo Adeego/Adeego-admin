@@ -45,7 +45,6 @@ const SkeletonComp = () => {
 };
 
 const DetailsBody = ({ user, address }) => {
-  console.log(user);
   return (
     <>
       <div className="flex flex-col gap-6 text-xs md:text-sm">

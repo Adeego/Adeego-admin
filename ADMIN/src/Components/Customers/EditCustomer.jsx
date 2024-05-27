@@ -76,8 +76,6 @@ const EditCustomer = ({ customer }) => {
       ReferredBy: referredBy,
     };
 
-    console.log(fieldsToUpdate);
-
     try {
       const db = getFirestore(app);
       await updateDoc(doc(db, "User", customer.id), fieldsToUpdate);

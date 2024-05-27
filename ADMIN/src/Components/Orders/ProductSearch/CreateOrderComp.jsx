@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import OrderStore from "../../../Store/OrderStore";
 
 import "instantsearch.css/themes/algolia-min.css";
@@ -58,37 +58,7 @@ const SearchBar = ({ refine, currentRefinement }) => {
 
 const CustomSearchBox = connectSearchBox(SearchBar);
 
-const InfiniteHit = ({ hits }) => {
-  const { items, addItem, clearItems } = OrderStore();
-
-  const handleErase = () => {
-    clearItems();
-  };
-
-  const handleAddItems = (item) => {
-    if (item.Stock === "Out of stock") {
-      console.log("This item is Out of stock");
-      return null;
-    } else {
-      // Assuming itemsArray is available and contains the list of current items
-      const existingItem = items.find(
-        (existingItem) => existingItem.ProductId === item._firestore_id
-      );
-
-      if (existingItem) {
-        // If the item is already in the array, increment the quantity
-        existingItem.Quantity += 1;
-      } else {
-        // If the item is not in the array, add a new item with quantity 1
-        const newItem = {
-          ProductId: `${item._firestore_id}`,
-          Quantity: 1,
-        };
-        addItem(newItem);
-      }
-    }
-  };
-
+const InfiniteHit = ({ hits, items, addItem }) => {
   return (
     <div className="flex flex-col items-center mt-2">
       {hits.length > 0 ? (
@@ -117,7 +87,8 @@ const InfiniteHit = ({ hits }) => {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  handleAddItems(item);
+                  addItem(item);
+                  console.log(items);
                 }}
                 className={`${
                   item.Stock === "Out of stock"
@@ -139,11 +110,11 @@ const InfiniteHit = ({ hits }) => {
 
 const CustomInfiniteHits = connectInfiniteHits(InfiniteHit);
 
-const Search = () => (
+const Search = ({ items, addItem }) => (
   <div className="w-full">
     <InstantSearch indexName="adeego" searchClient={searchClient}>
       <CustomSearchBox />
-      <CustomInfiniteHits />
+      <CustomInfiniteHits items={items} addItem={addItem} />
     </InstantSearch>
   </div>
 );
@@ -171,12 +142,9 @@ const Hit = ({ hit }) => (
   </div>
 );
 
-
 //! ORDERLIST
 
-const OrderList = () => {
-  const { items, itemList, setItemList, removeItem } = OrderStore();
-
+const OrderList = ({ items, removeItem }) => {
   useEffect(() => {
     // Function to fetch product documents from Firestore
     const fetchProducts = async (itemsId) => {
@@ -198,48 +166,25 @@ const OrderList = () => {
         );
 
         // Filter out any null results and set the state
-        setItemList(productDocs.filter((doc) => doc !== null));
+        // setItemList(productDocs.filter((doc) => doc !== null));
       } catch (error) {
         console.error(error);
         // Replace with your error handling logic
-        console.log("Error fetching product documents");
       }
     };
 
     if (items && items.length > 0) {
       fetchProducts(items);
     }
-  }, [items, setItemList]);
+  }, [items]);
 
-  const handleRemoveItem = (id) => {
-    const itemIndex = itemList.findIndex((item) => item.id === id);
-
-    if (itemIndex === -1) {
-      console.log(`Item with ID ${id} not found in itemList.`);
-      return;
-    }
-
-    const item = itemList[itemIndex];
-
-    if (item.Quantity > 1) {
-      item.Quantity -= 1;
-      // Update the item list directly (assuming in-place modification is allowed)
-      itemList[itemIndex] = item;
-    } else {
-      const remove = {
-        ProductId: id,
-      };
-      removeItem(remove);
-      setItemList(itemList.filter((item) => item.id !== id));
-    }
-  };
   return (
     <div className="p-4 flex flex-col gap-4">
       <div className="text-sm font-medium">
         <h1>Selected Products</h1>
       </div>
       <div className="flex flex-col gap-3">
-        {itemList.map((item) => (
+        {items.reverse().map((item) => (
           <div
             key={item.id}
             className="flex flex-row justify-between items-center p-2 rounded-[0.3rem] w-full  gap-4 border border-neutral-300"
@@ -264,12 +209,12 @@ const OrderList = () => {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                handleRemoveItem(item.id);
+                console.log(item);
+                removeItem(item._firestore_id);
               }}
               className={`bg-black rounded-full size-6 shrink-0 grid place-items-center`}
             >
               <Minus size={16} color="#F2F2F2" />
-            
             </button>
           </div>
         ))}
@@ -278,15 +223,53 @@ const OrderList = () => {
   );
 };
 
+function CreateOrderComp({ updateSelectedItems }) {
+  const [items, setItems] = useState([]);
 
-function CreateOrderComp() {
+  const addItem = (item) => {
+    const existingItem = items.find(
+      (existingItem) => existingItem._firestore_id === item._firestore_id
+    );
+
+    if (existingItem) {
+      existingItem.Quantity += 1;
+      setItems([...items]);
+      updateSelectedItems([...items]);
+    } else {
+      if (!item.Quantity) {
+        item.Quantity = 1;
+      }
+      const newArr = [item, ...items];
+      setItems(newArr);
+      updateSelectedItems(newArr);
+    }
+  };
+
+  const removeItem = (itemId) => {
+    const existingItem = items.find(
+      (existingItem) => existingItem._firestore_id === itemId
+    );
+
+    if (existingItem.Quantity > 1) {
+      existingItem.Quantity -= 1;
+      setItems([...items]);
+      updateSelectedItems([...items]);
+      return;
+    }
+
+    
+    const newArr = items.filter((item) => item._firestore_id !== itemId);
+    setItems(newArr);
+    updateSelectedItems(newArr);
+  };
+
   return (
     <div className="grid grid-cols-2 h-full w-full border border-neutral-200 divide-x divide-neutral-200 rounded-[0.2rem]">
       <div className="w-full flex justify-center p-2">
-        <Search />
+        <Search items={items} addItem={addItem} setItems={setItems} />
       </div>
       <div className="w-full">
-        <OrderList />
+        <OrderList items={items} removeItem={removeItem} />
       </div>
     </div>
   );

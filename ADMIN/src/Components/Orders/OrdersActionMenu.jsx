@@ -35,7 +35,6 @@ const DeleteDialog = ({ order }) => {
         const db = getFirestore(app);
         const orderRef = doc(db, "Orders", order.id);
         await deleteDoc(orderRef);
-        console.log(`Product with ID ${order.id} deleted successfully`);
         toast(
           <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
             <CircleCheck

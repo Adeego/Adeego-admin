@@ -112,7 +112,6 @@ const ProductsTable = () => {
       const db = getFirestore(app);
       const productRef = doc(db, "Products", productId);
       await deleteDoc(productRef);
-      console.log(`Product with ID ${productId} deleted successfully`);
     } catch (error) {
       console.error(error);
       throw error;

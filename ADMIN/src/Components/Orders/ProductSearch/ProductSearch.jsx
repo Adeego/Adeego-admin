@@ -62,7 +62,6 @@ const InfiniteHit = ({ hits }) => {
 
   const handleAddItems = (item) => {
     if (item.Stock === "Out of stock") {
-      console.log("This item is Out of stock");
       return null;
     } else {
       // Assuming itemsArray is available and contains the list of current items
