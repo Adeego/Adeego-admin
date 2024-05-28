@@ -65,7 +65,6 @@ const EditCustomer = ({ customer }) => {
   // Update the product details
   const handleApplyChanges = async () => {
     const fieldsToUpdate = {
-      UserId: userId,
       FirstName: firstName,
       LastName: lastName,
       Phone: phone,
@@ -75,8 +74,6 @@ const EditCustomer = ({ customer }) => {
       Tier: tier,
       ReferredBy: referredBy,
     };
-
-    console.log(fieldsToUpdate);
 
     try {
       const db = getFirestore(app);

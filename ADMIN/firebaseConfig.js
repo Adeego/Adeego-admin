@@ -50,20 +50,17 @@ export const RequestPermission = () => {
   // }, [])
 
   useEffect(() => {
-    console.log("Requesting User Permission......");
 
     const requestPermissionAsync = async () => {
       try {
         const permission = await Notification.requestPermission();
 
         if (permission === "granted") {
-          console.log("Notification User Permission Granted.");
 
           const currentToken = await getToken(messaging, {
             vapidKey:
               "BFwu4x55Ol5h5cnlkt6BSUbTKfmwibmCTJJxMvgB5ib-c_UEQf9_e8StabiOTtVKGdHcxzJEpZZG0gmwvX5s0W8",
           });
-          console.log("Client Token: ", currentToken);
 
           if (currentToken && !token) {
             // Check for both token existence and null value

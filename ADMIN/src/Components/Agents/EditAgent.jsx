@@ -62,7 +62,7 @@ const EditAgent = ({ agent }) => {
   // Update the product details
   const handleApplyChanges = async () => {
     const fieldsToUpdate = {
-      id,
+ 
       FullName,
       Code,
       Occupation,

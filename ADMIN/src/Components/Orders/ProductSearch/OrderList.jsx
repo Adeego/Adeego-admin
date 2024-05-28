@@ -31,7 +31,6 @@ function OrderList() {
         setItemList(productDocs.filter((doc) => doc !== null));
       } catch (error) {
         // Replace with your error handling logic
-        console.log("Error fetching product documents");
       }
     };
 
@@ -44,7 +43,6 @@ function OrderList() {
     const itemIndex = itemList.findIndex((item) => item.id === id);
 
     if (itemIndex === -1) {
-      console.log(`Item with ID ${id} not found in itemList.`);
       return;
     }
 

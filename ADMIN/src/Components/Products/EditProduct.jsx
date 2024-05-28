@@ -73,7 +73,6 @@ function EditProduct({ handleEditFalse, product }) {
       await updateDoc(doc(db, "Products", product.id), fieldsToUpdate);
 
       // Handle success (e.g., display a success message or navigate back)
-      console.log("Product updated successfully!");
 
       // Clear input fields
       // clearInputFields();

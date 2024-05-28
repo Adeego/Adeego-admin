@@ -28,6 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { CirclePlus } from "lucide-react";
 
@@ -129,7 +130,6 @@ function AddProduct() {
       };
 
       const newProductRef = await addDoc(productRef, productData);
-      console.log("Document written with ID: ", newProductRef.id);
 
       clearInputFields();
 
@@ -152,184 +152,186 @@ function AddProduct() {
           </button>
         </AlertDialogTrigger>
         <AlertDialogContent className="bg-white !rounded-[0.5rem] w-[95%]">
-          <AlertDialogHeader>
-            <AlertDialogTitle>Add product</AlertDialogTitle>
-            <AlertDialogDescription>
-              Add a new product and click continue when you're done.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
+          <ScrollArea className="max-h-[90vh]">
+            <AlertDialogHeader>
+              <AlertDialogTitle>Add product</AlertDialogTitle>
+              <AlertDialogDescription>
+                Add a new product and click continue when you're done.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
 
-          <form action="" className=" flex flex-col gap-4">
-            <div className="grid w-full items-center gap-1.5">
-              <Label
-                htmlFor="userId"
-                className="font-medium text-xs md:text-sm select-none pointer-events-none"
-              >
-                Name <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                type="text"
-                id="name"
-                value={name}
-                onChange={(e) => handleName(e.target.value)}
-                placeholder="Name"
-                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
-              />
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label
-                htmlFor="image"
-                className="font-medium text-xs md:text-sm select-none pointer-events-none"
-              >
-                Image url <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                type="text"
-                id="url"
-                value={image}
-                onChange={(e) => handleImage(e.target.value)}
-                placeholder="Image"
-                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
-              />
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label
-                htmlFor="description"
-                className="font-medium text-xs md:text-sm select-none pointer-events-none"
-              >
-                Description
-              </Label>
-              <Textarea
-                id="name"
-                value={description}
-                onChange={(e) => {
-                  handleDescription(e.target.value);
-                }}
-                placeholder="Description"
-                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
-              />
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label
-                htmlFor="orderStatus"
-                className="font-medium text-xs md:text-sm select-none pointer-events-none"
-              >
-                Category
-              </Label>
-              <Select onValueChange={(value) => handleCategory(value)}>
-                <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
-                  <SelectValue placeholder={`category`} />
-                </SelectTrigger>
-                <SelectContent className=" bg-white rounded-[0.3rem]">
-                  {categoryOptions.map((option) => (
-                    <SelectItem
-                      key={option.value}
-                      className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
-                      value={option.value}
-                    >
-                      {option.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label className="font-medium text-xs md:text-sm select-none pointer-events-none">
-                Availability
-              </Label>
-              <Select onValueChange={(value) => handleStock(value)}>
-                <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
-                  <SelectValue placeholder={`In stock`} />
-                </SelectTrigger>
-                <SelectContent
-                  onChange={(e) => handleStock(e.target.value)}
-                  className=" bg-white rounded-[0.3rem]"
+            <form action="" className=" flex flex-col gap-4">
+              <div className="grid w-full items-center gap-1.5">
+                <Label
+                  htmlFor="userId"
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
                 >
-                  <SelectItem
-                    className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
-                    value="In stock"
+                  Name <span className="text-red-500">*</span>
+                </Label>
+                <Input
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={(e) => handleName(e.target.value)}
+                  placeholder="Name"
+                  className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+                />
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label
+                  htmlFor="image"
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                >
+                  Image url <span className="text-red-500">*</span>
+                </Label>
+                <Input
+                  type="text"
+                  id="url"
+                  value={image}
+                  onChange={(e) => handleImage(e.target.value)}
+                  placeholder="Image"
+                  className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+                />
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label
+                  htmlFor="description"
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                >
+                  Description
+                </Label>
+                <Textarea
+                  id="name"
+                  value={description}
+                  onChange={(e) => {
+                    handleDescription(e.target.value);
+                  }}
+                  placeholder="Description"
+                  className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+                />
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label
+                  htmlFor="orderStatus"
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                >
+                  Category
+                </Label>
+                <Select onValueChange={(value) => handleCategory(value)}>
+                  <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
+                    <SelectValue placeholder={`category`} />
+                  </SelectTrigger>
+                  <SelectContent className=" bg-white rounded-[0.3rem]">
+                    {categoryOptions.map((option) => (
+                      <SelectItem
+                        key={option.value}
+                        className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                        value={option.value}
+                      >
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label className="font-medium text-xs md:text-sm select-none pointer-events-none">
+                  Availability
+                </Label>
+                <Select onValueChange={(value) => handleStock(value)}>
+                  <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
+                    <SelectValue placeholder={`In stock`} />
+                  </SelectTrigger>
+                  <SelectContent
+                    onChange={(e) => handleStock(e.target.value)}
+                    className=" bg-white rounded-[0.3rem]"
                   >
-                    In stock
-                  </SelectItem>
-                  <SelectItem
-                    className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
-                    value="Out of stock"
-                  >
-                    Out of stock{" "}
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label
-                htmlFor="b_price"
-                className="font-medium text-xs md:text-sm select-none pointer-events-none"
-              >
-                Buying price <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                type="number"
-                id="b_price"
-                value={buyPrice}
-                onChange={(e) => {
-                  handleBuyPrice(e.target.value);
-                }}
-                placeholder="Buying Price"
-                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
-              />
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label
-                htmlFor="price"
-                className="font-medium text-xs md:text-sm select-none pointer-events-none"
-              >
-                Price <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                type="number"
-                id="price"
-                value={price}
-                onChange={(e) => {
-                  handlePrice(e.target.value);
-                }}
-                placeholder="Price"
-                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
-              />
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label
-                htmlFor="price"
-                className="font-medium text-xs md:text-sm select-none pointer-events-none"
-              >
-                Quantity <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                type="text"
-                id="size"
-                value={size}
-                onChange={(e) => {
-                  handleSize(e.target.value);
-                }}
-                placeholder="Quantity"
-                className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
-              />
-            </div>
-          </form>
+                    <SelectItem
+                      className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                      value="In stock"
+                    >
+                      In stock
+                    </SelectItem>
+                    <SelectItem
+                      className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                      value="Out of stock"
+                    >
+                      Out of stock{" "}
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label
+                  htmlFor="b_price"
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                >
+                  Buying price <span className="text-red-500">*</span>
+                </Label>
+                <Input
+                  type="number"
+                  id="b_price"
+                  value={buyPrice}
+                  onChange={(e) => {
+                    handleBuyPrice(e.target.value);
+                  }}
+                  placeholder="Buying Price"
+                  className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+                />
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label
+                  htmlFor="price"
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                >
+                  Price <span className="text-red-500">*</span>
+                </Label>
+                <Input
+                  type="number"
+                  id="price"
+                  value={price}
+                  onChange={(e) => {
+                    handlePrice(e.target.value);
+                  }}
+                  placeholder="Price"
+                  className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+                />
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label
+                  htmlFor="price"
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                >
+                  Quantity <span className="text-red-500">*</span>
+                </Label>
+                <Input
+                  type="text"
+                  id="size"
+                  value={size}
+                  onChange={(e) => {
+                    handleSize(e.target.value);
+                  }}
+                  placeholder="Quantity"
+                  className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+                />
+              </div>
+            </form>
 
-          <AlertDialogFooter>
-            <AlertDialogCancel className="border border-neutral-300 rounded-[0.3rem]">
-              Cancel
-            </AlertDialogCancel>
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                addNewProduct();
-              }}
-              className="bg-black text-white rounded-[0.3rem] text-sm font-medium p-2 px-3"
-            >
-              Continue
-            </button>
-          </AlertDialogFooter>
+            <AlertDialogFooter className="mt-4">
+              <AlertDialogCancel className="border border-neutral-300 rounded-[0.3rem] px-6">
+                Cancel
+              </AlertDialogCancel>
+              <AlertDialogCancel
+                onClick={(e) => {
+                  e.preventDefault();
+                  addNewProduct();
+                }}
+                className="bg-black text-white rounded-[0.3rem] text-sm font-medium p-2 px-6"
+              >
+                Continue
+              </AlertDialogCancel>
+            </AlertDialogFooter>
+          </ScrollArea>
         </AlertDialogContent>
       </AlertDialog>
     </div>

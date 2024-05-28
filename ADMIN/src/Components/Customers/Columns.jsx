@@ -1,5 +1,6 @@
 "use client";
 
+import { convertFirestoreTimestampToDate } from "../../lib/utils";
 import ActionsMenu from "./ActionsMenu";
 
 export const columns = [
@@ -16,8 +17,19 @@ export const columns = [
     },
   },
   {
+    accessorKey: "CreatedAt",
+    header: () => <div className="text-left">Joined on</div>,
+    cell: ({ row }) => {
+      const date =
+        convertFirestoreTimestampToDate(row.original.CreatedAt) || "-";
+      return <p className="text-xs md:text-sm">{date}</p>;
+    },
+  },
+  {
     accessorKey: "ReferredBy",
-    header: () => <div className="text-left text-xs md:text-sm">Referred By</div>,
+    header: () => (
+      <div className="text-left text-xs md:text-sm">Referred By</div>
+    ),
   },
   {
     accessorKey: "Tier",
@@ -33,7 +45,7 @@ export const columns = [
   },
   {
     accessorKey: "AddressId",
-    header: () => <div className="text-left text-xs md:text-sm">Adress Id</div>,
+    header: () => <div className="text-left text-xs md:text-sm">Address Id</div>,
   },
   {
     accessorKey: "CartId",

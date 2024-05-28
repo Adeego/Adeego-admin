@@ -19,6 +19,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 
 const OrderItem = ({ item, removeItem }) => {
@@ -68,13 +69,17 @@ const OrderItem = ({ item, removeItem }) => {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <button
-              className="font-medium p-2 px-3 bg-black rounded-[0.4rem] text-sm grid place-items-center text-white"
-              onClick={() => removeItem(item.Name)}
-              type="submit"
-            >
-              Confirm
-            </button>
+            <DialogClose asChild>
+              <button
+                className="font-medium p-2 px-3 bg-black rounded-[0.4rem] text-sm grid place-items-center text-white"
+                onClick={() => {
+                  removeItem(item.id);
+                }}
+                type="submit"
+              >
+                Confirm
+              </button>
+            </DialogClose>
           </DialogFooter>
         </DialogContent>
       </div>
@@ -90,8 +95,14 @@ const EditForm = ({ order, editOrderFxns }) => {
     totalItems,
     totalAmount,
     paymentStatus,
+    paymentMethod,
     items,
   } = order;
+
+  const amount =
+    items.length > 0
+      ? items.map((item) => item.Price * item.Quantity).reduce((a, b) => a + b)
+      : 0;
 
   const {
     updateUserId,
@@ -100,6 +111,7 @@ const EditForm = ({ order, editOrderFxns }) => {
     removeItem,
     updateAmount,
     updatePaymentStatus,
+    updatePaymentMethod,
   } = editOrderFxns;
 
   return (
@@ -150,10 +162,10 @@ const EditForm = ({ order, editOrderFxns }) => {
         </div>
         <div className="grid w-full items-center gap-1.5">
           <Label
-            htmlFor="orderStatus"
+            htmlFor="Status"
             className="font-medium text-xs md:text-sm select-none pointer-events-none"
           >
-            Order Status
+            Status
           </Label>
           <Select onValueChange={(value) => updateStatus(value)}>
             <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
@@ -203,7 +215,9 @@ const EditForm = ({ order, editOrderFxns }) => {
           <Input
             type="number"
             id="items"
-            value={totalItems}
+            value={items.length}
+            disabled
+            onChange={(e) => {}}
             placeholder="Total items"
             className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm placeholder:text-neutral-500 w-full focus:border-neutral-600"
           />
@@ -217,12 +231,40 @@ const EditForm = ({ order, editOrderFxns }) => {
           </Label>
           <Input
             type="number"
-            value={totalAmount}
-            onChange={(e) => updateAmount(e.target.value)}
+            value={amount}
+            // onChange={(e) => updateAmount(e.target.value)}
             id="amount"
+            disabled
             placeholder="Amount"
             className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm placeholder:text-neutral-500 w-full focus:border-neutral-600"
           />
+        </div>
+        <div className="grid w-full items-center gap-1.5">
+          <Label
+            htmlFor="method"
+            className="font-medium text-xs md:text-sm select-none pointer-events-none"
+          >
+            Payment Method
+          </Label>
+          <Select onValueChange={(value) => updatePaymentMethod(value)}>
+            <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
+              <SelectValue placeholder={`${paymentMethod}`} />
+            </SelectTrigger>
+            <SelectContent className=" bg-white rounded-[0.3rem]">
+              <SelectItem
+                className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                value="CASH"
+              >
+                CASH
+              </SelectItem>
+              <SelectItem
+                className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                value="MPESA"
+              >
+                MPESA
+              </SelectItem>
+            </SelectContent>
+          </Select>
         </div>
         <div className="grid w-full items-center gap-1.5">
           <Label

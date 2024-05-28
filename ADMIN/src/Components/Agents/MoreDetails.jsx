@@ -40,9 +40,9 @@ const SkeletonComp = () => {
 
 const DetailsBody = ({ agent }) => {
   const formattedDate = convertFirestoreTimestampToDate(agent.Joined);
-  const lastUpdated = agent.Joined ? convertFirestoreTimestampToDate(agent.Updated)
+  const lastUpdated = agent.Joined
+    ? convertFirestoreTimestampToDate(agent.Updated)
     : formattedDate;
-    console.log(agent)
   return (
     <>
       <div className="flex flex-col gap-6 text-xs md:text-sm">

@@ -1,5 +1,7 @@
+import { doc, getDoc, getFirestore } from "@firebase/firestore";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import app from "../../firebaseConfig";
 
 export function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -29,5 +31,23 @@ export const convertFirestoreTimestampToDate = (timestamp) => {
   } catch (error) {
     console.error("Error converting");
     return null;
+  }
+};
+
+export const getData = async (collectionName, id) => {
+  {
+    try {
+      const db = getFirestore(app);
+      const ref = doc(db, collectionName, id);
+      const snap = await getDoc(ref);
+
+      if (snap.exists) {
+        return snap.data();
+      } else {
+        return null;
+      }
+    } catch (error) {
+      return null;
+    }
   }
 };

@@ -46,7 +46,6 @@ const DeleteDialog = ({ product }) => {
         const db = getFirestore(app);
         const productRef = doc(db, "Products", id);
         await deleteDoc(productRef);
-        console.log(`Product with ID ${id} deleted successfully`);
         toast(
           <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
             <CircleCheck
@@ -95,7 +94,6 @@ const DeleteDialog = ({ product }) => {
           value={confirmText}
           onChange={(e) => {
             setConfirmText(e.target.value);
-            console.log(confirmText, product.Name);
           }}
           className="border-neutral-200 rounded-[0.4rem] text-xs"
         />

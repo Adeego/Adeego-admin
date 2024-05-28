@@ -5,6 +5,8 @@ import {
   collection,
   deleteDoc,
   doc,
+  serverTimestamp,
+  addDoc,
 } from "firebase/firestore";
 
 import app from "../../../firebaseConfig";
@@ -49,10 +51,22 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CommandList } from "cmdk";
+import { getData } from "../../lib/utils";
+import OrderStore from "../../Store/OrderStore";
 
-const SelectUser = () => {
+const SelectUser = ({ updateUser }) => {
+  // update functions
+  const {
+    updateAddress,
+    updatePhoneNumber,
+    updateReferredBy,
+    updateUserId,
+    updateAddressId,
+  } = updateUser;
+
   const [data, setData] = useState([]);
   const [user, setUser] = useState(null);
+  const [addressId, setAddress] = useState("");
 
   useEffect(() => {
     let unsubscribe;
@@ -69,7 +83,6 @@ const SelectUser = () => {
           }));
           setData(user);
         });
-        console.log(user);
       } catch (error) {
         console.error(error);
       }
@@ -84,6 +97,15 @@ const SelectUser = () => {
       }
     };
   }, []);
+
+  const fetchAddress = async (id) => {
+    updateAddressId(id);
+
+    const data = await getData("Address", id);
+    updateAddress(
+      `${data.Estate} House ${data.HouseNo}, ${data.Area}, ${data.City}, ${data.Country}`
+    );
+  };
 
   return (
     <Popover>
@@ -107,14 +129,18 @@ const SelectUser = () => {
             <CommandEmpty>No User found.</CommandEmpty>
             <CommandGroup className="w-full bg-white ">
               <CommandList className="max-h-[300px] overflow-y-scroll custom_scrollbar">
-                {data.map((userItem) => {
+                {data.map((userItem, i) => {
                   const name = userItem.FirstName + " " + userItem.LastName;
                   return (
                     <CommandItem
                       value={name + userItem.Phone}
-                      key={name}
+                      key={name + i}
                       onSelect={() => {
                         setUser(name);
+                        updateReferredBy(userItem.ReferredBy);
+                        updatePhoneNumber(userItem.Phone);
+                        updateUserId(userItem.UserId);
+                        fetchAddress(userItem.AddressId);
                       }}
                       className="capitalize w-full flex items-center justify-between hover:!bg-neutral-200 "
                     >
@@ -138,10 +164,84 @@ const SelectUser = () => {
 };
 
 const CreateOrder = () => {
+  const [userId, setUserId] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
+  const [address, setAddress] = useState("");
+  const [totalItems, setTotalItems] = useState("");
+  const [amount, setAmount] = useState("");
+  const [referredBy, setReferredBy] = useState("");
+  const [phone, setPhone] = useState("");
+  const [addressId, setAddressId] = useState("");
+  const [cashback, setCashback] = useState(0);
+  const [selectedItems, setSelectedItems] = useState([]);
+
+  const updateSelectedItems = (values) => setSelectedItems([...values]);
+
+  // functions
+  const updateUser = {
+    updateReferredBy: (value) => setReferredBy(value),
+    updateAddress: (value) => setAddress(value),
+    updatePhoneNumber: (value) => setPhone(value),
+    updateUserId: (value) => setUserId(value),
+    updateAddressId: (value) => setAddressId(value),
+  };
+
+  // import order store
+
+  const totalAmount =
+    selectedItems.length > 0
+      ? selectedItems
+          .map((item) => item.Price * item.Quantity)
+          .reduce((a, b) => a + b)
+      : 0;
+
+  const buyingPrice =
+    selectedItems.length > 0
+      ? selectedItems
+          .map((item) => item.BuyPrice * item.Quantity)
+          .reduce((a, b) => a + b)
+      : 0;
+
+  const profit = totalAmount - buyingPrice;
+
+  const createOrder = async () => {
+    try {
+      const db = getFirestore(app);
+      const ordersRef = collection(db, "Orders");
+
+      const orderData = {
+        UserId: userId,
+        AddessId: addressId,
+        ReferredBy: referredBy,
+        OrderStatus: "Pending",
+        Status: "Pending",
+        PaymentStatus: "Unpaid",
+        PMethod: paymentMethod,
+        Profit: profit,
+        Items: selectedItems,
+        TotalItems: selectedItems.length,
+        TotalAmount: totalAmount,
+        UpdatedAt: serverTimestamp(),
+        CreatedAt: serverTimestamp(),
+      };
+
+      const newOrderRef = await addDoc(ordersRef, orderData);
+
+      // if (couponApplied) {
+      //   // Deduct 1 from the "Remaining" field in the "Coupons" collection
+      //   const db = getFirestore(app);
+      //   const couponRef = doc(db, "Coupons", couponId);
+      //   updateDoc(couponRef, { Remaining: couponData.Remaining - 1 });
+      // }
+
+      //  !reset local data to empty
+    } catch (error) {
+      console.error("Error adding order: ", error);
+    }
+  };
 
   return (
-    <div className="w-ful">
+    <div className="w-full">
       <AlertDialog>
         <AlertDialogTrigger className="w-full">
           <button className="w-10 aspect-square md:aspect-auto md:w-auto md:h-10 rounded-[0.4rem] border-neutral-200 grid place-items-center bg-black text-white md:flex gap-2 md:px-4 hover:bg-neutral-800 ">
@@ -152,68 +252,181 @@ const CreateOrder = () => {
           </button>
         </AlertDialogTrigger>
         <AlertDialogContent className="bg-white !rounded-[0.5rem] md:max-w-[750px] text-left">
-          <AlertDialogHeader>
-            <AlertDialogTitle className="text-left">
-              Create Order
-            </AlertDialogTitle>
-            <AlertDialogDescription className="text-left">
-              Create an order and click continue when you're done.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
+          <ScrollArea className="max-h-[90vh]">
+            <AlertDialogHeader className="mb-10">
+              <AlertDialogTitle className="text-left">
+                Create Order
+              </AlertDialogTitle>
+              <AlertDialogDescription className="text-left">
+                Create an order and click continue when you're done.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
 
-          <form action="" className=" flex flex-col gap-4">
-            <div className="grid w-full items-center gap-1.5">
-              <Label
-                htmlFor="userId"
-                className="font-medium text-xs md:text-sm select-none pointer-events-none"
+            <form action="" className=" flex flex-col gap-4">
+              <div className="grid w-full items-center gap-1.5">
+                <Label className="font-medium text-xs md:text-sm select-none pointer-events-none">
+                  Select user <span className="text-red-500">*</span>
+                </Label>
+                {/* Select user full search */}
+                <SelectUser updateUser={updateUser} />
+              </div>
+
+              <div className="grid gap-2">
+                <Label
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                  htmlFor="number"
+                >
+                  Phone
+                </Label>
+                <Input
+                  id="number"
+                  type="text"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Phone Number"
+                  className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+                  required
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                  htmlFor="number"
+                >
+                  Referred By
+                </Label>
+                <Input
+                  id="referredBy"
+                  type="text"
+                  value={referredBy}
+                  placeholder="Referred By"
+                  className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm placeholder:text-neutral-500 w-full"
+                  required
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                  htmlFor="number"
+                >
+                  Address Id
+                </Label>
+                <Input
+                  id="text"
+                  type="text"
+                  value={addressId}
+                  // onChange={(e) => setAddressId(e.target.value)}
+                  placeholder="Address"
+                  className="border-neutral-200 cursor-not-allowed rounded-[0.4rem] text-xs md:text-sm placeholder:text-neutral-500 w-full"
+                  required
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                  htmlFor="number"
+                >
+                  Address
+                </Label>
+                <Input
+                  id="text"
+                  type="text"
+                  value={address}
+                  // onChange={(e) => setAddressId(e.target.value)}
+                  placeholder="Address"
+                  className="border-neutral-200 cursor-not-allowed rounded-[0.4rem] text-xs md:text-sm placeholder:text-neutral-500 w-full"
+                  required
+                />
+              </div>
+
+              <div className="grid gap-2">
+                {}
+                <Label
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                  htmlFor="number"
+                >
+                  Total Items
+                </Label>
+                <Input
+                  id="number"
+                  type="number"
+                  value={selectedItems.length}
+                  // onChange={(e) => setTotalItems(e.target.value)}
+                  placeholder="Total Items"
+                  className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+                  required
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                  htmlFor="number"
+                >
+                  Total Amount
+                </Label>
+                <Input
+                  id="number"
+                  type="number"
+                  value={totalAmount}
+                  // onChange={(e) => setAmount(e.target.value)}
+                  placeholder="Total Amount"
+                  className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+                  required
+                />
+              </div>
+
+              <div className="grid w-full items-center gap-1.5">
+                <Label
+                  htmlFor="userId"
+                  className="font-medium text-xs md:text-sm select-none pointer-events-none"
+                >
+                  Payment Method <span className="text-red-500">*</span>
+                </Label>
+                <Select onValueChange={(value) => setPaymentMethod(value)}>
+                  <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
+                    <SelectValue placeholder={`Payment Method`} />
+                  </SelectTrigger>
+                  <SelectContent className=" bg-white rounded-[0.3rem]">
+                    <SelectItem
+                      className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                      value="MPESA"
+                    >
+                      MPESA
+                    </SelectItem>
+                    <SelectItem
+                      className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                      value="CASH"
+                    >
+                      CASH
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="grid w-full items-center gap-1.5">
+                <CreateOrderComp updateSelectedItems={updateSelectedItems} />
+              </div>
+            </form>
+
+            <AlertDialogFooter className="mt-4">
+              <AlertDialogCancel className="border border-neutral-300 rounded-[0.3rem]">
+                Cancel
+              </AlertDialogCancel>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  createOrder();
+                }}
+                className="bg-black text-white rounded-[0.3rem] text-sm font-medium p-2 px-3"
               >
-                Payment Method <span className="text-red-500">*</span>
-              </Label>
-              <Select onValueChange={(value) => setPaymentMethod(value)}>
-                <SelectTrigger className="w-full text-xs  md:text-sm border-neutra-200 rounded-[0.3rem] focus:border-neutral-600">
-                  <SelectValue placeholder={`Payment Method`} />
-                </SelectTrigger>
-                <SelectContent className=" bg-white rounded-[0.3rem]">
-                  <SelectItem
-                    className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
-                    value="MPESA"
-                  >
-                    MPESA
-                  </SelectItem>
-                  <SelectItem
-                    className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
-                    value="Cash"
-                  >
-                    Cash
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <Label className="font-medium text-xs md:text-sm select-none pointer-events-none">
-                Select user <span className="text-red-500">*</span>
-              </Label>
-              {/* Select user full search */}
-              <SelectUser />
-            </div>
-            <div className="grid w-full items-center gap-1.5">
-              <CreateOrderComp />
-            </div>
-          </form>
-
-          <AlertDialogFooter>
-            <AlertDialogCancel className="border border-neutral-300 rounded-[0.3rem]">
-              Cancel
-            </AlertDialogCancel>
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-              }}
-              className="bg-black text-white rounded-[0.3rem] text-sm font-medium p-2 px-3"
-            >
-              Continue
-            </button>
-          </AlertDialogFooter>
+                Continue
+              </button>
+            </AlertDialogFooter>
+          </ScrollArea>
         </AlertDialogContent>
       </AlertDialog>
     </div>

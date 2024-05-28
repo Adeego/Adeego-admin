@@ -26,7 +26,6 @@ export const columns = [
             src={image}
             onLoad={(e) => {
               setImageLoading(false);
-              console.log("image");
             }}
             className={`${imageLoading && "hidden"}`}
             alt="image"
@@ -81,10 +80,8 @@ export const columns = [
     id: "actions",
     cell: ({ row, props }) => {
       const product = row.original;
-      const deleteProduct = () => {
-        console.log("delete");
-      };
-      return <ActionsMenu deleteProduct={deleteProduct} product={product} />;
+
+      return <ActionsMenu product={product} />;
     },
   },
 ];
