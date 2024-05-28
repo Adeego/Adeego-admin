@@ -35,6 +35,8 @@ const CustomerDataTable = ({ columns, data }) => {
     },
   });
 
+  console.log(data);
+
   return (
     <section className="relative">
       <div className="w-full h-10 hidden md:flex justify-end absolute -top-14">

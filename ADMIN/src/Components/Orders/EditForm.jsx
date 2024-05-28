@@ -19,6 +19,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 
 const OrderItem = ({ item, removeItem }) => {
@@ -68,13 +69,17 @@ const OrderItem = ({ item, removeItem }) => {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <button
-              className="font-medium p-2 px-3 bg-black rounded-[0.4rem] text-sm grid place-items-center text-white"
-              onClick={() => removeItem(item.Name)}
-              type="submit"
-            >
-              Confirm
-            </button>
+            <DialogClose asChild>
+              <button
+                className="font-medium p-2 px-3 bg-black rounded-[0.4rem] text-sm grid place-items-center text-white"
+                onClick={() => {
+                  removeItem(item.id);
+                }}
+                type="submit"
+              >
+                Confirm
+              </button>
+            </DialogClose>
           </DialogFooter>
         </DialogContent>
       </div>
@@ -93,6 +98,11 @@ const EditForm = ({ order, editOrderFxns }) => {
     paymentMethod,
     items,
   } = order;
+
+  const amount =
+    items.length > 0
+      ? items.map((item) => item.Price * item.Quantity).reduce((a, b) => a + b)
+      : 0;
 
   const {
     updateUserId,
@@ -205,7 +215,8 @@ const EditForm = ({ order, editOrderFxns }) => {
           <Input
             type="number"
             id="items"
-            value={totalItems}
+            value={items.length}
+            disabled
             onChange={(e) => {}}
             placeholder="Total items"
             className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm placeholder:text-neutral-500 w-full focus:border-neutral-600"
@@ -220,9 +231,10 @@ const EditForm = ({ order, editOrderFxns }) => {
           </Label>
           <Input
             type="number"
-            value={totalAmount}
-            onChange={(e) => updateAmount(e.target.value)}
+            value={amount}
+            // onChange={(e) => updateAmount(e.target.value)}
             id="amount"
+            disabled
             placeholder="Amount"
             className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm placeholder:text-neutral-500 w-full focus:border-neutral-600"
           />

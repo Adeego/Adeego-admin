@@ -46,19 +46,18 @@ const paymentOptions = [
 
 // comp;
 function EditOrder({ order }) {
-  console.log(order);
   // states for input fields
   const [userId, setUserId] = useState(order.UserId);
   const [orderStatus, setOrderStatus] = useState(order.OrderStatus);
   const [status, setStatus] = useState(order.Status);
-  const [totalAmount, setTotalAmount] = useState(order.TotalAmount);
   const [paymentStatus, setPaymentStatus] = useState(order.PaymentStatus);
   const [paymentMethod, setPaymentMethod] = useState(order.PMethod || "");
-  const [items, setItems] = useState(order.Items);
-  const [totalItems, setTotalItems] = useState(order.Items.length);
+  const [items, setItems] = useState([...order.Items]);
+  const [totalItems, setTotalItems] = useState(items.length);
   const [customer, setCustomer] = useState(null);
   const [addressId, setAddressId] = useState(null);
   const [addressData, setAddressData] = useState(null);
+  const [totalAmount, setTotalAmount] = useState(order.TotalAmount);
 
   const orderObj = {
     userId,
@@ -75,8 +74,22 @@ function EditOrder({ order }) {
     updateUserId: (value) => setUserId(value),
     updateOrderStatus: (value) => setOrderStatus(value),
     updateStatus: (value) => setStatus(value),
-    removeItem: (value) =>
-      setItems(items.filter((item) => item.Name !== value)),
+    removeItem: (value) => {
+      const existingItem = items.find(
+        (existingItem) => existingItem.id === value
+      );
+
+      console.log(existingItem)
+
+      if (existingItem.Quantity > 1) {
+        existingItem.Quantity -= 1;
+        setItems([...items]);
+        return;
+      }
+
+      const newArr = items.filter((item) => item.id !== value);
+      setItems(newArr);
+    },
     updateAmount: (value) => setAmount(value),
     updatePaymentStatus: (value) => setPaymentStatus(value),
     updatePaymentMethod: (value) => setPaymentMethod(value),
@@ -181,12 +194,14 @@ function EditOrder({ order }) {
                       cancel
                     </button>
                   </DrawerClose>
-                  <button
-                    onClick={handleApplyChanges}
-                    className="p-2 px-6 bg-black text-white text-xs  rounded-[0.3rem]"
-                  >
-                    confirm
-                  </button>
+                  <DrawerClose asChild className="max-w-fit">
+                    <button
+                      onClick={handleApplyChanges}
+                      className="p-2 px-6 bg-black text-white text-xs  rounded-[0.3rem]"
+                    >
+                      confirm
+                    </button>
+                  </DrawerClose>
                 </div>
               </DrawerFooter>
             </div>

@@ -17,6 +17,7 @@ import { Search } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import CustomerDataTable from "./CustomerDatatable";
 import { Input } from "@/components/ui/input";
+import CreateUser from "./CreateUser";
 const LoadingSkeleton = () => {
   return (
     <div>
@@ -154,7 +155,9 @@ const customerTable = () => {
             />
           </div>
         </div>
-        <div className="flex gap-2 shrink-0 relative"></div>
+        <div className="flex gap-2 shrink-0 relative">
+          <CreateUser />
+        </div>
       </header>
       <section className="p-2 flex flex-col gap-6 py-4">
         <div className="px-2">

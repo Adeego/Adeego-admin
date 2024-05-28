@@ -257,7 +257,6 @@ function CreateOrderComp({ updateSelectedItems }) {
       return;
     }
 
-    
     const newArr = items.filter((item) => item._firestore_id !== itemId);
     setItems(newArr);
     updateSelectedItems(newArr);
