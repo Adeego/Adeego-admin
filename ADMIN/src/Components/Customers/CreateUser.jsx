@@ -4,6 +4,9 @@ import {
   addDoc,
   serverTimestamp,
   runTransaction,
+  query,
+  where,
+  getDocs,
 } from "firebase/firestore";
 
 import app from "../../../firebaseConfig";
@@ -30,7 +33,7 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CirclePlus } from "lucide-react";
+import { CircleCheck, CirclePlus, CircleX } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -48,52 +51,6 @@ const CreateUser = () => {
   const [refCode, setRefCode] = useState("");
   const [agent, setAgent] = useState(false);
 
-  const registerUser = async () => {
-    try {
-      const db = getFirestore(app);
-      const userRef = collection(db, "Users");
-
-      const userData = {
-        Address: address,
-        CreatedAt: serverTimestamp(),
-        FirstName: firstName,
-        LastName: lastName,
-        Passcode: passcode,
-        Phone: phone,
-        ReferredBy: "",
-        Tier: tier,
-        UpdatedAt: serverTimestamp(),
-        Verified: verified,
-      };
-
-      const newUser = await addDoc(userRef, userData);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const createAccount = async () => {
-    try {
-      const db = getFirestore(app);
-      const userRef = collection(db, "User");
-      const userData = {
-        FirstName: firstName,
-        LastName: lastName,
-        Phone: phone,
-        Passcode: passcode,
-        ReferredBy: refCode,
-        Tier: "New",
-        Verified: false,
-        CreatedAt: serverTimestamp(),
-        UpdatedAt: serverTimestamp(),
-      };
-
-      const newUserRef = await addDoc(userRef, userData);
-      return newUserRef.id;
-    } catch (error) {
-      throw error;
-    }
-  };
   const createNewUser = async () => {
     try {
       const db = getFirestore(app);
@@ -103,52 +60,63 @@ const CreateUser = () => {
         UpdatedAt: serverTimestamp(),
       };
 
-      const transactionResult = await runTransaction(
-        db,
-        async (transaction) => {
-          const cartRef = collection(db, "Cart");
-          const newCartRef = await addDoc(cartRef, commonData);
+      const userRef = collection(db, "User");
 
-          const collectionRef = collection(db, "Collection");
-          const newCollectionRef = await addDoc(collectionRef, commonData);
+      const cartRef = collection(db, "Cart");
+      const newCartRef = await addDoc(cartRef, commonData);
 
-          const addressRef = collection(db, "Address");
+      const collectionRef = collection(db, "Collection");
+      const newCollectionRef = await addDoc(collectionRef, commonData);
 
-          const addressData = {
-            Country: "Kenya",
-            City: "Nairobi",
-            Area: area,
-            Estate: estate,
-            HouseNo: houseNumber, // Use the newCartRef.id as UserId
-            CreatedAt: serverTimestamp(),
-            UpdatedAt: serverTimestamp(),
-          };
+      const addressRef = collection(db, "Address");
 
-          const newAddressRef = await addDoc(addressRef, addressData);
+      const addressData = {
+        Country: "Kenya",
+        City: "Nairobi",
+        Area: area,
+        Estate: estate,
+        HouseNo: houseNumber, // Use the newCartRef.id as UserId
+        CreatedAt: serverTimestamp(),
+        UpdatedAt: serverTimestamp(),
+      };
 
-          return {
-            cartId: newCartRef.id,
-            collectionId: newCollectionRef.id,
-            addressId: newAddressRef.id,
-          };
-        }
+      const newAddressRef = await addDoc(addressRef, addressData);
+
+      const userData = {
+        FirstName: firstName,
+        LastName: lastName,
+        Phone: phone,
+        Passcode: passcode,
+        ReferredBy: refCode,
+        Tier: "New",
+        Verified: false,
+        CartId: newCartRef.id,
+        CollectionId: newCollectionRef.id,
+        AddressId: newAddressRef.id,
+        CreatedAt: serverTimestamp(),
+        UpdatedAt: serverTimestamp(),
+      };
+
+      const newUserRef = await addDoc(userRef, userData);
+      toast(
+        <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
+          <CircleCheck
+            size={18}
+            className="stroke-green-600 md:text-sm text-green-800"
+          />
+          User added successfully
+        </div>
       );
-
-      const { cartId, collectionId, addressId } = transactionResult;
-
-      // Create user document
-      await createAccount();
-
-      toast.success("Registration successiful");
+      return newUserRef.id;
     } catch (error) {
-      console.error("Error adding user to Database:", error);
-      throw error;
+      console.error(error);
     }
   };
-  
+
   const verifyUser = async () => {
     try {
       // Check if user exists in the database
+      console.log("click");
       const db = getFirestore(app);
       const number = phone;
       const userRef = collection(db, "User");
@@ -156,14 +124,20 @@ const CreateUser = () => {
       const querySnapshot = await getDocs(userQuery);
       // Check if any documents match the query
       if (!querySnapshot.empty) {
-        toast(`${phone} already exists! Login`);
-      } else if (phone !== confirmPhone || passcode !== confirmPasscode) {
-        toast("Phone number or passcode do not match");
+        toast(
+          <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
+            <CircleX
+              size={18}
+              className="stroke-red-600 md:text-sm text-red-800 "
+            />
+            Phone number already exists in the database
+          </div>
+        );
       } else {
         createNewUser();
       }
     } catch (err) {
-      throw err;
+      console.error(err);
     }
   };
   const verifyAgent = async () => {
@@ -181,7 +155,7 @@ const CreateUser = () => {
         toast("referral code does not exist");
       }
     } catch (err) {
-      throw error;
+      throw err;
     }
   };
 
@@ -365,15 +339,16 @@ const CreateUser = () => {
             <AlertDialogCancel className="border border-neutral-300 rounded-[0.3rem]">
               Cancel
             </AlertDialogCancel>
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                registerUser();
-              }}
-              className="bg-black text-white rounded-[0.3rem] text-sm font-medium p-2 px-3"
-            >
-              Continue
-            </button>
+            <AlertDialogCancel className="!max-w-fit !p-0 border-none">
+              <button
+                onClick={(e) => {
+                  verifyUser();
+                }}
+                className="bg-black text-white rounded-[0.3rem] text-sm font-medium p-2 px-3 hover:bg-black"
+              >
+                Continue
+              </button>
+            </AlertDialogCancel>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

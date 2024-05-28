@@ -179,7 +179,7 @@ const ProductsTable = () => {
 
       <section className="p-2 flex flex-col gap-6 py-4">
         <div className="px-2">
-          <h1 className="font-bold tracking-tight text-2xl">Products</h1>
+          <h1 className="font-bold tracking-tight text-2xl">Products ( {data.length} )</h1>
           <small className="text-neutral-500">Manage your products</small>
         </div>
         {loading ? (
