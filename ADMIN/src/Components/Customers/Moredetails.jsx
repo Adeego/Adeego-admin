@@ -206,7 +206,7 @@ const MoreDetailsComp = ({ customer }) => {
 
     fetchAddress();
   }, []);
-
+console.log(customer)
   return (
     <>
       <MoreDetailsMobile user={customer} address={address} />
