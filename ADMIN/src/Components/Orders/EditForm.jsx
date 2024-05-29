@@ -21,6 +21,7 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog";
+import EditOrderProduct from "./ProductSearchEditOrder/EditOrderProduct";
 
 const OrderItem = ({ item, removeItem }) => {
   const [hasImageLoaded, setImageLoaded] = useState(true);
@@ -87,7 +88,7 @@ const OrderItem = ({ item, removeItem }) => {
   );
 };
 
-const EditForm = ({ order, editOrderFxns }) => {
+const EditForm = ({ order, editOrderFxns, addItem }) => {
   const {
     userId,
     orderStatus,
@@ -306,6 +307,16 @@ const EditForm = ({ order, editOrderFxns }) => {
             ))}
           </div>
         </div>
+      </div>
+      <hr className="my-6 border-neutral-100 md:border-neutral-200" />
+      <div className="grid w-full items-center gap-1.5 pb-6">
+        <Label
+          htmlFor=""
+          className="font-medium text-xs md:text-sm select-none pointer-events-none"
+        >
+          Add product
+        </Label>
+        <EditOrderProduct addItem={addItem} />
       </div>
     </>
   );

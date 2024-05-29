@@ -70,6 +70,23 @@ function EditOrder({ order }) {
     paymentMethod,
   };
 
+  const addItem = (item) => {
+    // const existingItem = items.find(
+    //   (existingItem) => existingItem === item
+    // );
+
+    // if (existingItem) {
+    //   existingItem.Quantity += 1;
+    //   setItems([...items]);
+    // } else {
+    //   if (!item.Quantity) {
+    //     item.Quantity = 1;
+    //   }
+    //   const newArr = [item, ...items];
+    //   setItems(newArr);
+    // }
+  };
+
   const editOrderFxns = {
     updateUserId: (value) => setUserId(value),
     updateOrderStatus: (value) => setOrderStatus(value),
@@ -79,7 +96,7 @@ function EditOrder({ order }) {
         (existingItem) => existingItem.id === value
       );
 
-      console.log(existingItem)
+      console.log(existingItem);
 
       if (existingItem.Quantity > 1) {
         existingItem.Quantity -= 1;
@@ -93,6 +110,7 @@ function EditOrder({ order }) {
     updateAmount: (value) => setAmount(value),
     updatePaymentStatus: (value) => setPaymentStatus(value),
     updatePaymentMethod: (value) => setPaymentMethod(value),
+    addItem: addItem(),
   };
 
   async function getData(collectionName, userId) {
@@ -213,6 +231,7 @@ function EditOrder({ order }) {
           order={orderObj}
           editOrderFxns={editOrderFxns}
           handleApplyChanges={handleApplyChanges}
+          addItem={addItem}
         />
       </div>
     </>
