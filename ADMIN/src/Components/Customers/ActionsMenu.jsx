@@ -72,7 +72,7 @@ const DeleteDialog = ({ customer }) => {
       }
     } else {
       alert("Enter the confimation text");
-    }
+      setConfirmText(" ");    }
   };
 
   return (
