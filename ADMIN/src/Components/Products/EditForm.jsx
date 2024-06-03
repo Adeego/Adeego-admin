@@ -17,6 +17,11 @@ const categoryOptions = [
   { value: "PersonalCare", label: "Personal Care" },
   { value: "Cleaning", label: "Cleaning" },
   { value: "OtherEssentials", label: "Other Essentials" },
+  { value: "Drinks", label: "Drinks" },
+  { value: "Snacks", label: "Snacks" },
+  { value: "HomeMaintenance", label: "Home Maintenance" },
+  { value: "Gas", label: "Gas" },
+  { value: "OtherFoods", label: "Other Foods" },
 ];
 
 const EditForm = ({ product, productFxns }) => {
@@ -59,6 +64,24 @@ const EditForm = ({ product, productFxns }) => {
             updateName(e.target.value);
           }}
           placeholder="Name"
+          className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
+        />
+      </div>
+      <div className="grid w-full items-center gap-1.5">
+        <Label
+          htmlFor="userId"
+          className="font-medium text-xs md:text-sm select-none pointer-events-none"
+        >
+          Image URL
+        </Label>
+        <Input
+          type="text"
+          id="image"
+          value={image}
+          onChange={(e) => {
+            updateImage(e.target.value);
+          }}
+          placeholder="Image URL"
           className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
         />
       </div>

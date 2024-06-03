@@ -111,6 +111,16 @@ const DetailsBody = ({ user, address }) => {
             </div>
           </div>
         </div>
+        <Separator orientation="horizontal" className="bg-neutral-200" />
+        <div className="flex flex-col gap-3">
+          <h1 className="font-semibold">Wallet</h1>
+          <div className="w-full flex items-center justify-between">
+            <div className="text-neutral-500">Balance</div>
+            <div className="text-black">
+              {formatPrice(user.Wallet)}
+            </div>
+          </div>
+        </div>
       </div>
       <div className="mt-10 pb-3">
         <small className="text-neutral-600 text-xs md:text-md">

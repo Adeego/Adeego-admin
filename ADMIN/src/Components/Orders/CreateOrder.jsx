@@ -40,7 +40,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Check, ChevronsUpDown, CirclePlus } from "lucide-react";
+import { Check, ChevronsUpDown, CircleCheck, CirclePlus } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import {
@@ -53,6 +53,7 @@ import {
 import { CommandList } from "cmdk";
 import { getData } from "../../lib/utils";
 import OrderStore from "../../Store/OrderStore";
+import { toast } from "sonner";
 
 const SelectUser = ({ updateUser }) => {
   // update functions
@@ -204,6 +205,19 @@ const CreateOrder = () => {
 
   const profit = totalAmount - buyingPrice;
 
+  const resetInputs = () => {
+    setUserId("");
+    setPaymentMethod("");
+    setAddress("");
+    setTotalItems("");
+    setAmount("");
+    setReferredBy("");
+    setPhone("");
+    setAddressId("");
+    setCashback(0);
+    setSelectedItems([]);
+  };
+
   const createOrder = async () => {
     try {
       const db = getFirestore(app);
@@ -226,6 +240,16 @@ const CreateOrder = () => {
       };
 
       const newOrderRef = await addDoc(ordersRef, orderData);
+      toast(
+        <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
+          <CircleCheck
+            size={16}
+            className="stroke-neutral-600 md:text-sm text-neutral-800"
+          />
+          Order created successfully.
+        </div>
+      );
+      resetInputs();
 
       // if (couponApplied) {
       //   // Deduct 1 from the "Remaining" field in the "Coupons" collection
@@ -402,6 +426,12 @@ const CreateOrder = () => {
                       value="CASH"
                     >
                       CASH
+                    </SelectItem>
+                    <SelectItem
+                      className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                      value="ADEEGO WALLET"
+                    >
+                      ADEEGO WALLET
                     </SelectItem>
                   </SelectContent>
                 </Select>

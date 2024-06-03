@@ -50,7 +50,7 @@ function Login() {
           const userData = querySnapshot.docs[0].data();
           const userId = querySnapshot.docs[0].id;
           const user = {
-            UserId: userId,
+            id: userId,
             FirstName: userData.FirstName,
             LastName: userData.LastName,
             Phone: userData.Phone,

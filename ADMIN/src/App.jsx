@@ -33,7 +33,7 @@ const App = () => {
             <Route path="/agents" element={<Agents />} />
           </Routes>
           <div className="fixed z-[999]">
-            <Toaster position="top-center" />
+            <Toaster position="top-center" className='z-[100000000000]' />
           </div>
         </Router>
       </div>

@@ -261,7 +261,7 @@ const MoreDetailsLg = ({ order, user, address }) => {
 
 const MoreDetailsComp = ({ order }) => {
   const [addressId, setAddressId] = useState("");
-  const [userId, setUserId] = useState(order.UserId);
+  const [userId, setUserId] = useState(order.id);
   const [user, setUser] = useState({});
   const [address, setAddress] = useState(null);
 
@@ -287,8 +287,10 @@ const MoreDetailsComp = ({ order }) => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData("User", userId);
-      setUser(data);
-      setAddressId(data.AddressId);
+      if (data) {
+        setUser(data);
+        setAddressId(data.AddressId);
+      }
     };
 
     fetchData();
@@ -306,7 +308,6 @@ const MoreDetailsComp = ({ order }) => {
 
     fetchAddress();
   }, [addressId]);
-
 
   return (
     <>

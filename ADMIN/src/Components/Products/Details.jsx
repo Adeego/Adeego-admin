@@ -127,6 +127,7 @@ const DetailsBody = ({ product }) => {
 
 const DetailsMobileComp = ({ product }) => {
   const [hasImageLoaded, setImageHasLoaded] = useState(false);
+  console.log(product)
   return (
     <div className="md:hidden">
       <Drawer>
@@ -224,6 +225,7 @@ const DetailsLgComp = ({ product }) => {
 };
 
 const DetailsComp = ({ product }) => {
+  
   return (
     <>
       <DetailsMobileComp product={product} />

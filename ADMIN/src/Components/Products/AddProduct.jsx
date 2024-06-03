@@ -53,13 +53,13 @@ function AddProduct() {
     { value: "PersonalCare", label: "Personal Care" },
     { value: "Cleaning", label: "Cleaning" },
     { value: "OtherEssentials", label: "Other Essentials" },
+    { value: "Drinks", label: "Drinks" },
+    { value: "Snacks", label: "Snacks" },
+    { value: "HomeMaintenance", label: "Home Maintenance" },
+    { value: "Gas", label: "Gas" },
+    { value: "OtherFoods", label: "Other Foods" },
   ];
-
-  const stockOptions = [
-    { stock: "" },
-    { stock: "In stock" },
-    { stock: "Out of stock" },
-  ];
+ 
 
   const handleName = (value) => {
     setName(value);

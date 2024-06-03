@@ -37,6 +37,7 @@ const EditCustomer = ({ customer }) => {
   const [cartId, setCartId] = useState(customer.CartId);
   const [tier, setTier] = useState(customer.Tier);
   const [referredBy, setReferredBy] = useState(customer.ReferredBy);
+  const [wallet, setWallet] = useState(customer.Wallet);
 
   const customerObj = {
     userId,
@@ -48,6 +49,7 @@ const EditCustomer = ({ customer }) => {
     cartId,
     tier,
     referredBy,
+    wallet,
   };
 
   const editCustomerFxns = {
@@ -60,6 +62,7 @@ const EditCustomer = ({ customer }) => {
     updateCartId: (value) => setCartId(value),
     updateTier: (value) => setTier(value),
     updateReferredBy: (value) => setReferredBy(value),
+    updateWallet: (value) => setWallet(value),
   };
 
   // Update the product details
@@ -142,7 +145,7 @@ const EditCustomer = ({ customer }) => {
           </AlertDialogTrigger>
           <AlertDialogContent className="bg-white !rounded-[0.5rem]">
             <AlertDialogHeader>
-              <AlertDialogTitle>Edit User?</AlertDialogTitle>
+              <AlertDialogTitle>Edit User</AlertDialogTitle>
               <AlertDialogDescription>
                 Make changes to your User here. Click save when you're done.
               </AlertDialogDescription>
