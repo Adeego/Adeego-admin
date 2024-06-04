@@ -23,7 +23,7 @@ const LgEditForm = ({ order, editOrderFxns, handleApplyChanges }) => {
       <AlertDialogContent className="bg-white !rounded-[0.5rem]">
         <ScrollArea className="!max-h-[90vh]">
           <AlertDialogHeader>
-            <AlertDialogTitle>Edit Order?</AlertDialogTitle>
+            <AlertDialogTitle>Edit Order</AlertDialogTitle>
             <AlertDialogDescription>
               Make changes to your order here. Click save when you're done.
             </AlertDialogDescription>

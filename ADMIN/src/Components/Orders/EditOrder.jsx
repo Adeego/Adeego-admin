@@ -22,9 +22,10 @@ import {
 
 import Receipt from "./Receipt";
 import { Link } from "react-router-dom";
-import { Image, X } from "lucide-react";
+import { CircleCheck, Image, X } from "lucide-react";
 import EditForm from "./EditForm";
 import LgEditForm from "./LgEditForm";
+import { toast } from "sonner";
 
 const orderStatusOptions = [
   { status: "Pending", value: "Pending" },
@@ -71,10 +72,10 @@ function EditOrder({ order }) {
   };
 
   const addItem = (item) => {
+    console.log(item);
     // const existingItem = items.find(
     //   (existingItem) => existingItem === item
     // );
-
     // if (existingItem) {
     //   existingItem.Quantity += 1;
     //   setItems([...items]);
@@ -123,11 +124,11 @@ function EditOrder({ order }) {
         return userSnap.data();
       } else {
         // Handle the case where user data is not found
-        alert.warn(`${collectionName} data not found for user:`, userId);
+        console.warn(`${collectionName} data not found for user:`, userId);
         return null;
       }
     } catch (error) {
-      alert.error("Error fetching data:", error);
+      console.log("Error fetching data:", error);
       return null;
     }
   }
@@ -135,8 +136,10 @@ function EditOrder({ order }) {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData("User", userId);
-      setCustomer(data);
-      setAddressId(data.AddressId);
+      if (data) {
+        setCustomer(data);
+        setAddressId(data.AddressId);
+      }
     };
 
     fetchData();
@@ -164,9 +167,9 @@ function EditOrder({ order }) {
       Status: status,
       PaymentStatus: paymentStatus,
       PMethod: paymentMethod,
-      Profit: profit,
-      items: itemList,
-      TotalItems: itemList.length,
+      Profit: 0,
+      items: items,
+      TotalItems: items.length,
       TotalAmount: totalAmount,
     };
 
@@ -176,8 +179,15 @@ function EditOrder({ order }) {
       await updateDoc(doc(db, "Orders", order.id), fieldsToUpdate);
 
       // Handle success (e.g., display a success message or navigate back)
-      alert("Product updated successfully!");
-
+      toast(
+        <div className="p-3 bg-white border border-neutral-300 rounded-[0.4rem] flex items-center gap-2 w-full">
+          <CircleCheck
+            size={16}
+            className="stroke-neutral-600 md:text-sm text-neutral-800"
+          />
+          Order updated successfully.
+        </div>
+      );
       // Callif needed
     } catch (error) {
       // Handle errors (e.g., display an error message to the user)

@@ -28,7 +28,7 @@ import MoreDetailsComp from "./MoreDetails";
 
 const DeleteDialog = ({ order }) => {
   const [confirmText, setConfirmText] = useState("");
-
+  console.log(order);
   const deleteOrder = async () => {
     if (confirmText === order.id) {
       try {
@@ -45,8 +45,7 @@ const DeleteDialog = ({ order }) => {
           </div>
         );
       } catch (error) {
-        console.error(error);
-        throw error;
+        console.error("error", error);
       }
     } else {
       alert("Enter the confimation text");

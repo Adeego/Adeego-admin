@@ -264,6 +264,12 @@ const EditForm = ({ order, editOrderFxns, addItem }) => {
               >
                 MPESA
               </SelectItem>
+              <SelectItem
+                className="text-xs md:text-sm !cursor-pointer hover:!bg-neutral-100 rounded-[0.3rem]"
+                value="ADEEGO WALLET"
+              >
+                ADEEGO WALLET
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -308,6 +314,8 @@ const EditForm = ({ order, editOrderFxns, addItem }) => {
           </div>
         </div>
       </div>
+      <hr className="my-6 border-neutral-100 md:border-neutral-200" />
+
       <hr className="my-6 border-neutral-100 md:border-neutral-200" />
       <div className="grid w-full items-center gap-1.5 pb-6">
         <Label

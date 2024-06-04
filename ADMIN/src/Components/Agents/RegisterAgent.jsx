@@ -27,7 +27,7 @@ const RegisterAgent = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [occupation, setOccupation] = useState("");
-  const [code, setCode] = useState("");
+  const [phone, setPhone] = useState("");
 
   const registerAgent = async () => {
     try {
@@ -36,8 +36,9 @@ const RegisterAgent = () => {
 
       const agentData = {
         FullName: name,
-        Code: code,
+        Code: phone,
         Address: address,
+        Phone: phone,
         Occupation: occupation,
         Referred: 0,
         Wallet: 0,
@@ -123,17 +124,17 @@ const RegisterAgent = () => {
             </div>
             <div className="grid w-full items-center gap-1.5">
               <Label
-                htmlFor="code"
+                htmlFor="phone"
                 className="font-medium text-xs md:text-sm select-none pointer-events-none"
               >
-                Code <span className="text-red-500">*</span>
+                Phone <span className="text-red-500">*</span>
               </Label>
               <Input
                 type="text"
-                id="code"
-                value={code}
-                onChange={(e) => setCode(e.target.value)}
-                placeholder="Code"
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Phone"
                 className="border-neutral-200 rounded-[0.4rem] text-xs md:text-sm focus:border-neutral-600 placeholder:text-neutral-500 w-full"
               />
             </div>
