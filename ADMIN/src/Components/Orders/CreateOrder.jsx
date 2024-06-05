@@ -69,6 +69,8 @@ const SelectUser = ({ updateUser }) => {
   const [user, setUser] = useState(null);
   const [addressId, setAddress] = useState("");
 
+  // console.log(user)
+
   useEffect(() => {
     let unsubscribe;
 
@@ -106,6 +108,7 @@ const SelectUser = ({ updateUser }) => {
     updateAddress(
       `${data.Estate} House ${data.HouseNo}, ${data.Area}, ${data.City}, ${data.Country}`
     );
+    console.log(updateAddress)
   };
 
   return (
@@ -140,7 +143,7 @@ const SelectUser = ({ updateUser }) => {
                         setUser(name);
                         updateReferredBy(userItem.ReferredBy);
                         updatePhoneNumber(userItem.Phone);
-                        updateUserId(userItem.UserId);
+                        updateUserId(userItem.id);
                         fetchAddress(userItem.AddressId);
                       }}
                       className="capitalize w-full flex items-center justify-between hover:!bg-neutral-200 "
@@ -187,6 +190,8 @@ const CreateOrder = () => {
     updateAddressId: (value) => setAddressId(value),
   };
 
+  // console.log(updateUser)
+
   // import order store
 
   const totalAmount =
@@ -232,12 +237,16 @@ const CreateOrder = () => {
         PaymentStatus: "Unpaid",
         PMethod: paymentMethod,
         Profit: profit,
+        CashBack: cashback,
         Items: selectedItems,
         TotalItems: selectedItems.length,
         TotalAmount: totalAmount,
         UpdatedAt: serverTimestamp(),
         CreatedAt: serverTimestamp(),
       };
+
+      console.log(orderData)
+      console.log(cashback)
 
       const newOrderRef = await addDoc(ordersRef, orderData);
       toast(

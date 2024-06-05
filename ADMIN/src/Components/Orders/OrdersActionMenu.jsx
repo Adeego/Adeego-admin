@@ -28,7 +28,7 @@ import MoreDetailsComp from "./MoreDetails";
 
 const DeleteDialog = ({ order }) => {
   const [confirmText, setConfirmText] = useState("");
-  console.log(order);
+  // console.log(order);
   const deleteOrder = async () => {
     if (confirmText === order.id) {
       try {
