@@ -52,7 +52,7 @@ const DetailsBody = ({ order, user, address }) => {
         )
       : 0;
   const formatSubtotal = formatPrice(subTotal);
-  const shipping = formatPrice(200);
+  // const shipping = formatPrice(200);
   const totalPrice = formatPrice(subTotal);
 
   return (
@@ -69,7 +69,7 @@ const DetailsBody = ({ order, user, address }) => {
                   currency: "KES",
                 }).format(item.Price);
                 return (
-                  <div className="flex items-center justify-between">
+                  <div key={item.ProductId} className="flex items-center justify-between">
                     <div>
                       <p className="text-neutral-500">
                         {item.Quantity} x {item.Name} ({item.Size})
@@ -261,9 +261,10 @@ const MoreDetailsLg = ({ order, user, address }) => {
 
 const MoreDetailsComp = ({ order }) => {
   const [addressId, setAddressId] = useState("");
-  const [userId, setUserId] = useState(order.id);
   const [user, setUser] = useState({});
   const [address, setAddress] = useState(null);
+
+  const userId = order.UserId
 
   async function getData(collectionName, userId) {
     try {
@@ -286,6 +287,7 @@ const MoreDetailsComp = ({ order }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      // const userId = order.UserId
       const data = await getData("User", userId);
       if (data) {
         setUser(data);

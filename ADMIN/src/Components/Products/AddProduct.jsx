@@ -57,7 +57,7 @@ function AddProduct() {
     { value: "Snacks", label: "Snacks" },
     { value: "HomeMaintenance", label: "Home Maintenance" },
     { value: "Gas", label: "Gas" },
-    { value: "OtherFoods", label: "Other Foods" },
+    { value: "Dairy", label: "Dairy" },
   ];
  
 
